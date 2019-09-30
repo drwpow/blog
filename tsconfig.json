@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "lib": ["dom", "es2015"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "target": "es2017"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

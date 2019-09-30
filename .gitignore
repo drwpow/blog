@@ -1,0 +1,12 @@
+build/
+dist/
+public/
+
+.stencil/
+.idea/
+node_modules/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env

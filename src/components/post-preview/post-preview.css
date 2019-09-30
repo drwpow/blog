@@ -1,0 +1,60 @@
+.card {
+  line-height: 1;
+  margin-bottom: 4rem;
+
+  & a {
+    color: var(--black);
+    text-decoration: none;
+  }
+}
+
+.date {
+  display: block;
+  font-size: var(--d1);
+  font-weight: 400;
+  letter-spacing: 0.0625em;
+  margin-top: 1rem;
+}
+
+.img {
+  background-color: var(--bg-accent);
+  height: 20rem;
+  position: relative;
+
+  & img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.more {
+  font-weight: 700;
+  margin-left: 0.5em;
+}
+
+.tag {
+  background: var(--fg);
+  color: var(--bg);
+  font-size: var(--u3);
+  left: 2rem;
+  padding-bottom: 0.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  padding-top: 0.375em;
+  position: absolute;
+  top: 0;
+}
+
+.title {
+  font-size: var(--u6);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.summary {
+  font-size: 1em;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
