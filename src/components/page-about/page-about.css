@@ -4,3 +4,12 @@ p {
   margin-top: 3em;
   max-width: 35em;
 }
+
+a {
+  color: currentColor;
+
+  &:focus,
+  &:hover {
+    color: hsl(var(--interactive));
+  }
+}

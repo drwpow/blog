@@ -18,6 +18,11 @@ video {
 
   & a {
     color: hsl(var(--fg));
+
+    &:focus,
+    &:hover {
+      color: hsl(var(--interactive));
+    }
   }
 
   & td {
@@ -34,6 +39,11 @@ video {
 
   & a {
     color: currentColor;
+
+    &:focus,
+    &:hover {
+      color: hsl(var(--interactive));
+    }
   }
 
   & blockquote {

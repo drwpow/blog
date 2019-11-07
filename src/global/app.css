@@ -1,5 +1,6 @@
 :root {
   /* color */
+  --interactive: 223, 100%, 50%;
   --bg: 0, 0%, 100%;
   --bg-accent: 0, 0%, 96%;
   --fg: 0, 0%, 0%;

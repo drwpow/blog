@@ -1,6 +1,4 @@
-build/
-dist/
-public/
+www/
 
 .stencil/
 .idea/

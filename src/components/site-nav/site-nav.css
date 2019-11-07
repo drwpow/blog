@@ -38,11 +38,12 @@
   margin-bottom: 2rem;
 
   & a {
-    color: hsl(var(--fg));
+    color: currentColor;
     text-decoration: none;
 
+    &:focus,
     &:hover {
-      text-decoration: underline;
+      color: hsl(var(--interactive));
     }
   }
 }
