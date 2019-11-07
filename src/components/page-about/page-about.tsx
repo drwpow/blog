@@ -9,13 +9,21 @@ import { SITE_NAME } from '../../lib/constants';
 export class PageAbout {
   render() {
     return (
-      <div>
+      <div itemScope itemType="http://schema.org/Person">
         <stencil-route-title title={`about // ${SITE_NAME}`} />
         <h1 class="title">About</h1>
+        <img
+          itemProp="image"
+          class="img"
+          src="/assets/drew-about.jpg"
+          width="2000"
+          height="1000"
+          alt="Drew"
+        />
         <p>
-          I’ve been building websites and spending way too much time online for over a decade. I’m
-          passionate about using technology as an equalizer, both in my work and sharing what I know
-          on this blog.
+          My name is <span itemProp="name">Drew Powers</span>. I’ve been building websites and
+          spending way too much time online for over a decade. I’m passionate about using technology
+          as an equalizer, both in my work and sharing what I know on this blog.
         </p>
         <p>
           Have a question, or a suggestion for something you’d like me to write about? Shoot me an{' '}
