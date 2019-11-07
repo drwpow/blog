@@ -13,7 +13,7 @@ export class PostPreview {
   render() {
     return (
       <article class="card">
-        <stencil-route-link url={`./post/${this.post.data.slug}`}>
+        <stencil-route-link url={`/post/${this.post.data.slug}`}>
           <div class="img">
             <img
               alt={this.post.data.title}
