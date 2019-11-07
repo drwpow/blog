@@ -1,4 +1,6 @@
-.title {
-  font-size: var(--u6);
-  margin-top: 0;
+p {
+  line-height: var(--ld1);
+  margin-bottom: 3em;
+  margin-top: 3em;
+  max-width: 35em;
 }

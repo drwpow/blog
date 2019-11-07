@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
-
 :root {
   /* color */
-  --bg: white;
-  --bg-accent: #f0f0f0;
-  --fg: black;
+  --bg: 0, 0%, 100%;
+  --bg-accent: 0, 0%, 96%;
+  --fg: 0, 0%, 0%;
 
   /* color: text */
-  --text: var(--black);
+  --text: hsl(var(--fg));
 
   /* font 2.25× every 6 steps */
   --u18: 11.390625em;
@@ -47,17 +45,20 @@
   --d17: 0.10049617492923625em;
   --d18: 0.0877914951989026em;
 
+  /* leading */
+  --ld1: 1.75;
+
   /* families */
-  --mono: 'IBM Plex Mono', monospace;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   --sans: 'Cardinal Grotesque', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica',
     'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: black;
-    --bg-accent: #1c1c1c;
-    --fg: white;
+    --bg: 0, 0%, 0%;
+    --bg-accent: 0, 0%, 8%;
+    --fg: 0, 0%, 100%;
   }
 }
 
@@ -85,16 +86,24 @@
     url('/assets/CardinalGrotesqueWide-Semibold.woff') format('woff');
 }
 
+html {
+  font-size: 16px;
+}
+
 html,
 body {
-  background: var(--bg);
+  background: hsl(var(--bg));
 }
 
 body {
-  color: var(--fg);
+  color: hsl(var(--fg));
   font-family: var(--sans);
   font-size: 16px;
   margin: 0;
+
+  @media (min-width: 800px) {
+    font-size: var(--u1);
+  }
 }
 
 pre,
@@ -102,7 +111,20 @@ code {
   font-family: var(--mono);
 }
 
-img {
+img,
+video {
   height: auto;
   max-width: 100%;
+}
+
+h1 {
+  font-size: var(--u6);
+  margin-top: 0;
+}
+
+p {
+  line-height: var(--ld1);
+  margin-bottom: 3em;
+  margin-top: 3em;
+  max-width: 35em;
 }

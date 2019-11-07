@@ -1,3 +1,9 @@
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
 .img {
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -11,7 +17,7 @@
   margin-top: 0.5rem;
 
   & a {
-    color: var(--fg);
+    color: hsl(var(--fg));
   }
 
   & td {
@@ -20,13 +26,19 @@
 }
 
 .post {
+  font-size: var(--u1);
+
+  @media (min-width: 800px) {
+    font-size: var(--u2);
+  }
+
   & a {
     color: currentColor;
   }
 
   & blockquote {
-    background: var(--bg-accent);
-    border-left: 2px solid var(--fg);
+    background: hsl(var(--bg-accent));
+    border-left: 2px solid hsl(var(--fg));
     margin-left: 0;
     margin-right: 0;
     padding: 2rem;
@@ -43,8 +55,30 @@
 
   & ol,
   & ul {
-    font-size: var(--u1);
+    counter-reset: list;
     padding-left: 0;
+  }
+
+  & ol li {
+    counter-increment: list;
+    list-style: none;
+    position: relative;
+
+    &::before {
+      align-items: center;
+      border: 1px solid currentColor;
+      content: counter(list);
+      display: flex;
+      font-size: var(--d1);
+      height: 1.5em;
+      justify-content: center;
+      margin-right: 1rem;
+      position: absolute;
+      right: 100%;
+      text-align: center;
+      top: 0;
+      width: 1.5em;
+    }
   }
 
   & li {
@@ -53,16 +87,16 @@
   }
 
   & p {
-    font-size: var(--u1);
-    line-height: 1.7;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    line-height: var(--ld1);
+    margin-bottom: 3em;
+    margin-top: 3em;
+    max-width: 35em;
 
     & code {
-      background: var(--bg-accent);
+      background: hsl(var(--bg-accent));
       display: inline-block;
-      margin-left: 0.5em;
-      margin-right: 0.5em;
+      margin-left: 0.375em;
+      margin-right: 0.375em;
       padding: 0.375em 0.75em;
     }
   }
@@ -70,13 +104,16 @@
   & pre,
   & code {
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: var(--d2);
   }
 
   & pre {
-    background: var(--fg);
-    color: var(--bg);
-    padding: 1rem;
+    border-left: 5px solid hsl(var(--fg));
+    background: hsl(var(--bg-accent));
+    line-height: 1.375;
+    margin-left: -2rem;
+    padding: 2rem;
+    width: 100%;
   }
 }
 
@@ -84,5 +121,10 @@
   font-size: var(--u8);
   line-height: 0.9;
   margin-bottom: 0.5rem;
-  margin-top: 0;
+}
+
+/* highlight.js */
+
+.hljs-comment {
+  opacity: 0.625;
 }

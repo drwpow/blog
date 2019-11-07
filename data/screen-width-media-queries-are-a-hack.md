@@ -1,25 +1,17 @@
 ---
-title: screen width media queries are obsolete
-date: 2019-09-30
-description: Media queries are absolute, and other thoughts after using them for a decade.
-slug: screen-width-media-queries-are-obsolete
+title: screen width media queries are a hack
+date: 2019-11-06
+description: Media queries are obsolete, and other thoughts after using them for a decade.
+slug: screen-width-media-queries-are-a-hack
 image: //www.placecage.com/800/450
 tag: dev
-updated: 2019-09-31
+updated: 2019-11-06
 ---
 
-Ah, the noble `@media` query. Useful for all sorts of things nowadays, like
-[prefers-color-scheme][prefers-color-scheme]:
-
-```css
-@media (prefers-color-scheme: dark) {
-  background: black;
-  color: white;
-}
-```
-
-But consider the `min-width` query—the one we all cut our teeth on when [responsive design][rd]
-first came into view. This is how we’d pull off those fancy responsive columns, for instance:
+[Media queries][mq] are an indispensible part of CSS, with `min-width` (or `max-width`, depending on
+your preference) being the most-used. Ever since [responsive design][rd] first came into view, we’ve
+been able to pull off slick things like increasing the number of columns as the screen width
+expands:
 
 ```css
 /* Mobile first™! */
@@ -47,13 +39,10 @@ float: none;
 }
 ```
 
-Suddenly a new world opened up! We were able to use CSS to rearrange content based on device size!
-No more awkward scrollbars! No more tiny, tiny, tiny text on phones! With our newfound power, the
-web became a much better place.
-
-This new, multi-device world gave rise to complexity in our designs. Suddenly, we had not one screen
-to design for, but dozens! The web ascended beyond its print origins. And it was amazing. But we had
-to deal with this complexity somehow. We did via **componentization**.
+But with this new thinking of responsive design and fluidity, our designs became more complicated.
+We had started to realize what the web was capable of and the unique challenges it brought. Instead
+of one layout to design as was the case in print, now we had nearly-infinite (or so it would seem).
+To handle this complexity we turned to **componentization**.
 
 Component thinking for the web started with CSS paradigms like Nicole Sullivan’s [OOCSS][oocss] and
 [BEM][bem] in the early 2010s, to name a few. In a nutshell, component thinking involves building:
@@ -73,7 +62,9 @@ word wrap, but I also have it next to a sidebar that can open and close, how sho
 We should be stacking those images a little better, and now screen width media queries can’t help us
 here. **The screen width isn’t changing!** Instead, we’d have to now create some parent component
 that controls the layout. But in order to do that, we have to **strip responsibility of layout away
-from our blog post component**—the very thing it was created to do!
+from our blog post component**—the very thing it was created to do.
+
+## A Glimmer of Hope
 
 [Container queries][container-queries] have been requested since 2015 to solve this problem, so this
 isn’t new. But it’s now 2019, and, well, it’s time we found another way to solve this. What should
@@ -99,16 +90,23 @@ property, `grid-template-columns`. With that, we’re able to:
 | `auto-fit`           | If the items don’t fill up the first row, stretch them out till they do                                                                           |
 | `minmax(300px, 1fr)` | `1fr` sizes every component proportionally to each other. `300px` tells grid that once they get smaller than that to push them to the next row 🎉 |
 
-## Diving deeper
+If you aren’t quite following, you’re not alone. Grid is hard. If you’re a little lost, please
+consult [Chen Hui Jing][chen-hui]’s video on `auto-fit` and `auto-fill`.
 
-I can’t recommend this video by [Chen Hui Jing][chen-hui] enough for understanding the difficult
-parts of Grid like `auto-fit` vs `auto-fill`. Definitely worth a watch!
+## A Dash of Despair
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZRtzk0371tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Though CSS Grid is a step in the right direction, it still has flaws. The biggest one is that **this
+method can’t support columns of different widths** (Rachel Andrew bemoans the same thing in her
+recent post, _[Things We Can’t (Yet) Do In CSS][ra]_).
+
+Though if this one problem were solved, CSS Grid may very well be a new, better, media query.
 
 [bem]: http://getbem.com/
-[chen-hui]: https://www.chenhuijing.com/#%F0%9F%9A%B2
+[ch]: https://www.youtube-nocookie.com/embed/ZRtzk0371tk
 [container-queries]: https://alistapart.com/article/container-queries-once-more-unto-the-breach/
 [js]: https://labs.jensimmons.com/2017/03-009.html
+[mq]: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
 [oocss]: http://oocss.org/
 [prefers-color-scheme]: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+[ra]: https://www.smashingmagazine.com/2019/11/css-things-cant-yet-do/
+[rd]: https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/

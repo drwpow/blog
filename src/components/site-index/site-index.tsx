@@ -23,7 +23,14 @@ export class SiteIndex {
             </stencil-route-switch>
           </stencil-router>
         </main>
-        <footer class="footer">{roman(new Date().getFullYear())}</footer>
+        <footer class="footer">
+          {roman(new Date().getFullYear())}
+          <br />
+          Built with{' '}
+          <a href="https://stenciljs.com/" rel="noopener noreferrer" target="_blank">
+            Stencil PWA
+          </a>
+        </footer>
       </div>
     );
   }

@@ -4,6 +4,8 @@ import { Post } from '../../types/post';
 import postData from '../../data/posts.json';
 import date from '../../utils/date';
 
+const posts = postData as Post[];
+
 @Component({
   shadow: true,
   styleUrl: './page-post.css',
@@ -14,7 +16,7 @@ export class PagePost {
   @State() post?: Post;
 
   componentWillLoad() {
-    this.post = postData.find(({ data: { slug } }) => slug === this.match.params.slug);
+    this.post = posts.find(({ data: { slug } }) => slug === this.match.params.slug);
   }
 
   render() {

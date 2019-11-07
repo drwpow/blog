@@ -3,8 +3,9 @@ const path = require('path');
 const remark = require('remark');
 const frontmatter = require('remark-frontmatter');
 const extractFrontmatter = require('remark-extract-frontmatter');
-const recommended = require('remark-preset-lint-recommended');
+const highlight = require('remark-highlight.js');
 const html = require('remark-html');
+const recommended = require('remark-preset-lint-recommended');
 const { parse: yaml } = require('yaml');
 
 function parseMd(file) {
@@ -13,6 +14,7 @@ function parseMd(file) {
     .use(frontmatter)
     .use(extractFrontmatter, { yaml })
     .use(html)
+    .use(highlight)
     .process(file);
 }
 

@@ -10,7 +10,6 @@ export const config: Config = {
   outputTargets: [
     {
       baseUrl: 'https://blog.pow.rs/',
-      dir: 'public',
       serviceWorker: null,
       type: 'www',
     },

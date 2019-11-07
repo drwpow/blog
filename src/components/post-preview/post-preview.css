@@ -3,7 +3,7 @@
   margin-bottom: 4rem;
 
   & a {
-    color: var(--black);
+    color: hsl(var(--fg));
     text-decoration: none;
   }
 }
@@ -17,7 +17,7 @@
 }
 
 .img {
-  background-color: var(--bg-accent);
+  background-color: hsl(var(--bg-accent));
   height: 20rem;
   position: relative;
 
@@ -34,8 +34,8 @@
 }
 
 .tag {
-  background: var(--fg);
-  color: var(--bg);
+  background: hsl(var(--fg));
+  color: hsl(var(--bg));
   font-size: var(--u3);
   left: 2rem;
   padding-bottom: 0.5em;
@@ -55,6 +55,7 @@
 
 .summary {
   font-size: 1em;
+  line-height: var(--ld1);
   margin-bottom: 0;
   margin-top: 1rem;
 }
