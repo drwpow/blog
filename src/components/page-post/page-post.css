@@ -5,8 +5,24 @@ video {
 }
 
 .img {
+  display: block;
+  height: auto;
+  left: 0;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.img-crop {
+  height: 0;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  overflow: hidden;
+  padding-top: 50%;
+  position: relative;
 }
 
 .meta {

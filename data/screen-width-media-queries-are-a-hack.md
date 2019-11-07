@@ -3,7 +3,7 @@ title: screen width media queries are a hack
 date: 2019-11-06
 description: Media queries are obsolete, and other thoughts after using them for a decade.
 slug: screen-width-media-queries-are-a-hack
-image: //www.placecage.com/800/450
+image: /assets/screen-width-media-queries-are-a-hack/videophone.jpg
 tag: dev
 updated: 2019-11-06
 ---
