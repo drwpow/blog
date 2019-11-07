@@ -11,7 +11,7 @@ const { parse: yaml } = require('yaml');
 const SITE_URL = 'https://blog.pow.rs';
 const SITE_IMAGE = `${SITE_URL}/static/thumb.jpg`;
 const SITE_TITLE = 'blog // Drew Powers';
-const OUT_DIR = path.resolve(__dirname, '..', 'public');
+const OUT_DIR = path.resolve(__dirname, '..', 'www');
 const author = {
   email: 'drew@pow.rs',
   link: 'https://twitter.com/_drewpowers',

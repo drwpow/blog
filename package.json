@@ -5,7 +5,7 @@
   "description": "Stencil App Starter",
   "license": "MIT",
   "scripts": {
-    "build": "mkdir -p public && npm run build:blog && npm run build:rss && stencil build --prerender",
+    "build": "mkdir -p public && npm run build:blog && stencil build --prerender && npm run build:rss ",
     "build:blog": "node scripts/blog",
     "build:blog:watch": "nodemon --watch ./data --exec 'npm run build:blog' -e md",
     "build:rss": "node scripts/rss",
@@ -52,6 +52,7 @@
     "stylelint": "^11.1.1",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^3.1.1"
+    "stylelint-order": "^3.1.1",
+    "workbox-build": "4.3.1"
   }
 }

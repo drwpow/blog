@@ -83,8 +83,8 @@
   font-family: 'Cardinal Grotesque';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/CardinalGrotesqueWide-Semibold.woff2') format('woff2'),
-    url('/assets/CardinalGrotesqueWide-Semibold.woff') format('woff');
+  src: url('/assets/CardinalGrotesqueWide-SemiBold.woff2') format('woff2'),
+    url('/assets/CardinalGrotesqueWide-SemiBold.woff') format('woff');
 }
 
 html {
