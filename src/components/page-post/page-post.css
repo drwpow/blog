@@ -134,8 +134,8 @@ video {
   }
 
   & pre {
-    border-left: 5px solid hsl(var(--fg));
     background: hsl(var(--bg-accent));
+    border-left: 5px solid hsl(var(--fg));
     line-height: 1.375;
     margin-left: -2rem;
     padding: 2rem;
