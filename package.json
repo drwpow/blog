@@ -22,7 +22,7 @@
     "posts": "data/*.md"
   },
   "dependencies": {
-    "@stencil/core": "^1.8.1",
+    "@stencil/core": "^1.8.3",
     "@stencil/postcss": "^1.0.1",
     "@stencil/router": "^1.0.1",
     "feed": "^4.0.0",
