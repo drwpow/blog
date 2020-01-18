@@ -5,9 +5,9 @@
   "description": "Stencil App Starter",
   "license": "MIT",
   "scripts": {
-    "build": "mkdir -p public && npm run build:blog && stencil build --prerender && npm run build:rss ",
+    "build": "npm run build:blog && stencil build --prerender && npm run build:rss",
     "build:blog": "node scripts/blog",
-    "build:rss": "node scripts/rss",
+    "build:rss": "rm -rf www/atom.xml && rm -rf www/feed.json && rm -rf www/feed.rss && node scripts/rss",
     "dev": "stencil build --dev --watch --serve",
     "generate": "stencil generate",
     "lint": "npm run lint:js & npm run lint:css",
@@ -21,7 +21,7 @@
     "posts": "data/*.md"
   },
   "dependencies": {
-    "@stencil/core": "^1.8.5",
+    "@stencil/core": "^1.8.8",
     "@stencil/postcss": "^1.0.1",
     "@stencil/router": "^1.0.1",
     "feed": "^4.1.0",
@@ -34,26 +34,24 @@
     "remark-html": "^10.0.0",
     "remark-preset-lint-recommended": "^3.0.3",
     "remark-slug": "^5.1.2",
-    "roman-numeral": "^0.2.6",
     "yaml": "^1.7.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react": "^7.18.3",
     "nodemon": "^2.0.2",
     "postcss": "^7.0.26",
     "prettier": "^1.19.1",
-    "stylelint": "^12.0.1",
-    "stylelint-config-prettier": "^6.0.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^3.1.1",
-    "workbox-build": "4.3.1"
+    "stylelint-order": "^4.0.0"
   }
 }

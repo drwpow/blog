@@ -4,7 +4,7 @@ date: 2019-11-06
 description: Finding that sweet spot of delight and whimsy in application design
 slug: playfulness-budget
 tag: design
-updated: 2019-11-29
+updated: 2019-01-18
 ---
 
 _Homo Ludens_ is a notable work of literature by Dutch philospher Henry Van Friedrick. In it he
@@ -16,18 +16,18 @@ argues:
 when you imagine your toaster complaining at you for never cleaning all the crumbs out. When you see
 an empty street and decide to run just because “who says I shouldn’t be allowed to run in normal
 clothes without a reason?” The sense of play is something we crave on a regular basis—some more than
-others—but can be seen as verboten in application design.
+others—but can be seen as _verboten_ in application design.
 
 There’s some reasonable cause for this feeling—application design does seek to be boring and
-predictable. Often I’ve lamented how hard it usually is for print and advertising designers to cross
-over into UI, and vice-versa. A magazine cover seeks to disrupt the space around it and draw your
-eye—either with boldness in a sea of consistency, or starkness in a sea of boldness; the separation
-from the pack is what drives the design. A user interface seeks to be predictable and usable without
-a manual, allowing a user to accomplish a complicated task with friendly buttons and maybe an input
-or two.
+predictable. For this reason I feel it’s hard for print and advertising designers to cross over into
+UI, and vice-versa. A magazine cover seeks to disrupt the space around it and draw your eye—either
+with boldness in a sea of consistency, or starkness in a sea of boldness; the separation from the
+pack is what drives the design. A user interface seeks to be predictable and usable without a
+manual, allowing a user to accomplish a complicated task with friendly buttons and maybe an input or
+two.
 
-But where do we draw the line? When does “boring” and “predictability” in application design stop
-being helpful, and start sucking the life out of an interface?
+But where do we draw the line? When does “predictable” and “usable” cross over into sucking the life
+out of an interface?
 
 ## 4 ways to spend playfulness points
 
