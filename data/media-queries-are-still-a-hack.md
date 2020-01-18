@@ -66,13 +66,13 @@ I can only do that based on the browser width, **not the component width itself.
 
 <figure>
   <img src="/assets/media-queries-are-still-a-hack/user-cards.svg" alt="A horizontally-laid out user card next to a vertical one" />
-  <figcaption>What if I wanted to stack a card vertically not based on screen width, but based on whether or not the text will fit side-by-side? In 2020, I still can’t.</figcaption>
+  <figcaption>What if I wanted to stack a card vertically not based on screen width, but based on whether or not the text and image will fit side-by-side? In 2020, I still can’t.</figcaption>
 </figure>
 
 Container Queries seem to check off all the boxes:
 
 - ✅ Modular and composable
-- ✅ Attack the root cause of responsive design: resizing based on **content**
+- ✅ Attack the root problem of responsive design: resizing based on **content**
 - ✅ CSS-based
 
 But perfect as they may be, Container Queries are not happening anytime soon. In Zach Leatherman’s
@@ -134,9 +134,10 @@ In other words, in 2020, the best solution we have to media queries’ failings 
 disappointingly, JavaScript. But not JavaScript for the sake of JavaScript; JavaScript for the sake
 of users.
 
-In the immortal [words of Zach Leatherman][zl]:
+It’s been 7 years since Ian Storm Taylor published _Media Queries are a Hack_. To no one’s surprise,
+in 2020 they’re still a hack. And we’re still waiting on Container Queries.
 
-> In conclusion, 🤷‍♂️.
+I may not have any original ideas on this subject, but at least we’re all on the same page.
 
 ## more reading
 

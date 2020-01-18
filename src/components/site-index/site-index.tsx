@@ -1,5 +1,4 @@
 import { Component, h } from '@stencil/core';
-import { convert as roman } from 'roman-numeral';
 
 @Component({
   shadow: true,
@@ -24,10 +23,11 @@ export class SiteIndex {
           </stencil-router>
         </main>
         <footer class="footer">
-          {roman(new Date().getFullYear())}
+          MMX
           <br />
-          <a href="https://blog.pow.rs/feed.xml">RSS</a> /{' '}
-          <a href="https://blog.pow.rs/atom.xml">Atom</a>
+          <a href="https://blog.pow.rs/feed.rss">RSS</a> /{' '}
+          <a href="https://blog.pow.rs/atom.xml">Atom</a> /{' '}
+          <a href="https://blog.pow.rs/feed.json">JSON</a>
           <br />
           built with{' '}
           <a href="https://stenciljs.com/" rel="noopener noreferrer" target="_blank">

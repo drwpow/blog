@@ -5,9 +5,9 @@
   "description": "Stencil App Starter",
   "license": "MIT",
   "scripts": {
-    "build": "mkdir -p public && npm run build:blog && stencil build --prerender && npm run build:rss ",
+    "build": "npm run build:blog && stencil build --prerender && npm run build:rss",
     "build:blog": "node scripts/blog",
-    "build:rss": "node scripts/rss",
+    "build:rss": "rm -rf www/atom.xml && rm -rf www/feed.json && rm -rf www/feed.rss && node scripts/rss",
     "dev": "stencil build --dev --watch --serve",
     "generate": "stencil generate",
     "lint": "npm run lint:js & npm run lint:css",
@@ -51,7 +51,7 @@
     "postcss": "^7.0.26",
     "prettier": "^1.19.1",
     "stylelint": "^12.0.1",
-    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-order": "^3.1.1",
     "workbox-build": "4.3.1"
