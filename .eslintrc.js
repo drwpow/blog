@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/no-unresolved': 'off', // TS handles this
+    'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'lines-between-class-members': 'off',
     'react/jsx-boolean-value': 'off',

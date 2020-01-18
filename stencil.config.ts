@@ -5,6 +5,10 @@ import postCSSPresetEnv from 'postcss-preset-env';
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
+  devServer: {
+    openBrowser: false,
+    port: 3333,
+  },
   globalScript: 'src/global/app.ts',
   globalStyle: 'src/global/app.css',
   outputTargets: [
@@ -20,6 +24,9 @@ export const config: Config = {
           features: {
             'custom-media-queries': true,
             'custom-properties': false,
+            'logical-properties-and-values': {
+              dir: 'ltr',
+            },
             'nesting-rules': true,
           },
         }),

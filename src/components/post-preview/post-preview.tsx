@@ -14,16 +14,17 @@ export class PostPreview {
     return (
       <article class="card">
         <stencil-route-link url={`/post/${this.post.data.slug}`}>
-          <div class="img">
-            <img
-              alt={this.post.data.title}
-              src={this.post.data.image}
-              loading="lazy"
-              width="800"
-              height="450"
-            />
-            <div class="tag">{this.post.data.tag}</div>
-          </div>
+          {this.post.data.image && (
+            <div class="img">
+              <img
+                alt={this.post.data.title}
+                src={this.post.data.image}
+                loading="lazy"
+                width="800"
+                height="450"
+              />
+            </div>
+          )}
           <time class="date" dateTime={this.post.data.date}>
             {date(this.post.data.date)}
           </time>
@@ -32,6 +33,10 @@ export class PostPreview {
             {this.post.data.description}
             <span class="more">More ›</span>
           </p>
+          <div class="tagged">
+            tagged:
+            <span class="tagged-tag">{this.post.data.tag}</span>
+          </div>
         </stencil-route-link>
       </article>
     );

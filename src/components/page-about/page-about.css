@@ -9,15 +9,15 @@ a {
 
 p {
   line-height: var(--ld1);
-  margin-bottom: 3em;
-  margin-top: 3em;
+  margin-block-end: 3em;
+  margin-block-start: 3em;
   max-width: 35em;
 }
 
 .img {
   display: block;
   height: auto;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-block-end: 2rem;
+  margin-block-start: 2rem;
   max-width: 100%;
 }

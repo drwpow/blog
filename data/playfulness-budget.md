@@ -3,7 +3,6 @@ title: playfulness budget
 date: 2019-11-06
 description: Finding that sweet spot of delight and whimsy in application design
 slug: playfulness-budget
-image: /assets/playfulness-budget/videophone.jpg
 tag: design
 updated: 2019-11-29
 ---
@@ -45,20 +44,31 @@ Booking a hotel, tickets for a show, or flight? These can feel **rushed**, somet
 and even feature anxiety-inducing timers, _BOOK NOW!_ calls to action, and the impending sense that
 someone will snag this before you do (_23 people have looked at this Airbnb in the last hour_).
 
-In these situations, it’s probably best not to push the “book” button further down the page with
-your wacky promo video—just let the user finish! They’re stressed enough as it is.
+This is **not a good time to test the user’s patience with playfulness.** But in times when they’re
+not rushed or panicked, make their day a little better!
 
-But say you’re building an editorial site and a user is casually reading an article at their
-leisure. That’s a perfect time for an unexpected page-turning transition. Or a user is shopping for
-beds, and you have a “bounce simulator” that shows how much give that mattress has with a fun,
-interactive animation. These are all wonderful opportunities to turn a slow experience where a user
-has time to spare into a memorable interaction.
+<figure>
+  <img src="/assets/playfulness-budget/pizza-tracker.jpg" alt="Domino’s Pizza Tracker" />
+  <figcaption>The Domino’s Pizza Tracker: probably my favorite example of a playful time-passer</figcaption>
+</figure>
+
+What better way to kill a 30-minute wait for a pizza to arrive than stare at a pizza tracker? Or say
+a user is shopping for beds—the opposite of stressful—and you came up with a cheeky “bounce
+simulator” that compares mattresses’ bounciness with a fun, interactive animation. These are all
+wonderful opportunities to turn a slow experience where a user has time to spare into a memorable
+interaction.
 
 ### 2. spend playfulness points during frustrating tasks
 
+<figure>
+  <video autoplay="true" controls muted loop playsinline width="1376" height="600">
+    <source src="/assets/playfulness-budget/little-known-goods-carousel.mp4" type="video/mp4" />
+  </video>
+  <figcaption>Little Known Goods Carousel animation</figcaption>
+</figure>
+
 For a recent [ecommerce site I built][lkg], I wanted to address 2 pain points that are the bane of
-my online shopping experience (or one, depending on how you look at it): image carousels and zoom
-views.
+my online shopping experience: image carousels and zoom views.
 
 For some reason, I just find most sites that have these to be buggy, unexpected, and frustrating.
 Hoping I wasn’t alone, I decided to introduce a little unpredictability for a little bit of whimsy.
@@ -78,6 +88,13 @@ unexpected joy by making it playful.
 
 ### 3. spend playfulness points on first impressions
 
+<figure>
+  <video autoplay="true" controls muted loop playsinline width="1375" height="600">
+    <source src="/assets/playfulness-budget/playdate.mp4" type="video/mp4" />
+  </video>
+  <figcaption>A 3D, rotatable portable game console right at the top of the page? Yes, please.</figcaption>
+</figure>
+
 A user’s first several seconds on a site is a critical time for them. They’re orienting to the
 site—to the layout, colors, language, etc.—while also having something they want to accomplish.
 While often times this is a winding path for the user to clarify what they want while orienting
@@ -92,34 +109,29 @@ to the hero graphic, where a bad animation would be hiding the top menu and anim
 one-by-one so the user has to wait painfully to even start their task. But assuming you executed the
 former, setting an impression for playfulness right off the bat can pay dividends later.
 
-### 4.spend playfulness points during successes
+### 4. spend playfulness points during successes
 
-As Mailchimp points out in their amazing [writing guide][mc], being flippant or acting exciting
-during an error is tone-deaf and can turn users off (personally, I remember seeing an “Oops!” piece
-of copy when my internet provider’s profile was down, and the carelessness and complete disregard
-for my situation was maddening).
+Errors are frustrating. Messages like `Oops! Something went wrong!` can be flippant and tone-deaf,
+especially when it resulted in data loss. Believe it or not, that was an actual error message I
+encountered that left me unable to pay a bill! _Oops!?_ More like “Oops! I accidentally cancelled
+your horrible service!”
 
-However, successes are something that should be celebrated, and celebrated often. Did a user finish
-sending an email? Add a fun illustration and some congratulatory copy on that succes page! Has a
-user reached a certain milestone in your app (miles walked, achievement reached, numbers hit)? Send
-a fun email or add a badge to their profile.
+In light of so many failures we encounter on the web, successes are something that should be
+celebrated! 🎉 Did a user finish sending an email? Add a fun illustration and some congratulatory
+copy on that succes page! Has a user reached a certain milestone in your app (miles walked,
+achievement reached, numbers hit)? Add a cool badge to their profile.
 
-Studies have shown that unexpected rewards result in the most positively-received experiences. And,
-no, we’re not “increasing engagement” or anything like that; we’re simply trying to help the humans
-that use our application feel appreciated because they’re worth it.
+Studies have shown that unexpected rewards result in the most positively-perceived experiences. So
+let’s try and help the humans that use our application feel appreciated because they’re worth it.
 
 ## how will you spend yours?
 
-An application’s primary purpose is to **help a user accomplish a task, and help them accomplish it
-as quickly and effortlessly as possible.** To that end, we must use shared language and rely on a
-user’s learned experiences with interfaces to guide them to the finish line as quickly as possible.
+An application’s primary purpose is to help a user accomplish a task, and help them accomplish it as
+quickly and effortlessly as possible. But that can be a little too robotic.
 
-But as we’re reminded by _Homo Ludens_, sometimes the most efficent way there isn’t a straight line.
-Sometimes the straightest roads can have us feeling sleepy behind the wheel a bit. Sometimes the
-little detours, the fun little dips and curves, make the journey provided they don’t add on _too_
-much time.
-
-> End quote
+As we’re reminded by _Homo Ludens_, when we’re dealing with people, sometimes _too much_ efficiency
+can be boring and detrimental to the squishy humans you’re guiding. Sometimes the straightest roads
+can have us feeling sleepy behind the wheel a bit. Sometimes the little detours, the fun little dips
+and curves, _make_ the journey memorable.
 
 [lkg]: https://littleknowngoods.com
-[mc]: https://

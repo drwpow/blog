@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const fs = require('fs');
 const path = require('path');
 const remark = require('remark');
-const frontmatter = require('remark-frontmatter');
+const headings = require('remark-autolink-headings');
 const extractFrontmatter = require('remark-extract-frontmatter');
+const frontmatter = require('remark-frontmatter');
 const highlight = require('remark-highlight.js');
 const html = require('remark-html');
 const recommended = require('remark-preset-lint-recommended');
+const slug = require('remark-slug');
 const { parse: yaml } = require('yaml');
 
 function parseMd(file) {
@@ -13,6 +17,8 @@ function parseMd(file) {
     .use(recommended)
     .use(frontmatter)
     .use(extractFrontmatter, { yaml })
+    .use(slug)
+    .use(headings)
     .use(html)
     .use(highlight)
     .process(file);

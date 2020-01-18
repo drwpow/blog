@@ -1,9 +1,7 @@
 ---
 title: screen width media queries are bad for component design
-date: 2019-11-06
 description: Screen width media queries fall short of solving today’s layout needs
 slug: screen-width-media-queries-are-bad-for-component-design
-image: /assets/screen-width-media-queries-are-bad-for-component-design/videophone.jpg
 tag: dev
 updated: 2019-11-06
 ---

@@ -46,15 +46,17 @@ export class PagePost {
                   </td>
                 </tr>
               </table>
-              <div class="img-crop">
-                <img
-                  class="img"
-                  alt={this.post.data.title}
-                  src={this.post.data.image}
-                  width="2000"
-                  height="1000"
-                />
-              </div>
+              {this.post.data.image && (
+                <div class="img-crop">
+                  <img
+                    class="img"
+                    alt={this.post.data.title}
+                    src={this.post.data.image}
+                    width="2000"
+                    height="1000"
+                  />
+                </div>
+              )}
             </header>
             <div class="post" innerHTML={this.post.contents} />
           </div>
