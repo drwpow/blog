@@ -26,7 +26,10 @@ export class SiteIndex {
         <footer class="footer">
           {roman(new Date().getFullYear())}
           <br />
-          Built with{' '}
+          <a href="https://blog.pow.rs/feed.xml">RSS</a> /{' '}
+          <a href="https://blog.pow.rs/atom.xml">Atom</a>
+          <br />
+          built with{' '}
           <a href="https://stenciljs.com/" rel="noopener noreferrer" target="_blank">
             Stencil PWA
           </a>
