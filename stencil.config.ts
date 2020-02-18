@@ -14,7 +14,7 @@ export const config: Config = {
   outputTargets: [
     {
       baseUrl: 'https://blog.pow.rs/',
-      serviceWorker: null,
+      // serviceWorker: null,
       type: 'www',
     },
   ],

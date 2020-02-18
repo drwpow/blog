@@ -13,7 +13,7 @@
     "lint": "npm run lint:js & npm run lint:css",
     "lint:css": "stylelint 'src/**/*.css'",
     "lint:js": "eslint --ext .js,.ts,.tsx src",
-    "start": "nodemon --watch data --exec 'npm run build:blog && npm run dev' -e md",
+    "start": "nodemon --watch data --exec 'npm run build:blog && sleep 3 && npm run dev' -e md",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
@@ -52,6 +52,7 @@
     "stylelint": "^13.2.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^4.0.0"
+    "stylelint-order": "^4.0.0",
+    "workbox-build": "4.3.1"
   }
 }

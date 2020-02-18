@@ -1,19 +1,17 @@
 import { Component, h } from '@stencil/core';
-import { SITE_NAME } from '../../lib/constants';
 
 @Component({
-  shadow: true,
   styleUrl: './page-about.css',
   tag: 'page-about',
 })
 export class PageAbout {
   render() {
     return (
-      <div itemScope itemType="http://schema.org/Person">
-        <stencil-route-title title={`about // ${SITE_NAME}`} />
-        <h1 class="title">About</h1>
+      <div class="pageAbout" itemScope itemType="http://schema.org/Person">
+        <stencil-route-title pageTitle="about // Drew Powers" />
+        <h1 class="pageAbout-title">About</h1>
         <img
-          itemProp="image"
+          itemProp="pageAbout-image"
           class="img"
           src="/assets/drew-about.jpg"
           width="2000"

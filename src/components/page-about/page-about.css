@@ -1,20 +1,22 @@
-a {
-  color: currentColor;
+.pageAbout {
+  & a {
+    color: currentColor;
 
-  &:focus,
-  &:hover {
-    color: hsl(var(--interactive));
+    &:focus,
+    &:hover {
+      color: hsl(var(--interactive));
+    }
+  }
+
+  & p {
+    line-height: var(--ld1);
+    margin-block-end: 3em;
+    margin-block-start: 3em;
+    max-width: 35em;
   }
 }
 
-p {
-  line-height: var(--ld1);
-  margin-block-end: 3em;
-  margin-block-start: 3em;
-  max-width: 35em;
-}
-
-.img {
+.pageAbout-img {
   display: block;
   height: auto;
   margin-block-end: 2rem;

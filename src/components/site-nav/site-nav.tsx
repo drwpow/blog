@@ -13,44 +13,43 @@ const tagMap = postData.reduce((tags, { data: { tag } }) => {
 const tags = Object.keys(tagMap).sort((a, b) => a.localeCompare(b));
 
 @Component({
-  shadow: true,
   styleUrl: './site-nav.css',
   tag: 'site-nav',
 })
 export class SiteNav {
   render() {
     return (
-      <nav class="nav">
-        <ol class="list">
+      <nav class="siteNav">
+        <ol class="siteNav-list">
           <li>
             <stencil-route-link url="/" exact={true}>
-              <h1 class="title">
+              <h1 class="siteNav-title">
                 <img
-                  class="logo"
+                  class="siteNav-logo"
                   src="/assets/drew-monogram-black.png"
                   width="512"
                   height="512"
                   alt="Drew Powers"
                 />
-                <div class="blog">blog</div>
+                <div class="siteNav-blog">blog</div>
               </h1>
             </stencil-route-link>
           </li>
-          <li class="item">
+          <li class="siteNav-item">
             <stencil-route-link url="/" exact={true}>
-              <div class="link">All</div>
+              <div class="siteNav-link">All</div>
             </stencil-route-link>
           </li>
           {tags.map(tag => (
-            <li class="item">
+            <li class="siteNav-item">
               <stencil-route-link url={`/tag/${tag}`}>
-                <div class="link">{tag}</div>
+                <div class="siteNav-link">{tag}</div>
               </stencil-route-link>
             </li>
           ))}
-          <li class="page">
+          <li class="siteNav-page">
             <stencil-route-link url="/about" exact={true}>
-              <div class="link">About</div>
+              <div class="siteNav-link">About</div>
             </stencil-route-link>
           </li>
         </ol>
