@@ -1,4 +1,4 @@
-.card {
+.postPreview {
   line-height: 1;
   margin-block-end: 4rem;
 
@@ -8,7 +8,7 @@
   }
 }
 
-.date {
+.postPreview-date {
   display: block;
   font-size: var(--d1);
   font-weight: 400;
@@ -16,7 +16,7 @@
   margin-block-start: 1rem;
 }
 
-.img {
+.postPreview-img {
   background-color: hsl(var(--bg-accent));
   height: 20rem;
   position: relative;
@@ -28,18 +28,18 @@
   }
 }
 
-.more {
+.postPreview-more {
   font-weight: 700;
   margin-inline-start: 0.5em;
 }
 
-.tagged {
+.postPreview-tagged {
   display: flex;
   font-size: var(--d1);
   font-weight: 700;
 }
 
-.tagged-tag {
+.postPreview-tag {
   background: hsl(var(--fg));
   color: hsl(var(--bg));
   display: inline-block;
@@ -52,14 +52,14 @@
   top: 0;
 }
 
-.title {
+.postPreview-title {
   font-size: var(--u6);
   font-weight: 500;
   margin-block-end: 0.5rem;
   margin-block-start: 0;
 }
 
-.summary {
+.postPreview-summary {
   font-size: 1em;
   line-height: var(--ld1);
   margin-block-end: 0;

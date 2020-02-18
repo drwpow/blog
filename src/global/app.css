@@ -1,9 +1,9 @@
 :root {
   /* color */
   --interactive: 223, 100%, 50%;
-  --bg: 0, 0%, 100%;
-  --bg-accent: 0, 0%, 96%;
-  --fg: 0, 0%, 0%;
+  --bg: 0, 0%, 98%;
+  --bg-accent: 0, 0%, 94%;
+  --fg: 0, 0%, 12%;
 
   /* color: text */
   --text: hsl(var(--fg));
@@ -57,13 +57,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: 0, 0%, 0%;
-    --bg-accent: 0, 0%, 8%;
-    --fg: 0, 0%, 100%;
+    --bg: 0, 0%, 6%;
+    --bg-accent: 0, 0%, 14%;
+    --fg: 0, 0%, 96%;
   }
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Cardinal Grotesque';
   font-style: normal;
   font-weight: 400;
@@ -72,6 +73,16 @@
 }
 
 @font-face {
+  font-display: swap;
+  font-family: 'Cardinal Grotesque';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/CardinalGrotesqueWide-LightItalic.woff2') format('woff2'),
+    url('/assets/CardinalGrotesqueWide-LightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
   font-family: 'Cardinal Grotesque';
   font-style: normal;
   font-weight: 500;
@@ -80,11 +91,30 @@
 }
 
 @font-face {
+  font-display: swap;
+  font-family: 'Cardinal Grotesque';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/assets/CardinalGrotesqueWide-MediumItalic.woff2') format('woff2'),
+    url('/assets/CardinalGrotesqueWide-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
   font-family: 'Cardinal Grotesque';
   font-style: normal;
   font-weight: 700;
   src: url('/assets/CardinalGrotesqueWide-SemiBold.woff2') format('woff2'),
     url('/assets/CardinalGrotesqueWide-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Cardinal Grotesque';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/CardinalGrotesqueWide-SemiBoldItalic.woff2') format('woff2'),
+    url('/assets/CardinalGrotesqueWide-SemiBoldItalic.woff') format('woff');
 }
 
 html {

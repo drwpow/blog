@@ -1,14 +1,13 @@
 import { Component, h } from '@stencil/core';
 
 @Component({
-  shadow: true,
   styleUrl: './site-index.css',
   tag: 'site-index',
 })
 export class SiteIndex {
   render() {
     return (
-      <div class="wrapper">
+      <div class="siteIndex">
         <header>
           <site-nav />
         </header>
@@ -22,12 +21,15 @@ export class SiteIndex {
             </stencil-route-switch>
           </stencil-router>
         </main>
-        <footer class="footer">
-          MMX
+        <footer class="siteIndex-footer">
+          © MMXX
           <br />
           <a href="https://blog.pow.rs/feed.rss">RSS</a> /{' '}
           <a href="https://blog.pow.rs/atom.xml">Atom</a> /{' '}
           <a href="https://blog.pow.rs/feed.json">JSON</a>
+          <br />
+          this website is encrypted and 100% analytics-free 🖤 if you want to support this blog,
+          tweet or share a link!
           <br />
           built with{' '}
           <a href="https://stenciljs.com/" rel="noopener noreferrer" target="_blank">

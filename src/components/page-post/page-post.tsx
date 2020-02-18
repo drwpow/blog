@@ -7,7 +7,6 @@ import date from '../../utils/date';
 const posts = postData as Post[];
 
 @Component({
-  shadow: true,
   styleUrl: './page-post.css',
   tag: 'page-post',
 })
@@ -20,13 +19,16 @@ export class PagePost {
   }
 
   render() {
+    const { post } = this;
+
     return (
-      <article class="wrapper">
+      <article class="pagePost">
+        <stencil-route-title pageTitle={`${(post && post.data.title) || 'blog'} // Drew Powers`} />
         {this.post ? (
           <div>
             <header>
-              <h1 class="title">{this.post.data.title}</h1>
-              <table class="meta">
+              <h1 class="pagePost-title">{this.post.data.title}</h1>
+              <table class="pagePost-meta">
                 <tr>
                   <td>published</td>
                   <td>{date(this.post.data.date)}</td>
@@ -47,9 +49,9 @@ export class PagePost {
                 </tr>
               </table>
               {this.post.data.image && (
-                <div class="img-crop">
+                <div class="pagePost-imgCrop">
                   <img
-                    class="img"
+                    class="pagePost-img"
                     alt={this.post.data.title}
                     src={this.post.data.image}
                     width="2000"
@@ -58,7 +60,7 @@ export class PagePost {
                 </div>
               )}
             </header>
-            <div class="post" innerHTML={this.post.contents} />
+            <div class="pagePost-post" innerHTML={this.post.contents} />
           </div>
         ) : (
           <div>Post not found</div>

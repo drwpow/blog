@@ -3,7 +3,6 @@ import { Post } from '../../types/post';
 import date from '../../utils/date';
 
 @Component({
-  shadow: true,
   styleUrl: './post-preview.css',
   tag: 'post-preview',
 })
@@ -12,10 +11,10 @@ export class PostPreview {
 
   render() {
     return (
-      <article class="card">
+      <article class="postPreview">
         <stencil-route-link url={`/post/${this.post.data.slug}`}>
           {this.post.data.image && (
-            <div class="img">
+            <div class="postPreview-img">
               <img
                 alt={this.post.data.title}
                 src={this.post.data.image}
@@ -25,17 +24,17 @@ export class PostPreview {
               />
             </div>
           )}
-          <time class="date" dateTime={this.post.data.date}>
+          <time class="postPreview-date" dateTime={this.post.data.date}>
             {date(this.post.data.date)}
           </time>
-          <h1 class="title">{this.post.data.title}</h1>
-          <p class="summary">
+          <h1 class="postPreview-title">{this.post.data.title}</h1>
+          <p class="postPreview-summary">
             {this.post.data.description}
-            <span class="more">More ›</span>
+            <span class="postPreview-more">More ›</span>
           </p>
-          <div class="tagged">
+          <div class="postPreview-tagged">
             tagged:
-            <span class="tagged-tag">{this.post.data.tag}</span>
+            <span class="postPreview-tag">{this.post.data.tag}</span>
           </div>
         </stencil-route-link>
       </article>
