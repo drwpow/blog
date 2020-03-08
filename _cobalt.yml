@@ -1,0 +1,24 @@
+ignore:
+  - '*.config.*'
+  - 'assets/**/*.scss'
+  - 'LICENSE'
+  - 'node_modules'
+  - 'scripts'
+  - 'package*.json'
+  - 'README.md'
+destination: public
+syntax_highlight:
+  enabled: false
+site:
+  title: blog // Drew Powers
+  description: The personal blog of Drew Powers
+  base_url: http://blog.pow.rs
+pages:
+  default:
+    layout: default.liquid
+posts:
+  publish_date_in_filename: false
+  rss: rss.xml
+  jsonfeed: feed.json
+  default:
+    layout: post.liquid

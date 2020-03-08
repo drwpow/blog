@@ -1,0 +1,23 @@
+---
+layout: default.liquid
+title: tag design // Drew Powers
+description: The latest design blog posts from Drew Powers
+data:
+  tag: design
+---
+<h1 class="page-title">{{ page.data.tag }}</h1>
+{% for post in collections.posts.pages %}
+  {% if post.tags contains page.data.tag %}
+    <a class="postPreview" href="/{{ post.permalink }}">
+      <div>
+        <time class="postPreview-date" dateTime={this.post.data.date}>{{ post.published_date | date: "%Y-%m-%d" }}</time>
+        <h1 class="postPreview-title">{{ post.title }}</h1>
+        <p class="postPreview-summary">{{ post.description }}</p>
+        <div class="postPreview-tagged">
+          tagged:
+          <span class="postPreview-tag">{{ post.tags | join: '</span></span class="postPreview-tag"' }}</span>
+        </div>
+      </div>
+    </a>
+  {% endif %}
+{% endfor %}

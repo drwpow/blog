@@ -1,11 +1,7 @@
-dist/
-www/
-
-.stencil/
-.idea/
-node_modules/
-
 .DS_Store
-Thumbs.db
-UserInterfaceState.xcuserstate
 .env
+assets/**/*.css
+assets/*.map
+node_modules/
+Thumbs.db
+www/

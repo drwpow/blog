@@ -1,0 +1,26 @@
+.page-title {
+  margin-block-end: 2rem;
+  margin-block-start: 2rem;
+}
+
+// ----------
+//  About
+// ----------
+
+.page__about {
+  & a {
+    color: currentColor;
+
+    &:focus,
+    &:hover {
+      color: hsl(var(--interactive));
+    }
+  }
+
+  & p {
+    line-height: var(--ld1);
+    margin-block-end: 3em;
+    margin-block-start: 3em;
+    max-width: 35em;
+  }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>media queries are (still) a hack</title>
+    <link rel="stylesheet" href="/assets/app.min.css" />
+
+    
+    <meta charset="utf-8">
+<meta name="description" content="Revisiting Ian Storm Taylor’s thoughts 7 years later" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
+<link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="nav">
+  <ol class="nav-list">
+    <li>
+      <a href="/">
+        <h1 class="nav-title">
+          <img class="nav-logo" src="/assets/images/drew-monogram-black.png" width="512" height="512" alt="Drew Powers" />
+          <div class="nav-blog">blog</div>
+        </h1>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/design">design</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/dev">dev</a>
+    </li>
+    <li class="nav-page">
+      <a class="nav-link" href="/about">About</a>
+    </li>
+  </ol>
+</nav>
+
+      </header>
+      <main role="main" class="post post__media-queries-are-still-a-hack">
+        <header class="post-header">
+          <h1 class="post-title">media queries are (still) a hack</h1>
+            <table class="post-meta">
+              <tr>
+                <td>description</td><td>Revisiting Ian Storm Taylor’s thoughts 7 years later</td>
+              </tr>
+              <tr>
+                <td>published</td><td>2020-01-18</td>
+              </tr>
+              
+              <tr>
+                <td>tagged</td>
+                <td><a href="/tag/dev">dev</a></td>
+              </tr>
+            </table>
+          </header>
+          <div class="post-body">
+            <h2>preface</h2>
+<p>It’s now been over 15 years of me working with CSS, and I’d had a longstanding itch to write down my
+grievances about how media queries were insufficient for web and responsive design, even in 2019. It
+was going to be a thoughtpiece for the ages.</p>
+<p>I was going to start out with some great shared experience and get everyone going “yeah, mate! Been
+there! This guy really gets it.” Next, I would carefully craft a scenario to show how media queries
+are a hacky solution, rallying sympathizers to my plight by selling it on a practical level. To sell
+it on the intellectual level I was going to throw in some design bullshit about how media queries
+are antithetical to design component thinking. And to tie it all up, I’d wax poetic about a future
+where this problem doesn’t exist, going beyond the shortcomings of <a href="https://github.com/joecritch/container-queries">container queries</a> and even
+CSS Grid to dream of a solution.</p>
+<p>The title for such a blog post? I needed to really sell it. Something borderline-click-baity, while
+staying true to my opinions. Something with candor. I titled it: <em>Media Queries are a Hack</em>.</p>
+<p>Then <a href="https://twitter.com/zachleat">@zachleat</a> made this tweet:</p>
+<blockquote>
+<p>I’m trying to find the earliest mention of Element Queries or Container Queries (or this idea in
+practice, if not name).</p>
+<p>In the lead right now is @joecritch’s very early work in March 2013
+<a href="https://github.com/joecritch/container-queries">https://github.com/joecritch/container-queries</a>
+(via @innovati).</p>
+<p>Does anyone have evidence of earlier work?</p>
+<p>@zachleat 12:50 PM · Dec 10, 2019 https://twitter.com/zachleat/status/1204488622386417665?s=20</p>
+</blockquote>
+<p>And in that tweet thread, it mentioned Ian Storm Taylor’s blog post titled—you guessed it—<a href="https://ianstormtaylor.com/media-queries-are-a-hack/"><em>Media
+Queries are a Hack</em></a>.</p>
+<p>Written in <strong>2013.</strong></p>
+<p>I am not as original as I think I am. But all things considered, I’m glad I procrastinated on
+finishing my blog post because now I can produce something of more value by stealing all these other
+smart peoples’ ideas.</p>
+<h2>media queries are (still) a hack</h2>
+<p>Ian summarizes the major failing of media queries:</p>
+<blockquote>
+<p>I want <strong>write-once, use-anywhere</strong>—that’s what modular code is.</p>
+<p>Media queries are not that. They’re <strong>write-everywhere</strong>. They’re relative to your screen, so
+every time you write a media query for max-width or min-width, you’re connecting the appearance of
+your module to the width of the entire canvas—exactly what you were trying to avoid.</p>
+</blockquote>
+<p>This has only become more true and more of a problem in our React-influenced,
+<em>everything-is-modular</em> landscape of contemporary web design. And this lack of component-oriented
+thinking lead Ian to pine for what we all do—Container Queries.</p>
+<h2>container queries?</h2>
+<p>If, for example, I have a user card component that I want to rearrange when there’s not enough room,
+I can only do that based on the browser width, <strong>not the component width itself.</strong></p>
+<figure>
+  <img src="/assets/images/media-queries-are-still-a-hack/user-cards.svg" alt="A horizontally-laid out user card next to a vertical one" />
+  <figcaption>What if I wanted to stack a card vertically not based on screen width, but based on whether or not the text and image will fit side-by-side? In 2020, I still can’t.</figcaption>
+</figure>
+<p>Container Queries seem to check off all the boxes:</p>
+<ul>
+<li>✅ Modular and composable</li>
+<li>✅ Attack the root problem of responsive design: resizing based on <strong>content</strong></li>
+<li>✅ CSS-based</li>
+</ul>
+<p>But perfect as they may be, Container Queries are not happening anytime soon. In Zach Leatherman’s
+recent article <a href="https://www.zachleat.com/web/origin-container-queries/"><em>The Origin Story of Container Queries</em></a>, after much research, he even admits
+the grim reality of our beloved Container Queries:</p>
+<blockquote>
+<p>[Container Queries] become almost cliché to mention it when talking about problems we’d like the
+web platform to solve… Everyone wants it, but it sure seems like no one is actively working on it.</p>
+</blockquote>
+<p>So what’s a person to do?</p>
+<h2>css grid repeat(auto-fit, minmax())?</h2>
+<p>If you’ve used CSS Grid, you may be familiar with this wonderful snippet:</p>
+<pre><code class="language-css">.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+</code></pre>
+<p>I was first introduced to this by <a href="https://labs.jensimmons.com/2017/03-009.html">Jen Simmons</a>’ wonderful demo. With only 3 lines of CSS, we
+have something that used to take hundreds:</p>
+<ul>
+<li>Responsive without any media queries</li>
+<li>Gutters built-in 😍</li>
+<li>And last, but most importantly, <strong>items that resize based on their width</strong> (kinda sounds like
+Container Queries, don’t it?)</li>
+</ul>
+<p>But despite being incredibly-useful, CSS Grid’s <code>repeat(auto-fit, minmax())</code> has 2 major drawbacks:</p>
+<ul>
+<li>🚫 It can’t be used on the component level like a Container Query could, so components can’t
+declare their own widths and breakpoints; their parents must.</li>
+<li>🚫 It doesn’t allow for columns of different widths. Neither can you tell items to responsively
+span multiple columns without media queries (and if we’re using media queries we‘re all the way
+back to where we started).</li>
+</ul>
+<h2>container queries.</h2>
+<p>It’s really hard to make a better pitch than Container Queries as a solution to the problem of
+modular responsive design, after <strong>7 years</strong> and hundreds of great minds have all shared their
+collective vision of how this holy-grail-of-a-CSS-selector should work. There are no downsides to
+Container Queries, other than the belabored point that <em>they don’t exist</em>.</p>
+<p>So in parting, as I alluded to earlier, I will leave you, dear reader, with nary an original
+thought, instead, rehashing my favorite line from Phillip Walton’s well-referenced <a href="https://philipwalton.com/articles/responsive-components-a-solution-to-the-container-queries-problem/"><em>Responsive
+Components: A Solution to the Container Queries Problem</em></a>:</p>
+<blockquote>
+<p>While I think we’d all agree a pure CSS solution is the ultimate goal, I hope we as a community
+are able prevent the perfect from becoming the enemy of the good.</p>
+<p>In matters like this, I like to remind myself of this quote from the <a href="https://www.w3.org/TR/html-design-principles/">W3C’s HTML design
+principles</a>: “In case of conflict, consider users over authors over implementors over
+specifiers over theoretical purity.”</p>
+</blockquote>
+<p>In other words, in 2020, the best solution we have to media queries’ failings is, somewhat
+disappointingly, JavaScript. But not JavaScript for the sake of JavaScript; JavaScript for the sake
+of users.</p>
+<p>It’s been 7 years since Ian Storm Taylor published <em>Media Queries are a Hack</em>. To no one’s surprise,
+in 2020 they’re still a hack. And we’re still waiting on Container Queries.</p>
+<p>I may not have any original ideas on this subject, but at least we’re all on the same page.</p>
+<h2>more reading</h2>
+<ul>
+<li><a href="https://ianstormtaylor.com/media-queries-are-a-hack/">Media Queries are a Hack</a> (the real one)</li>
+<li><a href="https://philipwalton.com/articles/responsive-components-a-solution-to-the-container-queries-problem/">Responsive Components: A Solution to the Container Queries Problem</a></li>
+<li><a href="https://css-tricks.com/lets-not-forget-about-container-queries/">Let’s Not Forget About Container Queries</a></li>
+<li><a href="https://www.zachleat.com/web/origin-container-queries/">The Origin Story of Container Queries</a></li>
+</ul>
+
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+  © MMXX
+  <br />
+  <a href="/rss.xml">RSS</a> / <a href="/feed.json">JSON</a>
+  <br />
+  this website is encrypted and 100% analytics-free 🖤 if you want to support this blog,
+  tweet or share a link!
+  <br />
+  built with <a href="https://cobalt-org.github.io/" rel="noopener noreferrer" target="_blank">Cobalt</a>
+  (<a href="https://github.com/dangodev/blog" rel="noopener noreferrer" target="_blank">source</a>)
+</footer>
+
+    </div>
+  </body>
+</html>

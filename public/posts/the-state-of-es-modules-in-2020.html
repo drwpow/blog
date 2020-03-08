@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the state of ES Modules in 2020</title>
+    <link rel="stylesheet" href="/assets/app.min.css" />
+
+    
+    <meta charset="utf-8">
+<meta name="description" content="The biggest change to JavaScript in years is a shockingly-quiet revolution" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
+<link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="nav">
+  <ol class="nav-list">
+    <li>
+      <a href="/">
+        <h1 class="nav-title">
+          <img class="nav-logo" src="/assets/images/drew-monogram-black.png" width="512" height="512" alt="Drew Powers" />
+          <div class="nav-blog">blog</div>
+        </h1>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/design">design</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/dev">dev</a>
+    </li>
+    <li class="nav-page">
+      <a class="nav-link" href="/about">About</a>
+    </li>
+  </ol>
+</nav>
+
+      </header>
+      <main role="main" class="post post__the-state-of-es-modules-in-2020">
+        <header class="post-header">
+          <h1 class="post-title">the state of ES Modules in 2020</h1>
+            <table class="post-meta">
+              <tr>
+                <td>description</td><td>The biggest change to JavaScript in years is a shockingly-quiet revolution</td>
+              </tr>
+              <tr>
+                <td>published</td><td>2020-03-08</td>
+              </tr>
+              
+              <tr>
+                <td>tagged</td>
+                <td><a href="/tag/dev">dev</a></td>
+              </tr>
+            </table>
+          </header>
+          <div class="post-body">
+            <p>It’s 2020—March to be exact—ES Modules (ESM) are now supported in both <a href="https://caniuse.com/#feat=es6-module">browsers</a> and
+<a href="https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663">Node.js</a>. In the world of JS Development, this news is a prolific milestone. But if
+that’s the case, why aren’t more people talking about it?</p>
+<p>Remember that as recently as 2016 we were still <a href="https://auth0.com/blog/javascript-module-systems-showdown/">discussing CommonJS, AMD, UMD, and ESM alongside
+each other</a>. There are probably more apps using AMD &amp; UMD than most realize. JavaScript
+going from no module system to a module system is pretty big deal. Modules affect <em>everything</em> about
+how you write your code.</p>
+<h2>modules affect everything</h2>
+<p>Say you wrote a program in CommonJS that let you conditionally <code>require()</code> something, or not:</p>
+<pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
+  require('./dev-tools');
+}
+</code></pre>
+<p>ESM demands all synchronous imports are in the top-level scope… in other words, they can’t be loaded
+conditionally at-runtime. You <em>could</em>, however, replace that with an async import:</p>
+<pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
+  import('./dev-tools');
+}
+</code></pre>
+<p>But this fundamentally changes how your program works. Whereas <code>require()</code> was synchronous, and the
+code that followed would wait on that to be imported before executing, <code>import()</code> will do no such
+thing. So now you’ll have to rewrite the rest of your application to handle that.</p>
+<p>This isn’t an ESM-vs-CJS comparison; this is simply highlighting that <strong>changing the module system
+is one of the biggest changes you can make in a language</strong> because everything about application
+development changes with it—the modules themselves, logic within, and dependency chains.</p>
+<h2>What are the benefits of ESM?</h2>
+<p>The benefits of ESM, apart from the fact that it’s a unified module system that can drastically
+simplify the fragmented JavaScript ecosystem as a whole, supports the following:</p>
+<ul>
+<li>Remote module imports (you can load JavaScript <a href="https://www.pika.dev/cdn">using a CDN</a> 🎉)</li>
+<li>No bundling needed</li>
+<li>No transpilation needed (except for legacy browser support feature-by-feature)</li>
+<li><a href="https://dev.to/pika/a-future-without-webpack-ago">Better caching</a> over traditional bundling</li>
+</ul>
+<h2>ESM is the future!</h2>
+<p>So if module systems affect everything, down from the code we write to the JS-powered toolchains we
+rely on, why aren’t we all racing to ESM? After all, ESM is the first <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules">official module
+system</a> for JavaScript.</p>
+<p>And yet, not only are we <em>not</em> switching to ESM, we’re still making it harder to unify by writing
+more CommonJS and creating more apps that rely on non-ESM-supported tools. A few that come to mind:</p>
+<ul>
+<li><strong>React:</strong> doesn’t ship an ESM-ready package (as of <a href="https://github.com/facebook/react/issues/11503">Mar 2020</a>)</li>
+<li><strong>npm:</strong> <code>&lt; 8%</code> of npm packages <a href="https://www.pika.dev/about/stats">ship ESM</a> (as of <a href="https://www.pika.dev/about/stats">Oct 2019</a>)</li>
+<li><strong>Node.js:</strong> though it supports ESM, it’s not in a stable LTS release yet (as of <a href="https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663">Nov
+2019</a>)</li>
+<li><strong>webpack</strong>: can’t ship your code as ESM (as of Mar 2020)</li>
+</ul>
+<p>By choosing these tools, you’re adding more non-ESM code to the world that will make switching all
+the more hard later.</p>
+<h2>How to make a difference</h2>
+<p>There are lots of new and exciting projects that are leading the way toward shipping more ESM-ready
+code to the web:</p>
+<h3>Snowpack</h3>
+<p><a href="https://www.snowpack.dev/">Snowpack</a> (a play on ”no pack”) is an install tool that lets you ship ESM-ready code
+straight to the browser, without sacrificing npm. You can <code>npm install</code> like normal, and lets you
+use Preact, Vue, Svelte, and more but with <strong>zero build time</strong> and <strong>no configuration.</strong></p>
+<p><a href="https://www.snowpack.dev/">snowpack.dev</a></p>
+<h3>Pika CDN</h3>
+<p><a href="https://www.pika.dev/registry">Pika Registry</a> does all the work of finding ESM-ready packages for you. Search for
+any keyword like you would on npm, except Pika Registry can tell you instantly whether or not that
+package supports ESM.</p>
+<p><a href="https://www.pika.dev/registry">pika.dev/registry</a></p>
+<h3>Deno</h3>
+<p><a href="https://deno.land/">Deno</a> is a new competitor to Node.js, built with V8, Rust, and Tokio and features native
+TypeScript and ESM support out-of-the-box. Its guiding principle is to more closely mirror
+ECMAScript in the areas where Node departed, principally only allowing ESM rather than CommonJS.
+Though the project is in beta, it’s already gathering community attention and shows tons of promise.</p>
+<p><a href="https://deno.land/">deno.land</a></p>
+<p>To recap, the current state of ESM in 2020 is: <strong>it’s ready to use everywhere,</strong> but <strong>it’s up to
+you to opt-in!</strong> Give some of the new ESM tools a try, and you might find yourself dealing with less
+tooling, less configuration, and other great benefits while helping the community at large unify
+around ESM.</p>
+
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+  © MMXX
+  <br />
+  <a href="/rss.xml">RSS</a> / <a href="/feed.json">JSON</a>
+  <br />
+  this website is encrypted and 100% analytics-free 🖤 if you want to support this blog,
+  tweet or share a link!
+  <br />
+  built with <a href="https://cobalt-org.github.io/" rel="noopener noreferrer" target="_blank">Cobalt</a>
+  (<a href="https://github.com/dangodev/blog" rel="noopener noreferrer" target="_blank">source</a>)
+</footer>
+
+    </div>
+  </body>
+</html>

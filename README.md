@@ -1,28 +1,29 @@
 # 🖋️ The Personal Blog of Drew Powers
 
-Pre-rendered Stencil.js app.
+Powered by [Cobalt][cobalt], a Rust-powered static site generator for very (very) fast builds.
 
-## Using for your own blog
+## 🏎️ Local Dev
 
-Feel free to fork this and delete everything in `data/` (my own personal writing). Then just create
-blog posts in there and you’re good to go!
-
-### Local dev
+Ensure [Cobalt][cobalt] and [Node.js][node] are installed. Then run:
 
 ```bash
+npm install
 npm start
 ```
 
-### Production build
+## 🚀 Deploying
 
 ```bash
-npm run build
+npm run build:static
 ```
 
-## License
+Deploy the `public/` folder using your method of choice (folder can be configured in
+[`_cobalt.yml`](./_cobalt.yml))
 
-All the source code for generating my blog is yours. Take/modify/steal whatever you like that
-resides in any code files (`.js`, `.tsx`, `.css', etc.).
+## 📜 License
+
+All the source code for generating my blog is yours. Take/modify/steal whatever you like that isn’t
+under some existing license.
 
 However, all my writing is **NOT** open source, and is ©️ Drew Powers. Do not use any `.md` files
 whatsoever.
@@ -30,4 +31,7 @@ whatsoever.
 The webfont Cardinal Grotesque is 100% copyrighted material and is licensed for use **ONLY FOR THIS
 SITE**. Go buy your own license at [verycoolstudio.com][verycool].
 
+[cobalt]: https://cobalt-org.github.io/
+[node]: https://nodejs.org
+[now]: https://zeit.co/docs/v2/git-integrations/zeit-now-for-github
 [verycool]: https://www.verycoolstudio.com/

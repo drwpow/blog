@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>the 3 pillars of front-end knowledge</title>
+    <link rel="stylesheet" href="/assets/app.min.css" />
+
+    
+    <meta charset="utf-8">
+<meta name="description" content="The world of front-end is vast, so where does one start? And where does mastery end?" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
+<link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="nav">
+  <ol class="nav-list">
+    <li>
+      <a href="/">
+        <h1 class="nav-title">
+          <img class="nav-logo" src="/assets/images/drew-monogram-black.png" width="512" height="512" alt="Drew Powers" />
+          <div class="nav-blog">blog</div>
+        </h1>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/design">design</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/tag/dev">dev</a>
+    </li>
+    <li class="nav-page">
+      <a class="nav-link" href="/about">About</a>
+    </li>
+  </ol>
+</nav>
+
+      </header>
+      <main role="main" class="post post__3-pillars-of-front-end-knowledge">
+        <header class="post-header">
+          <h1 class="post-title">the 3 pillars of front-end knowledge</h1>
+            <table class="post-meta">
+              <tr>
+                <td>description</td><td>The world of front-end is vast, so where does one start? And where does mastery end?</td>
+              </tr>
+              <tr>
+                <td>published</td><td>2020-02-17</td>
+              </tr>
+              
+                <tr>
+                  <td>updated</td><td>2020-02-17 12:00:00 +0000</td>
+                </tr>
+              
+              <tr>
+                <td>tagged</td>
+                <td><a href="/tag/dev">dev</a></td>
+              </tr>
+            </table>
+          </header>
+          <div class="post-body">
+            <p>It’s been a little over a year since Chris Coyier’s post <a href="https://css-tricks.com/the-great-divide/"><em>The Great Divide</em></a> came out, the
+first blog post I remember reading that drew a line in the sand between two distinct camps (armies?)
+of front-end developers. Which I guess are, like, at war with each other, or something:</p>
+<blockquote>
+<p>On one side, an army of developers whose interests, responsibilities, and skill sets are heavily
+revolved around JavaScript. On the other, an army of developers whose interests, responsibilities,
+and skill sets are focused on other areas of the front end, like HTML, CSS, design, interaction,
+patterns, accessibility, etc.</p>
+</blockquote>
+<p>In that year following the post, more of us have begin to see these spheres of expertise pulling
+apart, whether this post opened our eyes, or we witnessed the same patterns Chris did.</p>
+<p><strong>But what if the divide was actually made up?</strong> What if, instead of a divide, we just collectively
+admitted that front-end development is bigger, and more complicated than we originally thought? If
+we recognized that doing JavaScript <em>well</em> was harder than anticipated, and that it took smart
+cookies with Computer Science (CS) degrees a couple decades to push the ecosystem closer to where it
+needed to be?</p>
+<p>This post is an appeal to view it all as one, core knowledge, and one core role (albeit big as
+hell). Maybe it’s harder to attain true mastery than we originally thought. But isn’t that what
+makes it deep, and exciting, and satisfying to try?</p>
+<p>I started thinking about this subject again recently when a backend developer reached out to me,
+wanting to learn about modern front-end dev (they hadn’t really kept up for the past, oh, 6 years or
+so). In listing out all the things they could learn, I noticed <strong>three</strong> (not two) major groupings
+started forming. In my mind this not only lays a groundwork for possible starting points, but
+distinct axes of mastery to pursue the more you commit to front-end.</p>
+<p>So here are the three pillars to front-end development, not in any particular order, that your
+journey should cross into at some point:</p>
+<h2>👨‍🎨 Pillar 1: Browser APIs &amp; Rendering (HTML/CSS)</h2>
+<p>The pillar of Browser APIs &amp; Rendering revolves around two central questions: <strong>On the web, how do I
+make things look like things?</strong> and <strong>How does a browser work to help me accomplish this?</strong></p>
+<p>At beginner levels, browser rendering involves understanding the fundamentals of HTML &amp; CSS to get
+code to look like a design. At intermediate levels, this gets into animations, render profiling, and
+making interactive things perform adequately in a browser environment. At the highest levels,
+mastery of browser rendering means being able to describe in great detail how assets are requested
+and the priority of their loading, the browser paint API, and how to render anything—even 3D—at 60
+frames per second (the <a href="https://dassur.ma/things/120fps/">maximum a browser will allow</a>).</p>
+<p>For the traditional CS student, the browser is something that often gets underestimated. This
+results in the common “I don’t understand CSS” state of confusion that so many backend developers
+find themselves in. And it <em>is</em> confusing, until you treat the browser as the special, weird runtime
+environment that it is. Often times it’s what you’re fighting with here—your own misconceptions of
+what the browser is doing.</p>
+<p>Take the following with a grain of salt, but here is roughly how you might track growth of your
+knowledge in this area:</p>
+<h3>Beginner</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Fundamentals of HTML</td><td align="left"><em>I understand what different HTML tags do</em></td></tr>
+<tr><td align="left">Fundamentals of CSS</td><td align="left"><em>I understand how to use &amp; apply CSS to HTML to style pages</em></td></tr>
+<tr><td align="left">Fundamentals of Browser Resources</td><td align="left"><em>I understand where to put CSS &amp; JS files and reference them in the HTML for them to show up</em></td></tr>
+</tbody></table>
+<h3>Intermediate</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Accessibility</td><td align="left"><em>I can ensure sites are usable for people that use screen readers and other assistive technologies</em></td></tr>
+<tr><td align="left">Animations</td><td align="left"><em>I can animate objects using either <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations">CSS</a> or a JavaScript framework like <a href="https://github.com/mrdoob/three.js/">Three.js</a></em></td></tr>
+<tr><td align="left">Hardware acceleration</td><td align="left"><em>I understand certain properties &amp; animations can <a href="https://www.smashingmagazine.com/2016/12/gpu-animation-doing-it-right/">use the GPU</a> for performance</em></td></tr>
+<tr><td align="left">Render profiling²</td><td align="left"><em>I can use tools like <a href="lighthouse">Lighthouse</a> to understand what is slowing down browser rendering &amp; performance</em></td></tr>
+<tr><td align="left">Image formats</td><td align="left"><em>I understand when to use each image format (<code>JPG</code>, <code>PNG</code>, <code>WebP</code>, …), and how to <a href="http://imageoptim.com/">optimize them</a></em></td></tr>
+<tr><td align="left">Common Browser API knowledge</td><td align="left"><em>I understand common <a href="https://developer.mozilla.org/en-US/docs/Web/API">browser APIs</a> like <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"><code>fetch</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API"><code>history</code></a>, and know when to leverage the browser and when to write my own JavaScript</em></td></tr>
+</tbody></table>
+<h3>Master</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Resource prioritization² ³</td><td align="left"><em>I understand <a href="https://developers.google.com/web/fundamentals/performance/resource-prioritization">resource prioritization</a> and the steps from streaming initial HTML payload, to fetching the resources, to rendering them in priority order</em></td></tr>
+<tr><td align="left">Render debugging²</td><td align="left"><em>I understand how the browser performs <a href="https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas">paint operations</a> and how to optimize them</em></td></tr>
+<tr><td align="left">Comprehensive Browser API Knowledge²</td><td align="left"><em>I understand more invisible APIs like <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API">Paint</a>, and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a> and understand how they differ or can work in sync to render parts of a page</em></td></tr>
+<tr><td align="left">Browser processes</td><td align="left"><em>I understand the <a href="https://developers.google.com/web/updates/2018/09/inside-browser-part2">Browser, Renderer, and GPU processes</a> that lie underneath the higher-level APIs</em></td></tr>
+</tbody></table>
+<p><em>² related to Pillar 2 / ³ related to Pillar 3</em></p>
+<p>You may find that much of the “CSS Dev” from the <em>Great Divide</em> post fits in here, with the addition
+of JavaScript like <code>fetch</code> and <code>history</code>, and the omission of CSS frameworks like <a href="http://smacss.com/">SMACSS</a>.
+So already we’re breaking up that division! As for CSS framework knowledge, that fits more neatly
+in…</p>
+<h2>👩‍🔬 Pillar 2: JS Programming &amp; Architecture</h2>
+<p>The pillar of JavaScript &amp; Architecture is the recent development of front-end into a more formal,
+proper software environment from web dev’s <em>laissez-faire</em> “just throw that code anywhere”
+beginnings. This roughly correlates with the JavaScript-oriented type in Chris’ post somewhat, and
+is closer to the comfort sphere of a traditional Computer Science education. Whereas Pillar 1 trends
+toward static display, Pillar 2 adds dynamism, automation, and interaction. You could even call this
+“the backend of front-end.”</p>
+<p>This pillar is concerned with <strong>How should this application be interacted with?</strong> and <strong>How should
+code for the front-end be organized for delivery and team maintainability?</strong> The pursuit of these 2
+questions, together, have led to many milestones such as that React thing you’ve heard so much about
+(along with Node.js, which we’ll cover more in the last pillar).</p>
+<p>Though JavaScript is one of the most popular programming ecosystems, it’s still developing. And for
+that reason I don’t feel comfortable dividing intermediate- and master-level topics. Everyone’s
+journey through here will differ, and for that reason, I only distinguish between basics and
+non-basics.</p>
+<p>In your rebuttal of this blog post, please be gentle with this section ;)</p>
+<h3>Beginner</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Fundamentals of JavaScript</td><td align="left"><em>I can build basic things with vanilla JS and don’t always need a library (only sometimes)</em></td></tr>
+<tr><td align="left">JavaScript quirks</td><td align="left"><em>I understand the basics of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">working with objects</a> in JS, the basics of <a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/objects-classes/ch1.md"><code>this</code></a>, and a rough understanding of scopes</em></td></tr>
+<tr><td align="left">Async knowledge</td><td align="left"><em>I understand the basics of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise()</code></a> and can write code to fetch remote data (AJAX) or deal with async operations</em></td></tr>
+<tr><td align="left">Fundamentals of Frameworks³</td><td align="left"><em>I understand how to spin up a React / Vue / Svelte / whatever project and get something visible</em></td></tr>
+<tr><td align="left">Fundamentals of CSS organization¹</td><td align="left"><em>I have some basic strategies to organize styles, whether that’s a methodology like <a href="http://smacss.com/">SMACSS</a> or a utility like <a href="https://tailwindcss.com">Tailwind</a></em></td></tr>
+</tbody></table>
+<h3>Intermediate/Master</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Comprehensive JS knowledge³</td><td align="left"><em>I can solve any common problem in JS (when sensible), and I possess up-to-date knowledge of the latest <a href="https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/ECMAScript_Next_support_in_Mozilla">ECMAScript 20xx</a> features</em></td></tr>
+<tr><td align="left">Front-end philosophy</td><td align="left"><em>I have cursory-to-advanced knowledge of how strategies like <a href="https://xstate.js.org/">State Machines</a>, <a href="https://www.learnrxjs.io/">Observables</a>, <a href="https://reactjs.org/docs/design-principles.html">Component-based architecture</a>, etc. solve different problems for building web applications</em></td></tr>
+<tr><td align="left">Performance profiling</td><td align="left"><em>I understand how to profile JavaScript’s performance, even moving operations <a href="https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution">off the main thread</a> where needed</em></td></tr>
+<tr><td align="left">Inheritance and prototypes</td><td align="left"><em>Beyond data types, I understand JavaScript’s <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain">prototypal inheritance</a> design</em></td></tr>
+<tr><td align="left">Type System</td><td align="left"><em>I understand JavaScript’s type system and <a href="https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion">coercion</a>, and know how best to leverage it (and potentially possess TypeScript knowledge)</em></td></tr>
+<tr><td align="left">Testing</td><td align="left"><em>I ensure all JavaScript is tested, whether with <a href="https://jestjs.io/">unit / E2E</a> tests, <a href="https://developers.google.com/web/tools/puppeteer/">headless browser tests</a>, or <a href="https://happo.io/">VRT</a></em></td></tr>
+<tr><td align="left">Advanced network knowledge¹</td><td align="left"><em>I have comprehensive strategies for consuming API data and feel comfortable using client like <a href="https://www.apollographql.com/">Apollo</a> or rolling my own.</em></td></tr>
+<tr><td align="left">DOM manipulation¹</td><td align="left"><em>I understand JavaScript’s role in DOM manipulation, and strategies for managing this such as <a href="https://reactjs.org/docs/design-principles.html">React</a> (related to Pillar 1)</em></td></tr>
+<tr><td align="left">WebAssembly</td><td align="left"><em>I understand how JavaScript interops with <a href="https://webassembly.org/">WebAssembly</a> and know when to leverage it</em></td></tr>
+</tbody></table>
+<p><em>¹ related to Pillar 1 / ³ related to Pillar 3</em></p>
+<p>In JavaScript’s strange, strange development, something very weird happened that few could have
+predicted: <em>JavaScript turned into a backend language with Node.js.</em> This not only changed how we
+<em>prepared</em> JavaScript for the browser (Pillar 1); it also changed how we wrote it (Pillar 2).</p>
+<p>Let’s be clear: <em>Node.js is a backend language.</em> In this post we’re not talking about the backend,
+but we can’t deny that Node.js has changed the front-end ecosystem forever with advanced tooling to
+npm. And this knowledge makes up the final pillar.</p>
+<h2>👷‍♀️ Pillar 3: The Toolchain (Node.js, npm, Babel, bundlers)</h2>
+<p>The final pillar—The Toolchain—concerns itself with the “meta” parts of front-end development. Its
+concern is: <strong>Can the way we develop web applications be improved?</strong> and it’s given rise to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">module
+systems</a>, <a href="https://www.npmjs.com/">package managers</a>, <a href="https://babeljs.io/">transpilers</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">bundlers</a>, and even <a href="https://reactjs.org/docs/introducing-jsx.html">new
+languages</a>.</p>
+<p>While this pillar is the slipperiest to understand, because by its very nature it questions the
+ontology of front-end development, it’s also the most powerful because it has the ability to
+transform how we work. For beginners that have started their front-end journey fairly recently, all
+the kooky toolchains probably comprise the bulk of their learning curve. And for many, they won’t
+truly develop a deep understanding of this until they’ve worked in at least several different
+environments and contexts. Once they do, intermediates that understand the lay of the land can
+deftly rig up any development pipeline to fulfill a need. Toolchain masters shape the direction and
+the future of the common tools we all use.</p>
+<h3>Beginner</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Boilerplates</td><td align="left"><em>I can operate Boilerplates such as <a href="https://cli.vuejs.org/">Vue CLI</a> to create apps in my preferred ecosystem</em></td></tr>
+<tr><td align="left">Basic npm</td><td align="left"><em>I can add/remove/update npm libraries for use in my front-end app</em></td></tr>
+<tr><td align="left">Basic ecosystem</td><td align="left"><em>I understand how to examine npm package contents and load the correct library build I need</em></td></tr>
+</tbody></table>
+<h3>Intermediate</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Configuration</td><td align="left"><em>I can configure a local development without a boilerplate, working directly with tools like Gulp, webpack, and Parcel</em></td></tr>
+<tr><td align="left">Transpilation¹</td><td align="left"><em>I can configure Babel and PostCSS to transpile code for specific targets</em></td></tr>
+<tr><td align="left">Bundling &amp; optimization²</td><td align="left"><em>I can set up build pipelines to ship production-ready code and optimize delivery of those bundles</em></td></tr>
+<tr><td align="left">Advanced npm</td><td align="left"><em>I’ve deployed my own packages to npm</em></td></tr>
+</tbody></table>
+<h3>Master</h3>
+<table><thead><tr><th align="left">Skill</th><th align="left">Example</th></tr></thead><tbody>
+<tr><td align="left">Architect</td><td align="left"><em>I can build front-end boilerplates for other people to use</em></td></tr>
+<tr><td align="left">AST understanding</td><td align="left"><em>I can create my own <a href="https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md">Babel</a> or ESLint plugins</em></td></tr>
+<tr><td align="left">Bundler understanding</td><td align="left"><em>I can create my own webpack plugins</em></td></tr>
+<tr><td align="left">Code Generation</td><td align="left"><em>I can generate JS programatically</em></td></tr>
+<tr><td align="left">CI²</td><td align="left"><em>I create automated pipelines for deploying npm packages as well as shipping optimized bundles to production</em></td></tr>
+<tr><td align="left">Ecosystem understanding</td><td align="left"><em>I understand how to deploy npm packages for Node.js, web browsers, and CLI tools, and how to target each</em></td></tr>
+</tbody></table>
+<p><em>¹ related to Pillar 1 / ² related to Pillar 2</em></p>
+<p>Usually when complaints arise about the state of front-end development, whether that’s how much it’s
+changed, or if it’s too complicated, usually JavaScript gets the blame when really it’s the
+toolchain. Of course, this is confusing, since JavaScript is both the engine that runs the toolchain
+(Node.js) and the input/output of the toolchain itself (browser JS).</p>
+<p>This is also the pillar that’s undergone the biggest changes of front-end development, and it won’t
+be settling any time soon. Still, now’s the perfect time to jump in and contribute <em>because</em> all
+these things aren’t settled yet.</p>
+<h2>A final note on mastery</h2>
+<p>Hopefully you noticed the superscript ¹s, ²s, and ³s linking skills in one pillar to another.
+Hopefully, too, you started to get confused about where the barriers lay between the pillars, and
+what kept them as distinct. And, hopefully, you realized that all this knowledge feeds into itself,
+and any one pillar is incomplete, and can’t support a standing structure without the others.</p>
+<p>Mastery itself is a slippery thing. I’m reminded of Matt Might’s post, <a href="http://matt.might.net/articles/phd-school-in-pictures/"><em>The illustrated guide to a
+Ph.D.</em></a> To merely reach the limits of human knowledge is not enough; we’re all pushing to try
+and make that little “dent” in the shape of what’s possible. And with that act, we leave behind a
+bigger world to explore for the next generation.</p>
+<p>While this post was meant to paint a more unified, comprehensive view of front-end development, it’s
+not meant to guilt you into figuring all this stuff out on your own. That’s impossible. You won’t
+master everything, but even theoretically if you could, it would only last for a short time until
+someone came along and changed what’s possible with their dent.</p>
+<p>So above all else, <strong>be kind to yourself,</strong> and pursue mastery only to the extent it’s rewarding for
+you and others around you. And while it’s OK to know different things than everyone else, for the
+love of God, don’t create more “us vs them” rhetoric.</p>
+
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+  © MMXX
+  <br />
+  <a href="/rss.xml">RSS</a> / <a href="/feed.json">JSON</a>
+  <br />
+  this website is encrypted and 100% analytics-free 🖤 if you want to support this blog,
+  tweet or share a link!
+  <br />
+  built with <a href="https://cobalt-org.github.io/" rel="noopener noreferrer" target="_blank">Cobalt</a>
+  (<a href="https://github.com/dangodev/blog" rel="noopener noreferrer" target="_blank">source</a>)
+</footer>
+
+    </div>
+  </body>
+</html>

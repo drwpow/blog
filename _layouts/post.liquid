@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+    {% include 'assets.liquid' %}
+    {% assign description = page.description %}
+    {% include 'meta.liquid' %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        {% include 'header.liquid' %}
+      </header>
+      <main role="main" class="post post__{{ page.slug }}">
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title }}</h1>
+            <table class="post-meta">
+              <tr>
+                <td>description</td><td>{{ page.description }}</td>
+              </tr>
+              <tr>
+                <td>published</td><td>{{ page.published_date | date: "%Y-%m-%d" }}</td>
+              </tr>
+              {% if page.data.updated_date %}
+                <tr>
+                  <td>updated</td><td>{{ page.data.updated_date }}</td>
+                </tr>
+              {% endif %}
+              <tr>
+                <td>tagged</td>
+                <td><a href="/tag/{{ page.tags | first }}">{{ page.tags | first }}</a></td>
+              </tr>
+            </table>
+          </header>
+          <div class="post-body">
+            {{ page.content }}
+          </div>
+        </div>
+      </main>
+      {% include 'footer.liquid' %}
+    </div>
+  </body>
+</html>

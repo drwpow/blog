@@ -1,0 +1,19 @@
+---
+layout: default.liquid
+title: blog // Drew Powers
+description: The personal blog of Drew Powers
+---
+<h1 class="page-title">all posts</h1>
+{% for post in collections.posts.pages %}
+  <a class="postPreview" href="/{{ post.permalink }}">
+    <div>
+      <time class="postPreview-date" dateTime={this.post.data.date}>{{ post.published_date | date: "%Y-%m-%d" }}</time>
+      <h1 class="postPreview-title">{{ post.title }}</h1>
+      <p class="postPreview-summary">{{ post.description }}</p>
+      <div class="postPreview-tagged">
+        tagged:
+        <span class="postPreview-tag">{{ post.tags | join: '</span></span class="postPreview-tag"' }}</span>
+      </div>
+    </div>
+  </a>
+{% endfor %}

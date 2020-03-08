@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }}</title>
+    {% include 'assets.liquid' %}
+    {% include 'meta.liquid' %}
+  </head>
+  <body>
+    <div>
+      <div class="wrapper">
+        <header>
+          {% include 'header.liquid' %}
+        </header>
+        <main role="main" class="page page__{{ page.collection }}">
+          {{ page.content }}
+        </main>
+        {% include 'footer.liquid' %}
+      </div>
+    </div>
+  </body>
+</html>
