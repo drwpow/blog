@@ -5,20 +5,24 @@ description: The biggest change to JavaScript in years is a shockingly-quiet rev
 published_date: 2020-03-08 12:00:00 +0000
 tags:
   - dev
+data:
+  updated_date: 2020-03-09 12:00:00 +0000
 ---
 
 It’s 2020—March to be exact—ES Modules (ESM) are now supported in both [browsers][esm-browser] and
 [Node.js][esm-node]. In the world of JS Development, this news is a prolific milestone. But if
 that’s the case, why aren’t more people talking about it?
 
-Remember that as recently as 2016 we were still [discussing CommonJS, AMD, UMD, and ESM alongside
-each other][js-modules]. There are probably more apps using AMD & UMD than most realize. JavaScript
-going from no module system to a module system is pretty big deal. Modules affect _everything_ about
-how you write your code.
+JavaScript going from no module system to _any_ module system is pretty big deal, because modules
+affect _nearly everything_ about how you write code. Remember that as recently as 2016 we were still
+[discussing CommonJS, AMD, UMD, and ESM alongside each other][js-modules]. Going from no module
+system to one is enough, but fragmenting between **three** before landing on a common **fourth** has
+given us all whiplash. But now that the dust is settling, why aren’t we all sold on ESM?
 
 ## modules affect everything
 
-Say you wrote a program in CommonJS that let you conditionally `require()` something, or not:
+To expand a bit more on why module systems affect so much, let’s take an example of code in CommonJS
+and see what it takes to upgrade to ESM:
 
 ```js
 if (process.env.NODE_ENV === 'development') {
@@ -26,29 +30,42 @@ if (process.env.NODE_ENV === 'development') {
 }
 ```
 
-ESM demands all synchronous imports are in the top-level scope… in other words, they can’t be loaded
-conditionally at-runtime. You _could_, however, replace that with an async import:
+Here, CommonJS has let us conditionally load or not load a module. But if we try and switch to ESM:
 
 ```js
 if (process.env.NODE_ENV === 'development') {
-  import('./dev-tools');
+  import './dev-tools'; // SyntaxError: import declarations may only appear at top level of a module
 }
 ```
 
-But this fundamentally changes how your program works. Whereas `require()` was synchronous, and the
-code that followed would wait on that to be imported before executing, `import()` will do no such
-thing. So now you’ll have to rewrite the rest of your application to handle that.
+Uh oh. ESM demands all synchronous imports are in the top-level scope. So it’s not a 1:1 change. We
+_could_, however, replace that with an async import:
 
-This isn’t an ESM-vs-CJS comparison; this is simply highlighting that **changing the module system
-is one of the biggest changes you can make in a language** because everything about application
-development changes with it—the modules themselves, logic within, and dependency chains.
+```js
+if (process.env.NODE_ENV === 'development') {
+  import('./dev-tools'); // this works…
+}
 
-## What are the benefits of ESM?
+// … but now code that follows won’t wait for this module to be loaded because it’s async
+```
 
-The benefits of ESM, apart from the fact that it’s a unified module system that can drastically
-simplify the fragmented JavaScript ecosystem as a whole, supports the following:
+However this fundamentally changes how our program works. Whereas `require()` was synchronous, and
+any code that followed was blocked until that module finished loading, `import()` will do no such
+thing—it’s a promise that must be handled separately. So now you’ll have to rewrite the rest of this
+module to account for that.
 
-- Remote module imports (you can load JavaScript [using a CDN][pika-cdn] 🎉)
+Again, this just goes to show that changing a module system isn’t simple—if it was, then they
+probably wouldn’t be two systems to begin with! **Changing the module system is one of the biggest
+changes you can make in a language** because everything about application development changes with
+it—the modules themselves, logic within, and dependency chains.
+
+## Why switch to ESM
+
+A common barrier to ESM is the sheer amount of CommonJS there is—virtually the entire NodeJS
+ecosystem is still stick in CommonJS. But switching to ESM yields several benefits:
+
+- ESM is universal, meaning the same JavaScript works in a browser & the server
+- Remote module imports—you can load JavaScript [using a CDN][pika-cdn]! 🎉
 - No bundling needed
 - No transpilation needed (except for legacy browser support feature-by-feature)
 - [Better caching][esm-caching] over traditional bundling
@@ -56,11 +73,9 @@ simplify the fragmented JavaScript ecosystem as a whole, supports the following:
 ## ESM is the future!
 
 So if module systems affect everything, down from the code we write to the JS-powered toolchains we
-rely on, why aren’t we all racing to ESM? After all, ESM is the first [official module
-system][esm-spec] for JavaScript.
-
-And yet, not only are we _not_ switching to ESM, we’re still making it harder to unify by writing
-more CommonJS and creating more apps that rely on non-ESM-supported tools. A few that come to mind:
+rely on, why do we continue to write new code that we all know now has an expiration date on it? In
+case you’re not sure whether or not you’re writing ESM-ready code, if you‘re using any of the
+following, you’re likely not:
 
 - **React:** doesn’t ship an ESM-ready package (as of [Mar 2020][esm-react])
 - **npm:** `< 8%` of npm packages [ship ESM][esm-npm] (as of [Oct 2019][esm-npm])
@@ -68,8 +83,8 @@ more CommonJS and creating more apps that rely on non-ESM-supported tools. A few
   2019][esm-node])
 - **webpack**: can’t ship your code as ESM (as of Mar 2020)
 
-By choosing these tools, you’re adding more non-ESM code to the world that will make switching all
-the more hard later.
+By choosing these tools even in new projects, you’re shipping legacy code that already has a limited
+lifespan. Be sure you understand the tradeoffs you’re making when doing so.
 
 ## How to make a difference
 

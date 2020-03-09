@@ -57,6 +57,10 @@
                 <td>published</td><td>2020-03-08</td>
               </tr>
               
+                <tr>
+                  <td>updated</td><td>2020-03-09 12:00:00 +0000</td>
+                </tr>
+              
               <tr>
                 <td>tagged</td>
                 <td><a href="/tag/dev">dev</a></td>
@@ -67,43 +71,54 @@
             <p>It’s 2020—March to be exact—ES Modules (ESM) are now supported in both <a href="https://caniuse.com/#feat=es6-module">browsers</a> and
 <a href="https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663">Node.js</a>. In the world of JS Development, this news is a prolific milestone. But if
 that’s the case, why aren’t more people talking about it?</p>
-<p>Remember that as recently as 2016 we were still <a href="https://auth0.com/blog/javascript-module-systems-showdown/">discussing CommonJS, AMD, UMD, and ESM alongside
-each other</a>. There are probably more apps using AMD &amp; UMD than most realize. JavaScript
-going from no module system to a module system is pretty big deal. Modules affect <em>everything</em> about
-how you write your code.</p>
+<p>JavaScript going from no module system to <em>any</em> module system is pretty big deal, because modules
+affect <em>nearly everything</em> about how you write code. Remember that as recently as 2016 we were still
+<a href="https://auth0.com/blog/javascript-module-systems-showdown/">discussing CommonJS, AMD, UMD, and ESM alongside each other</a>. Going from no module
+system to one is enough, but fragmenting between <strong>three</strong> before landing on a common <strong>fourth</strong> has
+given us all whiplash. But now that the dust is settling, why aren’t we all sold on ESM?</p>
 <h2>modules affect everything</h2>
-<p>Say you wrote a program in CommonJS that let you conditionally <code>require()</code> something, or not:</p>
+<p>To expand a bit more on why module systems affect so much, let’s take an example of code in CommonJS
+and see what it takes to upgrade to ESM:</p>
 <pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
   require('./dev-tools');
 }
 </code></pre>
-<p>ESM demands all synchronous imports are in the top-level scope… in other words, they can’t be loaded
-conditionally at-runtime. You <em>could</em>, however, replace that with an async import:</p>
+<p>Here, CommonJS has let us conditionally load or not load a module. But if we try and switch to ESM:</p>
 <pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
-  import('./dev-tools');
+  import './dev-tools'; // SyntaxError: import declarations may only appear at top level of a module
 }
 </code></pre>
-<p>But this fundamentally changes how your program works. Whereas <code>require()</code> was synchronous, and the
-code that followed would wait on that to be imported before executing, <code>import()</code> will do no such
-thing. So now you’ll have to rewrite the rest of your application to handle that.</p>
-<p>This isn’t an ESM-vs-CJS comparison; this is simply highlighting that <strong>changing the module system
-is one of the biggest changes you can make in a language</strong> because everything about application
-development changes with it—the modules themselves, logic within, and dependency chains.</p>
-<h2>What are the benefits of ESM?</h2>
-<p>The benefits of ESM, apart from the fact that it’s a unified module system that can drastically
-simplify the fragmented JavaScript ecosystem as a whole, supports the following:</p>
+<p>Uh oh. ESM demands all synchronous imports are in the top-level scope. So it’s not a 1:1 change. We
+<em>could</em>, however, replace that with an async import:</p>
+<pre><code class="language-js">if (process.env.NODE_ENV === 'development') {
+  import('./dev-tools'); // this works…
+}
+
+// … but now code that follows won’t wait for this module to be loaded because it’s async
+</code></pre>
+<p>However this fundamentally changes how our program works. Whereas <code>require()</code> was synchronous, and
+any code that followed was blocked until that module finished loading, <code>import()</code> will do no such
+thing—it’s a promise that must be handled separately. So now you’ll have to rewrite the rest of this
+module to account for that.</p>
+<p>Again, this just goes to show that changing a module system isn’t simple—if it was, then they
+probably wouldn’t be two systems to begin with! <strong>Changing the module system is one of the biggest
+changes you can make in a language</strong> because everything about application development changes with
+it—the modules themselves, logic within, and dependency chains.</p>
+<h2>Why switch to ESM</h2>
+<p>A common barrier to ESM is the sheer amount of CommonJS there is—virtually the entire NodeJS
+ecosystem is still stick in CommonJS. But switching to ESM yields several benefits:</p>
 <ul>
-<li>Remote module imports (you can load JavaScript <a href="https://www.pika.dev/cdn">using a CDN</a> 🎉)</li>
+<li>ESM is universal, meaning the same JavaScript works in a browser &amp; the server</li>
+<li>Remote module imports—you can load JavaScript <a href="https://www.pika.dev/cdn">using a CDN</a>! 🎉</li>
 <li>No bundling needed</li>
 <li>No transpilation needed (except for legacy browser support feature-by-feature)</li>
 <li><a href="https://dev.to/pika/a-future-without-webpack-ago">Better caching</a> over traditional bundling</li>
 </ul>
 <h2>ESM is the future!</h2>
 <p>So if module systems affect everything, down from the code we write to the JS-powered toolchains we
-rely on, why aren’t we all racing to ESM? After all, ESM is the first <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules">official module
-system</a> for JavaScript.</p>
-<p>And yet, not only are we <em>not</em> switching to ESM, we’re still making it harder to unify by writing
-more CommonJS and creating more apps that rely on non-ESM-supported tools. A few that come to mind:</p>
+rely on, why do we continue to write new code that we all know now has an expiration date on it? In
+case you’re not sure whether or not you’re writing ESM-ready code, if you‘re using any of the
+following, you’re likely not:</p>
 <ul>
 <li><strong>React:</strong> doesn’t ship an ESM-ready package (as of <a href="https://github.com/facebook/react/issues/11503">Mar 2020</a>)</li>
 <li><strong>npm:</strong> <code>&lt; 8%</code> of npm packages <a href="https://www.pika.dev/about/stats">ship ESM</a> (as of <a href="https://www.pika.dev/about/stats">Oct 2019</a>)</li>
@@ -111,8 +126,8 @@ more CommonJS and creating more apps that rely on non-ESM-supported tools. A few
 2019</a>)</li>
 <li><strong>webpack</strong>: can’t ship your code as ESM (as of Mar 2020)</li>
 </ul>
-<p>By choosing these tools, you’re adding more non-ESM code to the world that will make switching all
-the more hard later.</p>
+<p>By choosing these tools even in new projects, you’re shipping legacy code that already has a limited
+lifespan. Be sure you understand the tradeoffs you’re making when doing so.</p>
 <h2>How to make a difference</h2>
 <p>There are lots of new and exciting projects that are leading the way toward shipping more ESM-ready
 code to the web:</p>

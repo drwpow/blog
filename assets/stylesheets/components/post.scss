@@ -1,8 +1,8 @@
 .post-body {
-  font-size: var(--u1);
+  font-size: 1rem;
 
   @media (min-width: 800px) {
-    font-size: var(--u2);
+    font-size: var(--u1);
   }
 
   & img,
