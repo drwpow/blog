@@ -56,15 +56,29 @@
   font-display: swap;
   font-family: "Cardinal Grotesque";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   src: url("/assets/fonts/CardinalGrotesqueWide-Light.woff2") format("woff2"), url("/assets/fonts/CardinalGrotesqueWide-Light.woff") format("woff");
 }
 @font-face {
   font-display: swap;
   font-family: "Cardinal Grotesque";
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   src: url("/assets/fonts/CardinalGrotesqueWide-LightItalic.woff2") format("woff2"), url("/assets/fonts/CardinalGrotesqueWide-LightItalic.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Cardinal Grotesque";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/CardinalGrotesqueWide-Regular.woff2") format("woff2"), url("/assets/fonts/CardinalGrotesqueWide-Regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Cardinal Grotesque";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/fonts/CardinalGrotesqueWide-RegularItalic.woff2") format("woff2"), url("/assets/fonts/CardinalGrotesqueWide-RegularItalic.woff") format("woff");
 }
 @font-face {
   font-display: swap;
@@ -154,6 +168,8 @@ p {
   font-size: var(--d2);
   margin-block-end: 4rem;
   margin-block-start: 4rem;
+  padding-inline-end: 1rem;
+  padding-inline-start: 1rem;
   text-align: center;
 }
 
@@ -244,8 +260,16 @@ p {
   color: hsl(var(--fg));
   display: flex;
   line-height: 1;
-  margin-block-end: 4rem;
+  margin-block-end: 2.5rem;
+  margin-inline-start: -1.5rem;
   text-decoration: none;
+}
+@media (min-width: 600px) {
+  .postPreview {
+    font-weight: 300;
+    margin-block-end: 4rem;
+    margin-inline-start: 0;
+  }
 }
 .postPreview::before {
   background-color: hsl(var(--fg));
@@ -309,26 +333,39 @@ p {
 }
 
 .postPreview-title {
-  font-size: var(--u6);
+  font-size: var(--u4);
   font-weight: 500;
-  margin-block-end: 0.5rem;
+  margin-block-end: 0.25em;
   margin-block-start: 0;
+}
+@media (min-width: 600px) {
+  .postPreview-title {
+    font-size: var(--u6);
+  }
 }
 
 .postPreview-summary {
   font-size: 1em;
-  line-height: var(--ld1);
-  margin-block-end: 1.5rem;
-  margin-block-start: 1.5rem;
+  line-height: 1.5;
+  margin-block-end: 1em;
+  margin-block-start: 1em;
+}
+@media (min-width: 600px) {
+  .postPreview-summary {
+    margin-block-end: 1.5em;
+    margin-block-start: 1.5em;
+  }
 }
 
 .post-body {
   font-size: 1rem;
+  font-weight: 400;
   /* stylelint-disable-next-line no-descending-specificity */
 }
 @media (min-width: 800px) {
   .post-body {
     font-size: var(--u1);
+    font-weight: 300;
   }
 }
 .post-body img, .post-body video {
@@ -469,22 +506,31 @@ p {
   text-transform: uppercase;
 }
 
+.post-description {
+  font-size: var(--u2);
+  font-style: italic;
+  line-height: 1.4;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  max-width: 28em;
+}
+
 .post-header {
-  border: 4px solid currentColor;
   box-sizing: border-box;
-  margin-left: -4px;
-  min-height: 12rem;
-  padding: 1.5rem;
-  width: calc(100% + 8px);
 }
 
 .post-meta {
   border-spacing: collapse;
-  font-family: var(--mono);
-  font-size: var(--d2);
+  display: grid;
   margin-block-end: 0;
-  margin-block-start: 0.5rem;
-  /* stylelint-disable-next-line no-descending-specificity */
+  margin-block-start: 2rem;
+}
+@media (min-width: 600px) {
+  .post-meta {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content auto;
+  }
 }
 .post-meta a {
   color: hsl(var(--fg));
@@ -492,14 +538,33 @@ p {
 .post-meta a:focus, .post-meta a:hover {
   color: hsl(var(--interactive));
 }
-.post-meta td {
-  padding-inline-end: 1rem;
+
+.post-meta-key {
+  font-weight: 700;
+}
+
+.post-meta-value {
+  font-family: var(--mono);
+  margin-block-end: 0.5em;
+  margin-inline-start: 0;
+}
+@media (min-width: 600px) {
+  .post-meta-value {
+    font-weight: 300;
+    margin-block-end: 0;
+  }
 }
 
 .post-title {
-  font-size: var(--u8);
+  font-size: var(--u6);
   line-height: 0.9;
-  margin-block-end: 1rem;
+  margin-block-end: 1em;
+}
+@media (min-width: 600px) {
+  .post-title {
+    font-size: var(--u8);
+    margin-block-end: 0.25em;
+  }
 }
 
 /* highlight.js */
@@ -511,6 +576,12 @@ p {
   margin-inline-end: auto;
   margin-inline-start: auto;
   max-width: 50em;
-  padding-inline-end: 2rem;
-  padding-inline-start: 2rem;
+  padding-inline-end: 1.5rem;
+  padding-inline-start: 1.5rem;
+}
+@media (min-width: 600px) {
+  .wrapper {
+    padding-inline-end: 2rem;
+    padding-inline-start: 2rem;
+  }
 }

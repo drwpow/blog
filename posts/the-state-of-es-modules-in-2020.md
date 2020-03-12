@@ -6,12 +6,12 @@ published_date: 2020-03-08 12:00:00 +0000
 tags:
   - dev
 data:
-  updated_date: 2020-03-09 12:00:00 +0000
+  updated_date: 2020-03-10 12:00:00 +0000
 ---
 
 It’s 2020—March to be exact—ES Modules (ESM) are now supported in both [browsers][esm-browser] and
-[Node.js][esm-node]. In the world of JS Development, this news is a prolific milestone. But if
-that’s the case, why aren’t more people talking about it?
+[Node.js][esm-node]. It’s a rather prolific change to JavaScript. So why aren’t more people talking
+about it?
 
 JavaScript going from no module system to _any_ module system is pretty big deal, because modules
 affect _nearly everything_ about how you write code. Remember that as recently as 2016 we were still
