@@ -6,16 +6,10 @@
     {% include 'meta.liquid' %}
   </head>
   <body>
-    <div>
-      <div class="wrapper">
-        <header>
-          {% include 'header.liquid' %}
-        </header>
-        <main role="main" class="page page__{{ page.collection }}">
-          {{ page.content }}
-        </main>
-        {% include 'footer.liquid' %}
-      </div>
-    </div>
+    {%- include 'header.liquid' -%}
+    <main role="main" class="page page__{{ page.collection }}">
+      {{ page.content }}
+    </main>
+    {%- include 'footer.liquid' -%}
   </body>
 </html>

@@ -1,49 +1,66 @@
 ---
-title: the 3 pillars of front-end knowledge
+title: the great(er) divide in front-end
 published_date: 2020-02-17 12:00:00 +0000
-description: The world of front-end is vast, so where does one start? And where does mastery end?
+description:
+  My initial reaction to Chris Coyier’s <em>The Great Divide</em> post almost a year ago was to
+  reject it. To be blunt, I saw it as someone who made their career on CSS attacking the good work
+  that JavaScript folks had been doing because it threatened his career (I say that as someone
+  respects Chris immensely, but people are allowed to be wrong in blog posts).
 slug: 3-pillars-of-front-end-knowledge
 tags:
   - dev
 data:
-  updated_date: 2020-02-17 12:00:00 +0000
+  updated_date: 2020-04-19 12:00:00 +0000
 ---
 
-It’s been a little over a year since Chris Coyier’s post [_The Great Divide_][css-gd] came out, the
-first blog post I remember reading that drew a line in the sand between two distinct camps (armies?)
-of front-end developers. Which I guess are, like, at war with each other, or something:
+It’s been about a year since Chris Coyier’s post [_The Great Divide_][css-gd] came out. The
+“divide,” of course, being between 2 armies within front-end development that had been forming:
 
 > On one side, an army of developers whose interests, responsibilities, and skill sets are heavily
 > revolved around JavaScript. On the other, an army of developers whose interests, responsibilities,
 > and skill sets are focused on other areas of the front end, like HTML, CSS, design, interaction,
 > patterns, accessibility, etc.
 
-In that year following the post, more of us have begin to see these spheres of expertise pulling
-apart, whether this post opened our eyes, or we witnessed the same patterns Chris did.
+If you‘re unfamiliar with what he’s talking about, I’d read that post, but a quick-and-dirty history
+of front-end is that it’s a profession that was once a league of ex-designers muddling their way
+through code, that’s recently transformed into a proper programming discipline (with some design
+skills remaining a part of the job requirement).
 
-**But what if the divide was actually made up?** What if, instead of a divide, we just collectively
-admitted that front-end development is bigger, and more complicated than we originally thought? If
-we recognized that doing JavaScript _well_ was harder than anticipated, and that it took smart
-cookies with Computer Science (CS) degrees a couple decades to push the ecosystem closer to where it
-needed to be?
+My initial reaction to this was to reject it—not that the divide wasn‘t happening, but the idea that
+these should be 2 different professions. To be blunt, I saw it as someone who made their career on
+CSS attacking the good work that JavaScript folks had been doing because it threatened his career (I
+say that as someone respects Chris immensely, but people are allowed to be wrong in blog posts). I
+even wrote an earlier draft of this post arguing that there’s no divide; that’s just how front-end
+_is_ now. Get used to it. _Git gud_.
 
-This post is an appeal to view it all as one, core knowledge, and one core role (albeit big as
-hell). Maybe it’s harder to attain true mastery than we originally thought. But isn’t that what
-makes it deep, and exciting, and satisfying to try?
+I now don’t see it that way, and I think Chris (rightly) was just pointing out a concern that he had
+about this divide forming.
 
-I started thinking about this subject again recently when a backend developer reached out to me,
-wanting to learn about modern front-end dev (they hadn’t really kept up for the past, oh, 6 years or
-so). In listing out all the things they could learn, I noticed **three** (not two) major groupings
-started forming. In my mind this not only lays a groundwork for possible starting points, but
-distinct axes of mastery to pursue the more you commit to front-end.
+As a result, I began to recognize my own limitations. I saw myself as someone that was good at both
+CSS and JS. But if I’m being honest, I’m not _that_ good at CSS; I just am good _enough_ at design
+where it seems like I am. I’m also not _that_ good at JS, as someone without a Computer Science
+background, I am not the master architect that well-educated CS students tend to be (to be clear—I’m
+strongly in the “you don’t need a degree to be a dev” camp as a member myself, but there is
+nonetheless a value in a CS education that I do not possess).
 
-So here are the three pillars to front-end development, not in any particular order, that your
-journey should cross into at some point:
+In short, the past couple months have been me coming to terms with not being able to do it all. And
+do it all well.
 
-## 👨‍🎨 Pillar 1: Browser APIs & Rendering (HTML/CSS)
+But all that musing aside, the core content of this blog post hasn’t changed, because it was drafted
+from notes I wrote to a coworker wanting to learn more about front-end, and as I was ennumerating
+all there is to learn today I noticed the knowledge started to pool into 3 rough areas of expertise,
+which I still stand by. _Will these become 3 different jobs eventually?_ I don’t know. The older I
+get the less I’m sure of. But I do know that each of these groups are substantial learning efforts
+each their own, and I do now think it’s impossible to master all three of them.
 
-The pillar of Browser APIs & Rendering revolves around two central questions: **On the web, how do I
-make things look like things?** and **How does a browser work to help me accomplish this?**
+Treat this like a DnD skill tree or something—up to you to spread points evenly or be a glass cannon
+in one.
+
+## 👨‍🎨 I. Browser APIs & Rendering (HTML/CSS)
+
+The area of expertise of Browser APIs & Rendering revolves around two central questions: **On the
+web, how do I make things look like things?** and **How does a browser work to help me accomplish
+this?**
 
 At beginner levels, browser rendering involves understanding the fundamentals of HTML & CSS to get
 code to look like a design. At intermediate levels, this gets into animations, render profiling, and
@@ -89,26 +106,26 @@ knowledge in this area:
 | Comprehensive Browser API Knowledge² | _I understand more invisible APIs like [WebGL][webgl-api], [Paint][paint-api], and the [DOM][dom] and understand how they differ or can work in sync to render parts of a page_     |
 | Browser processes                    | _I understand the [Browser, Renderer, and GPU processes][browser-processes] that lie underneath the higher-level APIs_                                                              |
 
-_² related to Pillar 2 / ³ related to Pillar 3_
+_² related to II / ³ related to II_
 
 You may find that much of the “CSS Dev” from the _Great Divide_ post fits in here, with the addition
 of JavaScript like `fetch` and `history`, and the omission of CSS frameworks like [SMACSS][smacss].
 So already we’re breaking up that division! As for CSS framework knowledge, that fits more neatly
 in…
 
-## 👩‍🔬 Pillar 2: JS Programming & Architecture
+## 👩‍🔬 II. JS Programming & Architecture
 
-The pillar of JavaScript & Architecture is the recent development of front-end into a more formal,
-proper software environment from web dev’s _laissez-faire_ “just throw that code anywhere”
+The knowledge of JavaScript & Architecture is the recent development of front-end into a more
+formal, proper software environment from web dev’s _laissez-faire_ “just throw that code anywhere”
 beginnings. This roughly correlates with the JavaScript-oriented type in Chris’ post somewhat, and
-is closer to the comfort sphere of a traditional Computer Science education. Whereas Pillar 1 trends
-toward static display, Pillar 2 adds dynamism, automation, and interaction. You could even call this
+is closer to the comfort sphere of a traditional Computer Science education. Whereas Camp 1 trends
+toward static display, Camp 2 adds dynamism, automation, and interaction. You could even call this
 “the backend of front-end.”
 
-This pillar is concerned with **How should this application be interacted with?** and **How should
-code for the front-end be organized for delivery and team maintainability?** The pursuit of these 2
-questions, together, have led to many milestones such as that React thing you’ve heard so much about
-(along with Node.js, which we’ll cover more in the last pillar).
+This area of knowledge is concerned with **How should this application be interacted with?** and
+**How should code for the front-end be organized for delivery and team maintainability?** The
+pursuit of these 2 questions, together, have led to many milestones such as that React thing you’ve
+heard so much about (along with Node.js, which we’ll cover more in the last section).
 
 Though JavaScript is one of the most popular programming ecosystems, it’s still developing. And for
 that reason I don’t feel comfortable dividing intermediate- and master-level topics. Everyone’s
@@ -138,42 +155,37 @@ In your rebuttal of this blog post, please be gentle with this section ;)
 | Type System                 | _I understand JavaScript’s type system and [coercion][coercion], and know how best to leverage it (and potentially possess TypeScript knowledge)_                                                               |
 | Testing                     | _I ensure all JavaScript is tested, whether with [unit / E2E][jest] tests, [headless browser tests][puppeteer], or [VRT][vrt]_                                                                                  |
 | Advanced network knowledge¹ | _I have comprehensive strategies for consuming API data and feel comfortable using client like [Apollo][apollo] or rolling my own._                                                                             |
-| DOM manipulation¹           | _I understand JavaScript’s role in DOM manipulation, and strategies for managing this such as [React][react] (related to Pillar 1)_                                                                             |
+| DOM manipulation¹           | _I understand JavaScript’s role in DOM manipulation, and strategies for managing this such as [React][react] (related to Camp 1)_                                                                               |
 | WebAssembly                 | _I understand how JavaScript interops with [WebAssembly][wasm] and know when to leverage it_                                                                                                                    |
 
-_¹ related to Pillar 1 / ³ related to Pillar 3_
+_¹ related to I / ³ related to III_
 
 In JavaScript’s strange, strange development, something very weird happened that few could have
 predicted: _JavaScript turned into a backend language with Node.js._ This not only changed how we
-_prepared_ JavaScript for the browser (Pillar 1); it also changed how we wrote it (Pillar 2).
+_prepared_ JavaScript for the browser (Camp 1); it also changed how we wrote it (Camp 2).
 
 Let’s be clear: _Node.js is a backend language._ In this post we’re not talking about the backend,
 but we can’t deny that Node.js has changed the front-end ecosystem forever with advanced tooling to
-npm. And this knowledge makes up the final pillar.
+npm. And this knowledge makes up the final area.
 
-## 👷‍♀️ Pillar 3: The Toolchain (Node.js, npm, Babel, bundlers)
+## 👷‍♀️ III: The Toolchain (Node.js, npm, Babel, bundlers)
 
-The final pillar—The Toolchain—concerns itself with the “meta” parts of front-end development. Its
-concern is: **Can the way we develop web applications be improved?** and it’s given rise to [module
-systems][esm], [package managers][npm], [transpilers][babel], [bundlers][webpack], and even [new
-languages][jsx].
+The final area of expertise is one you won’t see outlined often, if at all, as separate from JS
+(II). It likely got lumped in with the “JS devs” in _The Great Divide_ post. Though it seems like a
+part of JS, the toolchain is more “meta”, and its concern more aligns with: **Can the way we develop
+web applications be improved?** and it’s given rise to [module systems][esm], [package
+managers][npm], [transpilers][babel], [bundlers][webpack], and even [new languages][jsx].
 
-While this pillar is the slipperiest to understand, because by its very nature it questions the
-ontology of front-end development, it’s also the most powerful because it has the ability to
-transform how we work. For beginners that have started their front-end journey fairly recently, all
-the kooky toolchains probably comprise the bulk of their learning curve. And for many, they won’t
-truly develop a deep understanding of this until they’ve worked in at least several different
-environments and contexts. Once they do, intermediates that understand the lay of the land can
-deftly rig up any development pipeline to fulfill a need. Toolchain masters shape the direction and
-the future of the common tools we all use.
+So while web dev today is largely JS, thus explaining the confusion between II and III, perhaps it
+won’t be for long with things like [WebAssembly][wasm] on the rise. And you can contribute to the
+toolchain without being a JS dev whatsoever (for example, though Babel is central to JS dev these
+days, Babel plugins themselves apply generic principles of [AST][ast]s that apply to any language,
+and nothing about it is uniquely JS other than the syntax used to write it).
 
-### Beginner
-
-| Skill           | Example                                                                                          |
-| :-------------- | :----------------------------------------------------------------------------------------------- |
-| Boilerplates    | _I can operate Boilerplates such as [Vue CLI][vue-cli] to create apps in my preferred ecosystem_ |
-| Basic npm       | _I can add/remove/update npm libraries for use in my front-end app_                              |
-| Basic ecosystem | _I understand how to examine npm package contents and load the correct library build I need_     |
+This area of knowledge is also hard to outline because by its nature it questions the ontology of
+front-end development. But it’s also the most powerful because it has the ability to transform how
+we work. And as it also requires at least an intermediate understanding of _some_ programming
+language (even if not JS), the “Beginner” section was omitted entirely here.
 
 ### Intermediate
 
@@ -195,39 +207,44 @@ the future of the common tools we all use.
 | CI²                     | _I create automated pipelines for deploying npm packages as well as shipping optimized bundles to production_ |
 | Ecosystem understanding | _I understand how to deploy npm packages for Node.js, web browsers, and CLI tools, and how to target each_    |
 
-_¹ related to Pillar 1 / ² related to Pillar 2_
+_¹ related to I / ² related to II_
 
 Usually when complaints arise about the state of front-end development, whether that’s how much it’s
 changed, or if it’s too complicated, usually JavaScript gets the blame when really it’s the
 toolchain. Of course, this is confusing, since JavaScript is both the engine that runs the toolchain
 (Node.js) and the input/output of the toolchain itself (browser JS).
 
-This is also the pillar that’s undergone the biggest changes of front-end development, and it won’t
-be settling any time soon. Still, now’s the perfect time to jump in and contribute _because_ all
-these things aren’t settled yet.
+This is also the area of expertise that’s undergone the biggest changes of front-end development,
+and it won’t be settling any time soon. Still, now’s the perfect time to jump in and contribute
+_because_ all these things aren’t settled yet.
 
 ## A final note on mastery
 
-Hopefully you noticed the superscript ¹s, ²s, and ³s linking skills in one pillar to another.
-Hopefully, too, you started to get confused about where the barriers lay between the pillars, and
-what kept them as distinct. And, hopefully, you realized that all this knowledge feeds into itself,
-and any one pillar is incomplete, and can’t support a standing structure without the others.
+Recently, a coworker used the term “Platypus” to refer to an engineering problem which is difficult
+to classify (obviously based off an animal that lays eggs, is aquatic, has fur, and poison), and I
+love that. He didn’t remember the origin (and I Googling it only gave me the results you might
+expect), so I apologize for not being able to source this (if you know where this originates from
+please contact me).
 
-Mastery itself is a slippery thing. I’m reminded of Matt Might’s post, [_The illustrated guide to a
-Ph.D._][phd] To merely reach the limits of human knowledge is not enough; we’re all pushing to try
-and make that little “dent” in the shape of what’s possible. And with that act, we leave behind a
-bigger world to explore for the next generation.
+In a similar vein, you probably you noticed the superscript ¹s, ²s, and ³s linking skills in one
+area to another. This is a natural failing of any taxonomic system to be perfect. While there’s
+always overlap, there’s still enough net value to drawing lines that it’s worth doing.
 
-While this post was meant to paint a more unified, comprehensive view of front-end development, it’s
-not meant to guilt you into figuring all this stuff out on your own. That’s impossible. You won’t
-master everything, but even theoretically if you could, it would only last for a short time until
-someone came along and changed what’s possible with their dent.
+Mastery of any of these areas is a slippery thing, too. I’m reminded of Matt Might’s post, [_The
+illustrated guide to a Ph.D._][phd] To merely reach the limits of human knowledge is not enough;
+we’re all pushing to try and make that little “dent” in the shape of what’s possible. And with that
+act, we leave behind a bigger world to explore for the next generation.
 
-So above all else, **be kind to yourself,** and pursue mastery only to the extent it’s rewarding for
-you and others around you. And while it’s OK to know different things than everyone else, for the
-love of God, don’t create more “us vs them” rhetoric.
+Even theoretically if you could master something, it would only last for a short time until someone
+came along and changed what’s possible with their dent. And I can’t say this enough: **the internet
+is a fledgeling industry**. We’re still figuring everything out.
+
+Above all else, **be kind to yourself,** and pursue mastery only to the extent it’s rewarding for
+you and others around you. And if you do write an “us vs them” post, write it with the intent of
+unifying, not dividing. God knows we have too much division going on as it is.
 
 [apollo]: https://www.apollographql.com/
+[ast]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
 [babel]: https://babeljs.io/
 [babel-plugin]:
   https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/plugin-handbook.md

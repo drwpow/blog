@@ -1,0 +1,23 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  &::before {
+    display: inline-block;
+    width: 0.375em;
+    height: 0.375em;
+    margin-right: 0.5em;
+    background: currentColor;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &--dev {
+    color: var(--green);
+  }
+
+  &--design {
+    color: var(--fuschia);
+  }
+}

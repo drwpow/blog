@@ -1,0 +1,53 @@
+.postPreview {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 4rem 0;
+  color: var(--fg);
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(6, 1fr);
+    margin: 6rem 0;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &-meta {
+    font-size: var(--d1);
+    font-family: var(--heading);
+
+    @media (min-width: 600px) {
+      text-align: right;
+    }
+  }
+
+  &-summary {
+    line-height: 1.75;
+
+    @media (min-width: 600px) {
+      grid-column: span 4;
+    }
+  }
+
+  &-simlink {
+    display: flex;
+    align-self: end;
+    justify-content: flex-end;
+    font-weight: 600;
+    font-family: var(--heading);
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: var(--u2);
+
+    @media (min-width: 600px) {
+      grid-column: span 5;
+    }
+  }
+}

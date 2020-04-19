@@ -1,101 +1,124 @@
 ---
 slug: the-state-of-es-modules-in-2020
-title: the state of ES Modules in 2020
-description: The biggest change to JavaScript in years is a shockingly-quiet revolution
+title: |
+  JavaScript's greatest revolution was too quiet
+description:
+  <strong>In 2019, a revolution happened in JS.</strong> You may have missed it. All major browsers
+  and Node.js added native support for ES Modules (ESM)—no Babel, transpiling, preprocessing, or
+  trickery needed.
 published_date: 2020-03-08 12:00:00 +0000
 tags:
   - dev
 data:
-  updated_date: 2020-03-10 12:00:00 +0000
+  updated_date: 2020-04-19 12:00:00 +0000
 ---
 
-It’s 2020—March to be exact—ES Modules (ESM) are now supported in both [browsers][esm-browser] and
-[Node.js][esm-node]. It’s a rather prolific change to JavaScript. So why aren’t more people talking
-about it?
+**In 2019, a revolution happened in JS.** You may have missed it. All [major browsers][esm-browser]
+and [Node.js][esm-node] added native support for ES Modules (ESM)—no Babel, transpiling,
+preprocessing, or trickery needed.
 
-JavaScript going from no module system to _any_ module system is pretty big deal, because modules
-affect _nearly everything_ about how you write code. Remember that as recently as 2016 we were still
-[discussing CommonJS, AMD, UMD, and ESM alongside each other][js-modules]. Going from no module
-system to one is enough, but fragmenting between **three** before landing on a common **fourth** has
-given us all whiplash. But now that the dust is settling, why aren’t we all sold on ESM?
+If you’ve written JavaScript in the time before React & webpack, you remember how much of a mess it
+was without `import` or `require()`. You had to be intimately familiar with `this` and lexical
+scoping, otherwise it’d come back to bite you. Vendor scripts weren’t a thing, unless they were
+completely isolated from the rest of your JS (and God help you if it there was a bug, and it
+wasn’t). Put plainly, global JS was a nightmare to write software for. Much of JavaScript’s bad rep
+in the programming world came from that time. And it was partly justified—JavaScript lacked many
+things a mature programming language did, chiefly of all, a module system.
 
-## modules affect everything
+That changed in 2019, when the ESM proposal became a reality, not something that only lived in the
+make-believe world of webpack & Babel. JavaScript _finally_ got the thing everyone had been asking
+for.
 
-To expand a bit more on why module systems affect so much, let’s take an example of code in CommonJS
-and see what it takes to upgrade to ESM:
+So why didn’t more people notice?
 
-```js
-if (process.env.NODE_ENV === 'development') {
-  require('./dev-tools');
-}
-```
+## the land of make-believe
 
-Here, CommonJS has let us conditionally load or not load a module. But if we try and switch to ESM:
+In preparing [for a talk I gave][pika-web] last year, I realized just how much JS has changed over
+the last decade. Node.js was released in 2010 with the CommonJS module system, and as a result, npm.
+That’s over 10 years of CommonJS we’ve been writing, and we’re not slowing down there (if this is
+all mumbo-jumbo to you, hopefully [my talk][pika-web] will help).
 
-```js
-if (process.env.NODE_ENV === 'development') {
-  import './dev-tools'; // SyntaxError: import declarations may only appear at top level of a module
-}
-```
+In the land of Node, we got Gulp, Grunt, Babel, webpack, Browserify, and Rollup. These are all tools
+that fundamentally changed how we wrote JS. And they all, in their own unique ways, compensated for
+JS’ lack of a module system. Gulp and Grunt gave you more tools to invent your own bundle, whereas
+Browserify and webpack embraced the idea of a JS module system by completely simulating it, and
+abstracting it away from you. Babel made everything possible.
 
-Uh oh. ESM demands all synchronous imports are in the top-level scope. So it’s not a 1:1 change. We
-_could_, however, replace that with an async import:
+But the point is: all of these tools over the past 10 years created a land of make-believe that JS
+itself (or browsers) didn’t support. This wasn’t a bad thing, as it let us code more, faster, and we
+got to stress-test the future before actually arriving—all good things.
 
-```js
-if (process.env.NODE_ENV === 'development') {
-  import('./dev-tools'); // this works…
-}
+But now we don’t need it anymore, and it’s hard to change everything and start over again. And
+perhaps that fear of starting over—again—has kept us from recognizing the exciting new future. Yet
+we must move forward.
 
-// … but now code that follows won’t wait for this module to be loaded because it’s async
-```
+## why switch to ESM
 
-However this fundamentally changes how our program works. Whereas `require()` was synchronous, and
-any code that followed was blocked until that module finished loading, `import()` will do no such
-thing—it’s a promise that must be handled separately. So now you’ll have to rewrite the rest of this
-module to account for that.
+So, why switch to ESM? What do we stand to gain by changing everything?
 
-Again, this just goes to show that changing a module system isn’t simple—if it was, then they
-probably wouldn’t be two systems to begin with! **Changing the module system is one of the biggest
-changes you can make in a language** because everything about application development changes with
-it—the modules themselves, logic within, and dependency chains.
+### universal
 
-## Why switch to ESM
+Universal JS means the same JavaScript works in a browser and the server. Remember that Node.js is
+truly a different language from clientside JS, but with ESM that would no longer need to be the
+case.
 
-A common barrier to ESM is the sheer amount of CommonJS there is—virtually the entire NodeJS
-ecosystem is still stick in CommonJS. But switching to ESM yields several benefits:
+### remote imports
 
-- ESM is universal, meaning the same JavaScript works in a browser & the server
-- Remote module imports—you can load JavaScript [using a CDN][pika-cdn]! 🎉
-- No bundling needed
-- No transpilation needed (except for legacy browser support feature-by-feature)
-- [Better caching][esm-caching] over traditional bundling
+This is _huge_. We can import any module from anywhere on the internet, and **are no longer bound to
+npm.** Consider [Deno][deno], a new V8/Rust/Tokio runtime that might replace Node.js. This is a line
+from the [docs][deno-docs]:
 
-## ESM is the future!
+> **Comparison to Node.js**<br/> Deno does not use `npm`
 
-So if module systems affect everything, down from the code we write to the JS-powered toolchains we
-rely on, why do we continue to write new code that we all know now has an expiration date on it? In
-case you’re not sure whether or not you’re writing ESM-ready code, if you‘re using any of the
-following, you’re likely not:
+This single, understated line is a huge shift. How can you just… _move away_ from the most popular
+package repository in history? With ESM, it’s possible 🎉
+
+### no bundling or transpilation needed
+
+Imagine a world where you don’t need to run any CLI command whatsoever to start a front-end
+application. No runtime, webpack, build times… _nothing_.
+
+To learn more about this, check out _[A future without webpack][pika-webpack]_.
+
+### near-perfect caching
+
+Thanks to the “remote imports” story above, in addition to being freed from npm, there’s another
+benefit: _near-perfect caching._ In the webpack world before ESM, you always had to make trade-offs:
+rolling everything into one giant bundle meant no load times after initializing, but that initial
+download is brutal. Conversely, “code splitting” into tiny chunks made each chunk
+easily-downloadable but code is almost certainly duplicated across those chunks and a user will be
+paying for the same weight over and over again (🤔 not entirely unlike buying a home with cash or
+paying it off over 30 years, now that I think about it).
+
+With ESM, the entire dependency tree is exposed to the browser, so the browser can perfectly cache
+what it needs, and nothing more. Of course, _cache invalidation_ is a separate problem that will be
+with us until the end of time. But that aside, ESM truly is the perfect caching story for JS.
+
+## making the switch
+
+So let’s say you’re sold on ESM… how do you make the leap? Well, it may be your tools that are to
+blame:
 
 - **React:** doesn’t ship an ESM-ready package (as of [Mar 2020][esm-react])
 - **npm:** `< 8%` of npm packages [ship ESM][esm-npm] (as of [Oct 2019][esm-npm])
 - **Node.js:** though it supports ESM, it’s not in a stable LTS release yet (as of [Nov
   2019][esm-node])
-- **webpack**: can’t ship your code as ESM (as of Mar 2020)
+- **webpack**: can’t ship your code as ESM, nor can it take advantage of ESM features like remote
+  imports.
 
 By choosing these tools even in new projects, you’re shipping legacy code that already has a limited
-lifespan. Be sure you understand the tradeoffs you’re making when doing so.
+lifespan. But some of that isn’t within your control, sure—maybe your company, or client demands
+these. Or you just can’t accomplish what you need to with alternatives; that’s understandable.
 
-## How to make a difference
-
-There are lots of new and exciting projects that are leading the way toward shipping more ESM-ready
-code to the web:
+But there are also some new, exciting projects on the horizon that are shaping up to replace
+now-legacy CommonJS tools:
 
 ### Snowpack
 
-[Snowpack][snowpack] (a play on ”no pack”) is an install tool that lets you ship ESM-ready code
-straight to the browser, without sacrificing npm. You can `npm install` like normal, and lets you
-use Preact, Vue, Svelte, and more but with **zero build time** and **no configuration.**
+[Snowpack][snowpack] (a play on ”no pack”) is an install tool (disclosure: that I’m one of the [lead
+contributers for][snowpack-contrib]) that lets you ship ESM-ready code straight to the browser
+**and** use npm. You can `npm install` like normal, and lets you use Preact, Vue, Svelte, and more
+but with **zero build time** and **no configuration.**
 
 [snowpack.dev][snowpack]
 
@@ -122,14 +145,14 @@ tooling, less configuration, and other great benefits while helping the communit
 around ESM.
 
 [deno]: https://deno.land/
+[deno-docs]: https://deno.land/std/manual.md#introduction
 [esm-browser]: https://caniuse.com/#feat=es6-module
-[esm-caching]: https://dev.to/pika/a-future-without-webpack-ago
 [esm-node]:
   https://medium.com/@nodejs/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663
 [esm-npm]: https://www.pika.dev/about/stats
 [esm-react]: https://github.com/facebook/react/issues/11503
-[esm-spec]: https://www.ecma-international.org/ecma-262/6.0/#sec-modules
-[js-modules]: https://auth0.com/blog/javascript-module-systems-showdown/
-[pika-cdn]: https://www.pika.dev/cdn
 [pika-registry]: https://www.pika.dev/registry
+[pika-webpack]: https://dev.to/pika/a-future-without-webpack-ago
 [snowpack]: https://www.snowpack.dev/
+[snowpack-contrib]: https://github.com/pikapkg/snowpack/graphs/contributors
+[pika-web]: https://www.youtube.com/watch?v=Sn2e62CZ41g

@@ -1,24 +1,16 @@
-<nav class="nav">
-  <ol class="nav-list">
-    <li>
-      <a href="/">
-        <h1 class="nav-title">
-          <img class="nav-logo" src="/assets/images/drew-monogram-black.png" width="512" height="512" alt="Drew Powers" />
-          <div class="nav-blog">blog</div>
-        </h1>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/">All</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/tag/design">design</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/tag/dev">dev</a>
-    </li>
-    <li class="nav-page">
-      <a class="nav-link" href="/about">About</a>
-    </li>
-  </ol>
-</nav>
+<script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
+
+<header class="header">
+  <a class="header-logo" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.3 226.8"><path d="M0 181.1h60.6v45.7H0zM66.2 159.1h21.6c27 0 48.3-7.1 64-21.2s23.5-33.7 23.5-58.8c0-24.8-7.8-44.2-23.5-58.2C136.1 7 114.8 0 87.8 0H0v159.1h66.2zm39.7-59.3c-5.4 4.8-12.4 7.1-21.1 7.1H60.3V52.2h24.6c8.6 0 15.7 2.4 21.1 7.1s8.1 11.4 8.1 20.1c-.1 8.8-2.8 15.6-8.2 20.4z"/></svg>
+  </a>
+  <p class="header-desc">the personal blog of Drew Powers</p>
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-item"><a class="header-link" href="/">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--design" href="/tag/design/">design</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/tag/dev/">dev</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
+    </ul>
+  </nav>
+</header>

@@ -2,19 +2,29 @@
 //  Base
 // ----------
 
-@use "./root";
-@use "./fonts";
-@use "./base";
-@use "./theme";
+@use "root";
+@use "fonts";
+@use "base";
+@use "vendor";
+@use "theme";
 
 // -----------
 //  Components
 // -----------
 
-@use "./components/footer";
-@use "./components/nav";
-@use "./components/page";
-@use "./components/photo";
-@use "./components/post-preview";
-@use "./components/post";
-@use "./components/wrapper";
+@use "components/footer";
+@use "components/header";
+@use "components/icon";
+@use "components/page";
+@use "components/photo";
+@use "components/post-preview";
+@use "components/post";
+@use "components/tag";
+@use "components/toggle";
+@use "components/wrapper";
+
+// ----------
+// Utils
+// ----------
+
+@use "utils";

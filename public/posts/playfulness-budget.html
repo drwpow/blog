@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>playfulness budget</title>
+    <title>4 tips for setting a playfulness budget</title>
     <link rel="stylesheet" href="/assets/app.min.css" />
 
     
     <meta charset="utf-8">
-<meta name="description" content="Finding that sweet spot of delight and whimsy in application design" />
+<meta name="description" content="All of us can recall being frustrated by a website or app, as well as inspired and entertained. Sometimes those feelings can happen with the same app, either at different points in the experience or perhaps we were in a different state of mind. Application design always walks a tightrope between utility and whimsy. An app must use familiar patterns to be usable, but if <em>nothing</em> new is introduced it will be a forgettable experience. But while <em>some</em> novelty is required, if <em>everything</em> reinvents the wheel you’ve created a frustrating experience that users are lost in. How do you find a balance?" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
 <meta name="theme-color" content="#000" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,110 +17,153 @@
 <link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
 
   </head>
-  <body>
-    <div class="wrapper">
-      <nav class="nav">
-  <ol class="nav-list">
-    <li>
-      <a href="/">
-        <h1 class="nav-title">
-          <img class="nav-logo" src="/assets/images/drew-monogram-black.png" width="512" height="512" alt="Drew Powers" />
-          <div class="nav-blog">blog</div>
-        </h1>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/">All</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/tag/design">design</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/tag/dev">dev</a>
-    </li>
-    <li class="nav-page">
-      <a class="nav-link" href="/about">About</a>
-    </li>
-  </ol>
-</nav>
+  <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
 
-
+<header class="header">
+  <a class="header-logo" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.3 226.8"><path d="M0 181.1h60.6v45.7H0zM66.2 159.1h21.6c27 0 48.3-7.1 64-21.2s23.5-33.7 23.5-58.8c0-24.8-7.8-44.2-23.5-58.2C136.1 7 114.8 0 87.8 0H0v159.1h66.2zm39.7-59.3c-5.4 4.8-12.4 7.1-21.1 7.1H60.3V52.2h24.6c8.6 0 15.7 2.4 21.1 7.1s8.1 11.4 8.1 20.1c-.1 8.8-2.8 15.6-8.2 20.4z"/></svg>
+  </a>
+  <p class="header-desc">the personal blog of Drew Powers</p>
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-item"><a class="header-link" href="/">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--design" href="/tag/design/">design</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/tag/dev/">dev</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="wrapper">
       <header class="post-header">
-        <h1 class="post-title">playfulness budget</h1>
-        <p class="post-description">Finding that sweet spot of delight and whimsy in application design</p>
+        <div class="post-animation"><style>
+:root {
+  --sin-out: cubic-bezier(0, 0.5, 0.5, 1);
+  --sin-in: cubic-bezier(0.5, 0, 1, 0.5);
+}
+
+.dots {
+  display: flex;
+  justify-content: space-between;
+  width: 76px;
+  margin: 4rem auto;
+}
+
+.dot {
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #f00;
+}
+.dot:nth-child(1) {animation-duration: 1s; animation-delay: 0.2s; }
+.dot:nth-child(2) {animation-duration: 1.1s;}
+.dot:nth-child(3) {animation-duration: 1.3s;}
+.dot:nth-child(4) {animation-duration: 1.4s;animation-delay: 0.1s;}
+.dot:nth-child(5) {animation-duration: 1.5s;animation-delay: 0.3s;}
+.dot:nth-child(6) {animation-duration: 1.6s;}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  92%,
+  100% { transform: translateY(0); }
+  40% {transform: translateY(-600%);}
+  70% {transform: translateY(-280%);}
+  90% {transform: translateY(-50%);}
+  95% {transform: translateY(-25%);}
+  40%,
+  49%,
+  70%,
+  79%,
+  90%,
+  91%,
+  96% { animation-timing-function: var(--sin-in); }
+  0%,
+  39%,
+  50%,
+  69%,
+  80%,
+  89%,
+  93%,
+  94% { animation-timing-function: var(--sin-out); }
+}
+</style>
+
+<div class="dots">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+</div>
+        <h1 class="post-title mb1r">4 tips for setting a playfulness budget</h1>
         <dl class="post-meta">
-          <dt class="post-meta-key">published</dt><dd class="post-meta-value">2019-11-06</dd>
-          
-          <dt class="post-meta-key">updated</dt><dd class="post-meta-value">2019-03-09</dd>
-          
-          <dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a href="/tag/design">design</a></dd>
+          <dt class="post-meta-key">published</dt>
+          <dd class="post-meta-value"><time datetime="2019-11-06 12:00:00 +0000"> 6 Nov 2019</time></dd><dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="2019-04-19 12:00:00 +0000">19 Apr 2019</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--design" href="/tag/design">design</a></dd>
         </dl>
       </header>
 
-      <main role="main" class="post-body post-body__playfulness-budget">
-        <p><em>Homo Ludens</em> is a notable work of literature by Dutch philospher Henry Van Friedrick. In it he
-argues:</p>
-<blockquote>
-<p>Play is essential for the building of culture and intellect.</p>
-</blockquote>
-<p>“Play—” that sudden urge you have to jump in that puddle and ruin your shoes. That spark of humor
-when you imagine your toaster complaining at you for never cleaning all the crumbs out. When you see
-an empty street and decide to run just because “who says I shouldn’t be allowed to run in normal
-clothes without a reason?” The sense of play is something we crave on a regular basis—some more than
-others—but can be seen as <em>verboten</em> in application design.</p>
-<p>There’s some reasonable cause for this feeling—application design does seek to be boring and
-predictable. For this reason I feel it’s hard for print and advertising designers to cross over into
-UI, and vice-versa. A magazine cover seeks to disrupt the space around it and draw your eye—either
-with boldness in a sea of consistency, or starkness in a sea of boldness—the separation from the
-pack is what drives the design. A user interface seeks to be predictable and usable without a
-manual, allowing a user to accomplish a complicated task with friendly buttons and maybe an input or
-two.</p>
-<p>But where do we draw the line? When does “predictable” and “usable” cross over into sucking the life
-out of an interface?</p>
-<h2>4 ways to spend playfulness points</h2>
-<p>I typically envision some imaginary bank or budget of playfulness that I draw from. I only have a
-few “points” to spend to disrupt a user’s expectations in an application before they get frustrated.
-How, and when? Here are 5 tips to spending your few points wisely.</p>
-<h3>1. spend playfulness points during slow tasks</h3>
-<p>Every user, when using your application, will be in varying states of panic. Typically, the type of
-application will lean one way or another.</p>
+      <main role="main" class="post-body mt4 post-body__playfulness-budget">
+        <p>All of us can recall being frustrated by a website or app, as well as inspired and entertained.
+Sometimes both happen in the same app, either at different points in the journey, or if we revisit
+in a a different state of mind. Application design walks a tightrope between utility and whimsy. An
+app must use <strong>usable,</strong> drawing from familiar patterns. But if <em>everything</em> is copy-and-pasted from
+elsewhere the experience will be forgettable. However, if <em>everything</em> reinvents the wheel you’ve
+created a frustrating experience that users are lost in (fine for an experiential art exhibit;
+terrible for an app). How do you find a balance?</p>
+<p>I’ve always imagined this problem as having an imaginary bank or budget of “playfulness points” to
+draw from. If you don’t spend any points, the experience at best ends up flat and dull; at worst
+being a waste of users’ time. But going deep into debt trying to be <em>too</em> whimsical and novel (a
+tendency that both novice and ego-driven designers have) is worse as it’s practically unusable. I’ve
+tried to distill things I’ve learned over the years into 4 tips to spend that “budget” wisely.</p>
+<h2>1. spend playfulness points during slow tasks</h2>
+<p>Every user when using your application will be in varying states of panic.</p>
 <p>Booking a hotel, tickets for a show, or flight? These can feel <strong>rushed</strong>, sometimes intentionally,
 and even feature anxiety-inducing timers, <em>BOOK NOW!</em> calls to action, and the impending sense that
 someone will snag this before you do (<em>23 people have looked at this Airbnb in the last hour</em>).</p>
-<p>This is <strong>not a good time to test the user’s patience with playfulness.</strong> But in times when they’re
-not rushed or panicked, make their day a little better!</p>
+<p>This is <strong>not a good time to test the user’s patience with playfulness.</strong></p>
+<p>However, based on the task, state of mind, and precise point in the process a user finds themself,
+there can be opportunities to slow down and deliver something unexpected.</p>
 <figure>
   <img src="/assets/images/playfulness-budget/pizza-tracker.jpg" alt="Domino’s Pizza Tracker" />
   <figcaption>The Domino’s Pizza Tracker: probably my favorite example of a playful time-passer</figcaption>
 </figure>
-<p>What better way to kill a 30-minute wait for a pizza to arrive than stare at a pizza tracker? Or say
-a user is shopping for beds—the opposite of stressful—and you came up with a cheeky “bounce
-simulator” that compares mattresses’ bounciness with a fun, interactive animation. These are all
-wonderful opportunities to turn a slow experience where a user has time to spare into a memorable
-interaction.</p>
-<h3>2. spend playfulness points during frustrating tasks</h3>
+<p>The Domino’s Pizza Tracker is a legendary UX experience that gets everything right. It’s a fun,
+animated tool that appends <em>at the end of a user’s task</em>, almost like the after-credits scenes in a
+Marvel movie where it’s optional to stick around. What better way to kill a 30-minute wait for a
+pizza to arrive than stare at the pizza tracker’s wfun themes, creative animations, voice acting,
+and music?</p>
+<p>Now imagine what that experience would be like while you’re trying to <em>order</em> the pizza, with kids
+screaming and no time to spare. One experience is a lot of fun; the other, not so much. And context
+is the only difference.</p>
+<h2>2. spend playfulness points during frustrating tasks</h2>
 <figure>
   <video autoplay="true" controls muted loop playsinline width="1376" height="600">
     <source src="/assets/images/playfulness-budget/little-known-goods-carousel.mp4" type="video/mp4" />
   </video>
   <figcaption>Little Known Goods Carousel animation</figcaption>
 </figure>
-<p>For a recent <a href="https://littleknowngoods.com">ecommerce site I built</a>, I wanted to address 2 pain points that are the bane of
-my online shopping experience: image carousels and zoom views.</p>
-<p>For some reason, I just find most sites that have these to be buggy, unexpected, and frustrating.
-Hoping I wasn’t alone, I decided to introduce a little unpredictability for a little bit of whimsy.</p>
-<p>Using the metaphor of a map, I created a carousel that folds and unfolds as you click through it,
-animating smoothly between the stops. For the zoom view, on desktop I made the hover interaction
-reveal the zoomed-in view without clicking. Quick to navigate, quick to dismiss. And on smaller
-devices when you find yourself pinch—zooming anyway, I simply made the image itself high-res, and
-disabled the zoom so users can use the natural zoom on their device (I personally find the simulated
-zoom, like Twitter’s mobile site, to be buggy, and I always have images flying off into space or
-re-centering wildly, which I don’t understand because zooming in on static images works just great).</p>
-<p>Perhaps I got a little too anecdotal here, but the main point is: if there’s an interaction that is
-typically laden with frustration (date-picking availability, calendars, actually just dates and
-times in general are hard…), it may be a good opportunity to turn a bad expectation into an
-unexpected joy by making it playful.</p>
-<h3>3. spend playfulness points on first impressions</h3>
+<p>2 pain points that are the bane of my online shopping experience: image carousels and zoom views
+(usually which are baked into the same component). I find it unwieldy on particular devices—usually
+it‘s built with largely mobile or desktop in mind at the expense of the other. Further, the actions
+aren’t always clear, with hover, click, and manual zoom yielding wildly different outcomes depending
+on the site you’re on.</p>
+<p>For a recent <a href="https://littleknowngoods.com">ecommerce site I built</a>, I wanted to break the paradigm people were used to with
+carousels so they put no prior expectations on it (save for the arrow keys). Using the metaphor of a
+folding roadmap, I created a carousel that animates folding and unfolding as you click through the
+slides. For the zoom view, hover reveals a larger image, while on mobile the zoom is disabled and
+users intuitively pinch-zoom to enhance (with all positioning JS disabled so your image doesn’t fly
+off into space while pinch-zooming).</p>
+<p>While you can be the judge on how well I did, the intent was to deliver a component that people
+hadn’t seen before—a 3D, folded carousel—in order to not have expectations be placed upon it. And in
+injecting a bit of whimsy, hopefully it saves most visitors from a bad carousel experience by
+turning it on its head and making it playful.</p>
+<h2>3. spend playfulness points on first impressions</h2>
 <figure>
   <video autoplay="true" controls muted loop playsinline width="1375" height="600">
     <source src="/assets/images/playfulness-budget/playdate.mp4" type="video/mp4" />
@@ -138,7 +181,7 @@ they figure out where it is they need to go.</p>
 to the hero graphic, where a bad animation would be hiding the top menu and animating in items
 one-by-one so the user has to wait painfully to even start their task. But assuming you executed the
 former, setting an impression for playfulness right off the bat can pay dividends later.</p>
-<h3>4. spend playfulness points during successes</h3>
+<h2>4. spend playfulness points during successes</h2>
 <p>Errors are frustrating. Messages like <code>Oops! Something went wrong!</code> can be flippant and tone-deaf,
 especially when it resulted in data loss. Believe it or not, that was an actual error message I
 encountered that left me unable to pay a bill! <em>Oops!?</em> More like “Oops! I accidentally cancelled
@@ -147,30 +190,68 @@ your horrible service!”</p>
 celebrated! 🎉 Did a user finish sending an email? Add a fun illustration and some congratulatory
 copy on that succes page! Has a user reached a certain milestone in your app (miles walked,
 achievement reached, numbers hit)? Add a cool badge to their profile.</p>
-<p>Studies have shown that unexpected rewards result in the most positively-perceived experiences. So
-let’s try and help the humans that use our application feel appreciated because they’re worth it.</p>
-<h2>how will you spend yours?</h2>
-<p>An application’s primary purpose is to help a user accomplish a task, and help them accomplish it as
-quickly and effortlessly as possible. But that can be a little too robotic.</p>
-<p>As we’re reminded by <em>Homo Ludens</em>, when we’re dealing with people, sometimes <em>too much</em> efficiency
-can be boring and detrimental to the squishy humans you’re guiding. Sometimes the straightest roads
-can have us feeling sleepy behind the wheel a bit. Sometimes the little detours, the fun little dips
-and curves, <em>make</em> the journey memorable.</p>
+<p>Unexpected rewards may result in the most positively-perceived experiences. So let’s try and help
+the humans that use our application feel appreciated because they’re worth it.</p>
+<h2>so how big is my “playfulness budget?”</h2>
+<p>The natural question after reading all this is—”how much can I spend?” “How far is too far?” You
+probably saw this coming: <strong>it depends</strong>.</p>
+<p>Just like our personal relationships, sometimes a loved one reaching out to talk can be a
+life-saver; other times a burden because you just really don’t have the time right now. In app
+design, “moments of delight” can either be a joy or a nightmare depending on the mindset of the
+user, the “panic level” they’re feeling, and what you’re offering them.</p>
+<p>When we’re dealing with people, <em>too much</em> efficiency can be boring and detrimental to the squishy
+humans you’re guiding. Sometimes the straightest roads can have us feeling sleepy behind the wheel a
+bit. Sometimes the little detours, the fun little dips and curves, <em>make</em> the journey memorable.</p>
 
       </main>
-
-      <footer class="footer">
-  © MMXX
-  <br />
-  <a href="/rss.xml">RSS</a> / <a href="/feed.json">JSON</a>
-  <br />
-  this website is encrypted and 100% analytics-free&nbsp;🖤 if you want to support this blog,
-  tweet or share&nbsp;a&nbsp;link!
-  <br />
-  built with <a href="https://cobalt-org.github.io/" rel="noopener noreferrer" target="_blank">Cobalt</a>
-  (<a href="https://github.com/dangodev/blog" rel="noopener noreferrer" target="_blank">source</a>)
-</footer>
-
     </div>
+
+    <div class="wrapper">
+  <footer class="footer">
+    <a class="footer-link" href="/rss.xml">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      RSS
+    </a>
+    /
+    <a class="footer-link" href="/feed.json">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      JSON
+    </a>
+    /
+    <a class="footer-link" href="https://github.com/dangodev/blog">
+      <svg class="icon mr1r" aria-label="github" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M16 23c-.6 0-1-.4-1-1v-3.9c0-.4 0-.7-.1-1.1-.1-.3-.3-.6-.5-.8-.3-.3-.4-.7-.2-1 .2-.3.5-.6.8-.7 2.9-.3 5.6-1.3 5.6-6 0-1.1-.4-2.2-1.2-3.1-.3-.3-.3-.7-.2-1 .3-.8.3-1.6.1-2.4-.5.1-1.3.4-2.6 1.3-.2.2-.5.2-.8.1-2.1-.6-4.4-.6-6.5 0-.4.1-.7.1-1-.1-1.2-.8-2.1-1.1-2.6-1.2-.2.7-.2 1.6.1 2.3.1.4.1.8-.2 1-.8.9-1.2 2-1.2 3.2 0 4.7 2.7 5.7 5.6 6 .4 0 .7.3.8.7.1.4 0 .8-.2 1-.2.2-.4.5-.5.8-.2.3-.2.7-.2 1V22c0 .6-.4 1-1 1s-1-.4-1-1v-1.7c-3 .5-4.3-1.2-5.2-2.3-.4-.5-.7-.9-1.1-1-.5-.1-.9-.7-.7-1.2.1-.5.7-.9 1.2-.7 1 .3 1.6 1 2.2 1.7.8 1.1 1.5 1.9 3.6 1.5v-.1c0-.5 0-1.2.3-1.7v-.1c-2.8-.6-5.8-2.4-5.8-7.7 0-1.5.5-2.9 1.4-4-.4-1.4-.3-2.8.3-4.1.1-.3.3-.5.6-.6.4 0 1.7-.2 4.4 1.4 2.2-.5 4.5-.5 6.6 0 2.6-1.7 4-1.5 4.4-1.4.3.1.5.3.6.6.5 1.3.6 2.6.3 3.9.9 1.1 1.4 2.5 1.4 4 0 5.7-3.4 7.2-5.8 7.8v.1c.3.6.3 1.2.3 1.8V22c0 .6-.4 1-1 1z"/></g><defs><clipPath id="clip0"><path d="M0 0h24v24H0V0z"/></clipPath></defs></svg>
+      GitHub
+    </a>
+    <br />
+    this website is encrypted and 100% analytics-free.<br />
+    if you’d like to support this blog, tweet or share&nbsp;a&nbsp;link!
+
+    <div class="footer-theme">
+      <div class="toggle">
+        <input class="toggle-input" id="theme-switcher" type="checkbox" value="dark-mode" />
+        <label class="toggle-label" for="theme-switcher">dark theme</label>
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById('theme-switcher');
+      if (localStorage.getItem('theme') === 'dark') toggle.checked = true;
+      function darkTheme(dark) {
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        document.body.classList.add('theme--' + (dark ? 'dark' : 'light'));
+        document.body.classList.add('theme-transition');
+        setTimeout(function() { document.body.classList.remove('theme-transition') }, 500);
+      }
+      toggle.addEventListener('change', function(evt) {
+        document.body.classList.remove('theme--dark');
+        document.body.classList.remove('theme--light');
+        darkTheme(evt.target.checked === true);
+      });
+    </script>
+  </footer>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>
 </html>

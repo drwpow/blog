@@ -1,54 +1,24 @@
 ---
-title: media queries are (still) a hack
+title: media queries are (still) a hack
 slug: media-queries-are-still-a-hack
-description: Revisiting Ian Storm Taylor’s thoughts 7 years later
+description:
+  After 15 years of working with CSS, media queries still don’t do enough for me to create
+  responsive designs. To express my frustrations, I had written about half of a blog post under the
+  title <em>Media Queries are a Hack</em> before I discovered that title had been taken. In
+  <strong>2013</strong>. Clearly I’m not as original as I think I am.
 published_date: 2020-01-18 12:00:00 +0000
 tags:
   - dev
 ---
 
-## preface
-
-It’s now been over 15 years of me working with CSS, and I’d had a longstanding itch to write down my
-grievances about how media queries were insufficient for web and responsive design, even in 2019. It
-was going to be a thoughtpiece for the ages.
-
-I was going to start out with some great shared experience and get everyone going “yeah, mate! Been
-there! This guy really gets it.” Next, I would carefully craft a scenario to show how media queries
-are a hacky solution, rallying sympathizers to my plight by selling it on a practical level. To sell
-it on the intellectual level I was going to throw in some design bullshit about how media queries
-are antithetical to design component thinking. And to tie it all up, I’d wax poetic about a future
-where this problem doesn’t exist, going beyond the shortcomings of [container queries][cs] and even
-CSS Grid to dream of a solution.
-
-The title for such a blog post? I needed to really sell it. Something borderline-click-baity, while
-staying true to my opinions. Something with candor. I titled it: _Media Queries are a Hack_.
-
-Then [@zachleat][@zachleat] made this tweet:
-
-> I’m trying to find the earliest mention of Element Queries or Container Queries (or this idea in
-> practice, if not name).
->
-> In the lead right now is @joecritch’s very early work in March 2013
-> [https://github.com/joecritch/container-queries](https://github.com/joecritch/container-queries)
-> (via @innovati).
->
-> Does anyone have evidence of earlier work?
->
-> @zachleat 12:50 PM · Dec 10, 2019 https://twitter.com/zachleat/status/1204488622386417665?s=20
-
-And in that tweet thread, it mentioned Ian Storm Taylor’s blog post titled—you guessed it—[_Media
-Queries are a Hack_][ist].
-
-Written in **2013.**
-
-I am not as original as I think I am. But all things considered, I’m glad I procrastinated on
-finishing my blog post because now I can produce something of more value by stealing all these other
-smart peoples’ ideas.
+After 15 years of working with CSS, media queries still don’t do enough for me to create responsive
+designs. To express my frustrations, I had written about half of a blog post under the title _Media
+Queries are a Hack_ before I discovered [that title had been taken][ist]. In **2013**. Clearly I’m
+not as original as I think I am.
 
 ## media queries are (still) a hack
 
-Ian summarizes the major failing of media queries:
+Ian Storm Taylor, the author of that post, summarizes the major failing of media queries:
 
 > I want **write-once, use-anywhere**—that’s what modular code is.
 >

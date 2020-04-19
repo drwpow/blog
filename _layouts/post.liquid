@@ -7,26 +7,36 @@
     {% include 'meta.liquid' %}
   </head>
   <body>
-    <div class="wrapper">
-      {% include 'header.liquid' %}
+    {%- include 'header.liquid' -%}
 
+    <div class="wrapper">
       <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-description">{{ page.description }}</p>
+        <div class="post-animation">
+          {%- if page.slug == 'the-state-of-es-modules-in-2020' -%}{%- include 'animations/waves.liquid' -%}{%- endif -%}
+          {%- if page.slug == '3-pillars-of-front-end-knowledge' -%}{%- include 'animations/3-rings.liquid' -%}{%- endif -%}
+          {%- if page.slug == 'media-queries-are-still-a-hack' -%}{%- include 'animations/windows.liquid' -%}{%- endif -%}
+          {%- if page.slug == 'playfulness-budget' -%}{%- include 'animations/bounce.liquid' -%}{%- endif -%}
+        </div>
+        <h1 class="post-title mb1r">{{ page.title }}</h1>
         <dl class="post-meta">
-          <dt class="post-meta-key">published</dt><dd class="post-meta-value">{{ page.published_date | date: "%Y-%m-%d" }}</dd>
-          {% if page.data.updated_date %}
-          <dt class="post-meta-key">updated</dt><dd class="post-meta-value">{{ page.data.updated_date | date: "%Y-%m-%d" }}</dd>
-          {% endif %}
-          <dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a href="/tag/{{ page.tags | first }}">{{ page.tags | first }}</a></dd>
+          <dt class="post-meta-key">published</dt>
+          <dd class="post-meta-value"><time datetime="{{ page.published_date }}">{{ page.published_date | date: "%e %b %Y" }}</time></dd>
+          {%- if page.data.updated_date -%}
+            <dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="{{ page.data.updated_date }}">{{ page.data.updated_date | date: "%e %b %Y" }}</time></dd>
+          {%- endif -%}
+          <dt class="post-meta-key">tagged</dt><dd class="post-meta-value">
+            {%- for tag in page.tags -%}<a class="tag tag--{{ tag }}" href="/tag/{{ tag }}">{{ tag }}</a>{%- endfor -%}
+          </dd>
         </dl>
       </header>
 
-      <main role="main" class="post-body post-body__{{ page.slug }}">
+      <main role="main" class="post-body mt4 post-body__{{ page.slug }}">
         {{ page.content }}
       </main>
-
-      {% include 'footer.liquid' %}
     </div>
+
+    {% include 'footer.liquid' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>
 </html>

@@ -1,12 +1,16 @@
 .wrapper {
   margin-inline-end: auto;
   margin-inline-start: auto;
-  max-width: 50em;
+  max-width: 45em;
   padding-inline-end: 1.5rem;
   padding-inline-start: 1.5rem;
 
   @media (min-width: 600px) {
     padding-inline-end: 2rem;
     padding-inline-start: 2rem;
+  }
+
+  &--s {
+    max-width: 40rem;
   }
 }

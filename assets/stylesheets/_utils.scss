@@ -1,0 +1,52 @@
+// ---------------
+//  (T)ext (A)lign
+// ---------------
+
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+
+// ---------------------
+//  (M)argin & (P)adding
+// ---------------------
+
+$directions: 'b' 'bottom', 'l' 'left', 't' 'top', 'r' 'right';
+$max-size: 16;
+
+@each $abbr, $direction in $directions {
+  @for $i from 0 through $max-size {
+    .m#{$abbr}#{$i} {
+      margin-#{$direction}: #{$i/2}rem;
+    }
+  }
+}
+
+@each $abbr, $direction in $directions {
+  @for $i from 0 through $max-size {
+    .p#{$abbr}#{$i} {
+      padding-#{$direction}: #{$i/2}rem;
+    }
+  }
+}
+
+@each $abbr, $direction in $directions {
+  @for $i from 1 through $max-size {
+    .m#{$abbr}#{$i}r {
+      margin-#{$direction}: #{$i/4}em;
+    }
+  }
+}
+
+@each $abbr, $direction in $directions {
+  @for $i from 1 through $max-size {
+    .p#{$abbr}#{$i}r {
+      padding-#{$direction}: #{$i/4}em;
+    }
+  }
+}

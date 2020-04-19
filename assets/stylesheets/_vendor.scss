@@ -1,0 +1,24 @@
+// ----------
+//  PrismJS
+// ----------
+
+.language-js {
+  .comment {
+    opacity: 0.5;
+  }
+  .constant {
+    color: var(--green);
+  }
+  .keyword {
+    color: var(--green);
+  }
+  .operator {
+    color: #090;
+  }
+  .string {
+    color: #cfc;
+  }
+  .punctuation {
+    color: #088;
+  }
+}

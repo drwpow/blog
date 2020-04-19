@@ -1,0 +1,54 @@
+.post {
+  &-animation {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: 8rem;
+      left: 2rem;
+      width: 16rem;
+    }
+  }
+
+  &-body {
+    @media (min-width: 600px) {
+      font-size: var(--u1);
+    }
+  }
+
+  &-description {
+    max-width: 28em;
+    font-size: var(--u2);
+    font-style: italic;
+    line-height: 1.4;
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+
+  &-header {
+    box-sizing: border-box;
+  }
+
+  &-meta {
+    display: grid;
+    grid-gap: 0.5rem 1rem;
+    grid-template-columns: min-content auto;
+    align-items: center;
+
+    &-value {
+      margin: 0;
+    }
+  }
+
+  &-title {
+    margin-top: 0;
+  }
+}
+
+/* highlight.js */
+
+.hljs-comment {
+  opacity: 0.625;
+}
