@@ -1,4 +1,5 @@
 ---
+slug: 3-pillars-of-front-end-knowledge
 title: the great(er) divide in front-end
 published_date: 2020-02-17 12:00:00 +0000
 description:
@@ -6,7 +7,6 @@ description:
   reject it. To be blunt, I saw it as someone who made their career on CSS attacking the good work
   that JavaScript folks had been doing because it threatened his career (I say that as someone
   respects Chris immensely, but people are allowed to be wrong in blog posts).
-slug: 3-pillars-of-front-end-knowledge
 tags:
   - dev
 data:
@@ -24,7 +24,8 @@ It’s been about a year since Chris Coyier’s post [_The Great Divide_][css-gd
 If you‘re unfamiliar with what he’s talking about, I’d read that post, but a quick-and-dirty history
 of front-end is that it’s a profession that was once a league of ex-designers muddling their way
 through code, that’s recently transformed into a proper programming discipline (with some design
-skills remaining a part of the job requirement).
+skills remaining a part of the job requirement). Chris’ post is somewhat of a flag post marking that
+slow, subtle shift that had been happening in the profession for years.
 
 My initial reaction to this was to reject it—not that the divide wasn‘t happening, but the idea that
 these should be 2 different professions. To be blunt, I saw it as someone who made their career on

@@ -1,4 +1,5 @@
 ---
+slug: playfulness-budget
 title: 4 tips for setting a playfulness budget
 published_date: 2019-11-06 12:00:00 +0000
 description:
@@ -9,7 +10,6 @@ description:
   <em>nothing</em> new is introduced it will be a forgettable experience. But while <em>some</em>
   novelty is required, if <em>everything</em> reinvents the wheel you’ve created a frustrating
   experience that users are lost in. How do you find a balance?
-slug: playfulness-budget
 tags:
   - design
 data:
@@ -67,7 +67,7 @@ is the only difference.
   <figcaption>Little Known Goods Carousel animation</figcaption>
 </figure>
 
-2 pain points that are the bane of my online shopping experience: image carousels and zoom views
+Two pain points are the bane of my online shopping experience: image carousels and zoom views
 (usually which are baked into the same component). I find it unwieldy on particular devices—usually
 it‘s built with largely mobile or desktop in mind at the expense of the other. Further, the actions
 aren’t always clear, with hover, click, and manual zoom yielding wildly different outcomes depending

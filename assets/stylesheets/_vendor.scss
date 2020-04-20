@@ -2,6 +2,15 @@
 //  PrismJS
 // ----------
 
+.language-css {
+  .comment {
+    opacity: 0.5;
+  }
+  .selector {
+    color: var(--green);
+  }
+}
+
 .language-js {
   .comment {
     opacity: 0.5;

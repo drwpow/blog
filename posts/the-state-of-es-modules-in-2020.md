@@ -1,12 +1,11 @@
 ---
 slug: the-state-of-es-modules-in-2020
-title: |
-  JavaScript's greatest revolution was too quiet
+title: JavaScript's greatest revolution was too quiet
+published_date: 2020-03-08 12:00:00 +0000
 description:
   <strong>In 2019, a revolution happened in JS.</strong> You may have missed it. All major browsers
   and Node.js added native support for ES Modules (ESM)—no Babel, transpiling, preprocessing, or
   trickery needed.
-published_date: 2020-03-08 12:00:00 +0000
 tags:
   - dev
 data:
@@ -19,11 +18,10 @@ preprocessing, or trickery needed.
 
 If you’ve written JavaScript in the time before React & webpack, you remember how much of a mess it
 was without `import` or `require()`. You had to be intimately familiar with `this` and lexical
-scoping, otherwise it’d come back to bite you. Vendor scripts weren’t a thing, unless they were
-completely isolated from the rest of your JS (and God help you if it there was a bug, and it
-wasn’t). Put plainly, global JS was a nightmare to write software for. Much of JavaScript’s bad rep
-in the programming world came from that time. And it was partly justified—JavaScript lacked many
-things a mature programming language did, chiefly of all, a module system.
+scoping, otherwise it’d come back to bite you. All JS having global scope (even vendor scripts) was
+_hard_ to do well, which often meant you limited its reach. JavaScript was maligned in other
+programming communities for the things it lacked compared to more mature languages, chiefly of all,
+a module system.
 
 That changed in 2019, when the ESM proposal became a reality, not something that only lived in the
 make-believe world of webpack & Babel. JavaScript _finally_ got the thing everyone had been asking
@@ -58,9 +56,9 @@ So, why switch to ESM? What do we stand to gain by changing everything?
 
 ### universal
 
-Universal JS means the same JavaScript works in a browser and the server. Remember that Node.js is
-truly a different language from clientside JS, but with ESM that would no longer need to be the
-case.
+The same JavaScript you write for the browser, works in the server. While that was the _promise_ of
+Node.js, over time it’s shifted away from ECMAScript to become its own language. ESM would bring
+everything back under one roof again.
 
 ### remote imports
 
@@ -82,17 +80,18 @@ To learn more about this, check out _[A future without webpack][pika-webpack]_.
 
 ### near-perfect caching
 
-Thanks to the “remote imports” story above, in addition to being freed from npm, there’s another
-benefit: _near-perfect caching._ In the webpack world before ESM, you always had to make trade-offs:
-rolling everything into one giant bundle meant no load times after initializing, but that initial
-download is brutal. Conversely, “code splitting” into tiny chunks made each chunk
-easily-downloadable but code is almost certainly duplicated across those chunks and a user will be
-paying for the same weight over and over again (🤔 not entirely unlike buying a home with cash or
-paying it off over 30 years, now that I think about it).
+In the webpack world before ESM, you had to make trade-offs: rolling everything into one giant
+bundle meant no load times after initializing, but that initial download is brutal. Conversely,
+“code splitting” into tiny chunks made each chunk easily-downloadable but code is almost certainly
+duplicated across those chunks and a user will be paying for the same weight over and over again (🤔
+not entirely unlike buying a home with cash or paying it off over 30 years, now that I think about
+it).
 
 With ESM, the entire dependency tree is exposed to the browser, so the browser can perfectly cache
-what it needs, and nothing more. Of course, _cache invalidation_ is a separate problem that will be
-with us until the end of time. But that aside, ESM truly is the perfect caching story for JS.
+what it needs, and nothing more (imagine if you paid nothing on your home to start, zero interest
+ever, and you only paid for the parts of the home you used, as you used them). Of course, _cache
+invalidation_ is a separate problem that will be with us until the end of time. But that aside, ESM
+truly is the perfect caching story for JS.
 
 ## making the switch
 

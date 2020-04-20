@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>JavaScript's greatest revolution was too quiet
-</title>
+    <title>JavaScript's greatest revolution was too quiet</title>
     <link rel="stylesheet" href="/assets/app.min.css" />
 
     
@@ -16,6 +15,14 @@
 <link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
 <link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
 <link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@_drewpowers" />
+<meta name="twitter:creator" content="@_drewpowers" />
+<meta property="og:url" content="posts/the-state-of-es-modules-in-2020.html" />
+<meta property="og:title" content="JavaScript's greatest revolution was too quiet" />
+<meta property="og:description" content="<strong>In 2019, a revolution happened in JS.</strong> You may have missed it. All major browsers and Node.js added native support for ES Modules (ESM)—no Babel, transpiling, preprocessing, or trickery needed." />
+<meta property="og:image" content="https://blog.pow.rs/assets/images/drew-monogram-black.png" />
 
   </head>
   <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
@@ -39,9 +46,15 @@
         <div class="post-animation"><style>
 .waves {
   position: relative;
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 10rem;
   height: 10rem;
+}
+
+@media (min-width: 600px) {
+  .waves {
+    margin: 0 auto;
+  }
 }
 
 .wave {
@@ -90,8 +103,7 @@
   <div class="wave"></div>
 </div>
 </div>
-        <h1 class="post-title mb1r">JavaScript's greatest revolution was too quiet
-</h1>
+        <h1 class="post-title mb1r">JavaScript's greatest revolution was too quiet</h1>
         <dl class="post-meta">
           <dt class="post-meta-key">published</dt>
           <dd class="post-meta-value"><time datetime="2020-03-08 12:00:00 +0000"> 8 Mar 2020</time></dd><dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="2020-04-19 12:00:00 +0000">19 Apr 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/tag/dev">dev</a></dd>
@@ -104,11 +116,10 @@ and <a href="https://medium.com/@nodejs/announcing-core-node-js-support-for-ecma
 preprocessing, or trickery needed.</p>
 <p>If you’ve written JavaScript in the time before React &amp; webpack, you remember how much of a mess it
 was without <code>import</code> or <code>require()</code>. You had to be intimately familiar with <code>this</code> and lexical
-scoping, otherwise it’d come back to bite you. Vendor scripts weren’t a thing, unless they were
-completely isolated from the rest of your JS (and God help you if it there was a bug, and it
-wasn’t). Put plainly, global JS was a nightmare to write software for. Much of JavaScript’s bad rep
-in the programming world came from that time. And it was partly justified—JavaScript lacked many
-things a mature programming language did, chiefly of all, a module system.</p>
+scoping, otherwise it’d come back to bite you. All JS having global scope (even vendor scripts) was
+<em>hard</em> to do well, which often meant you limited its reach. JavaScript was maligned in other
+programming communities for the things it lacked compared to more mature languages, chiefly of all,
+a module system.</p>
 <p>That changed in 2019, when the ESM proposal became a reality, not something that only lived in the
 make-believe world of webpack &amp; Babel. JavaScript <em>finally</em> got the thing everyone had been asking
 for.</p>
@@ -132,9 +143,9 @@ we must move forward.</p>
 <h2>why switch to ESM</h2>
 <p>So, why switch to ESM? What do we stand to gain by changing everything?</p>
 <h3>universal</h3>
-<p>Universal JS means the same JavaScript works in a browser and the server. Remember that Node.js is
-truly a different language from clientside JS, but with ESM that would no longer need to be the
-case.</p>
+<p>The same JavaScript you write for the browser, works in the server. While that was the <em>promise</em> of
+Node.js, over time it’s shifted away from ECMAScript to become its own language. ESM would bring
+everything back under one roof again.</p>
 <h3>remote imports</h3>
 <p>This is <em>huge</em>. We can import any module from anywhere on the internet, and <strong>are no longer bound to
 npm.</strong> Consider <a href="https://deno.land/">Deno</a>, a new V8/Rust/Tokio runtime that might replace Node.js. This is a line
@@ -149,16 +160,17 @@ package repository in history? With ESM, it’s possible 🎉</p>
 application. No runtime, webpack, build times… <em>nothing</em>.</p>
 <p>To learn more about this, check out <em><a href="https://dev.to/pika/a-future-without-webpack-ago">A future without webpack</a></em>.</p>
 <h3>near-perfect caching</h3>
-<p>Thanks to the “remote imports” story above, in addition to being freed from npm, there’s another
-benefit: <em>near-perfect caching.</em> In the webpack world before ESM, you always had to make trade-offs:
-rolling everything into one giant bundle meant no load times after initializing, but that initial
-download is brutal. Conversely, “code splitting” into tiny chunks made each chunk
-easily-downloadable but code is almost certainly duplicated across those chunks and a user will be
-paying for the same weight over and over again (🤔 not entirely unlike buying a home with cash or
-paying it off over 30 years, now that I think about it).</p>
+<p>In the webpack world before ESM, you had to make trade-offs: rolling everything into one giant
+bundle meant no load times after initializing, but that initial download is brutal. Conversely,
+“code splitting” into tiny chunks made each chunk easily-downloadable but code is almost certainly
+duplicated across those chunks and a user will be paying for the same weight over and over again (🤔
+not entirely unlike buying a home with cash or paying it off over 30 years, now that I think about
+it).</p>
 <p>With ESM, the entire dependency tree is exposed to the browser, so the browser can perfectly cache
-what it needs, and nothing more. Of course, <em>cache invalidation</em> is a separate problem that will be
-with us until the end of time. But that aside, ESM truly is the perfect caching story for JS.</p>
+what it needs, and nothing more (imagine if you paid nothing on your home to start, zero interest
+ever, and you only paid for the parts of the home you used, as you used them). Of course, <em>cache
+invalidation</em> is a separate problem that will be with us until the end of time. But that aside, ESM
+truly is the perfect caching story for JS.</p>
 <h2>making the switch</h2>
 <p>So let’s say you’re sold on ESM… how do you make the leap? Well, it may be your tools that are to
 blame:</p>

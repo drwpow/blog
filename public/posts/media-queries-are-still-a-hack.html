@@ -16,6 +16,14 @@
 <link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
 <link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
 
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@_drewpowers" />
+<meta name="twitter:creator" content="@_drewpowers" />
+<meta property="og:url" content="posts/media-queries-are-still-a-hack.html" />
+<meta property="og:title" content="media queries are (still) a hack" />
+<meta property="og:description" content="After 15 years of working with CSS, media queries still don’t do enough for me to create responsive designs. To express my frustrations, I had written about half of a blog post under the title <em>Media Queries are a Hack</em> before I discovered that title had been taken. In <strong>2013</strong>. Clearly I’m not as original as I think I am." />
+<meta property="og:image" content="https://blog.pow.rs/assets/images/drew-monogram-black.png" />
+
   </head>
   <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
 
@@ -38,9 +46,13 @@
         <div class="post-animation"><style>
 .windows {
   position: relative;
-  margin: 0 auto;
+  margin: 4rem auto;
   width: 180px;
   height: 96px;
+}
+
+@media (min-width: 600px) {
+  margin: 0 auto;
 }
 
 .window {
@@ -88,7 +100,6 @@
 designs. To express my frustrations, I had written about half of a blog post under the title <em>Media
 Queries are a Hack</em> before I discovered <a href="https://ianstormtaylor.com/media-queries-are-a-hack/">that title had been taken</a>. In <strong>2013</strong>. Clearly I’m
 not as original as I think I am.</p>
-<h2>media queries are (still) a hack</h2>
 <p>Ian Storm Taylor, the author of that post, summarizes the major failing of media queries:</p>
 <blockquote>
 <p>I want <strong>write-once, use-anywhere</strong>—that’s what modular code is.</p>
@@ -141,7 +152,7 @@ Container Queries, don’t it?)</li>
 <li>🚫 It can’t be used on the component level like a Container Query could, so components can’t
 declare their own widths and breakpoints; their parents must.</li>
 <li>🚫 It doesn’t allow for columns of different widths. Neither can you tell items to responsively
-span multiple columns without media queries (and if we’re using media queries we‘re all the way
+span multiple columns without media queries (and if we’re using media queries we’re all the way
 back to where we started).</li>
 </ul>
 <h2>container queries.</h2>
@@ -159,11 +170,10 @@ are able prevent the perfect from becoming the enemy of the good.</p>
 principles</a>: “In case of conflict, consider users over authors over implementors over
 specifiers over theoretical purity.”</p>
 </blockquote>
-<p>In other words, in 2020, the best solution we have to media queries’ failings is, somewhat
-disappointingly, JavaScript. But not JavaScript for the sake of JavaScript; JavaScript for the sake
-of users.</p>
-<p>It’s been 7 years since Ian Storm Taylor published <em>Media Queries are a Hack</em>. To no one’s surprise,
-in 2020 they’re still a hack. And we’re still waiting on Container Queries.</p>
+<p>In other words, in 2020, <strong>the best solution we have to media queries’ failings is JavaScript.</strong></p>
+<p>But not JavaScript for the sake of JavaScript; JavaScript for the sake of users.</p>
+<p>It’s been 7 years since Ian Storm Taylor published <em>Media Queries are a Hack</em>. And unfortunately, in
+2020, they’re <em>still</em> a hack. And we’re still waiting on Container Queries.</p>
 <p>I may not have any original ideas on this subject, but at least we’re all on the same page.</p>
 <h2>more reading</h2>
 <ul>

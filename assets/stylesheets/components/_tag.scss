@@ -1,6 +1,8 @@
 .tag {
   display: inline-flex;
   align-items: center;
+  font-size: var(--d1);
+  font-family: var(--heading);
   text-decoration: none;
 
   &::before {

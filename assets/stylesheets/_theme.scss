@@ -18,5 +18,5 @@
 
 .theme-transition,
 .theme-transition * {
-  transition: all 500ms linear;
+  transition: background-color 500ms linear, color 500ms linear;
 }

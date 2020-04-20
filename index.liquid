@@ -6,14 +6,14 @@ description: The personal blog of Drew Powers
 <div class="wrapper" itemscope itemtype="https://schema.org/Blog">
   {%- for post in collections.posts.pages -%}
     <a class="postPreview" href="/{{ post.permalink }}" itemscope itemtype="http://schema.org/BlogPosting">
-      <div class="postPreview-meta">
+      <div class="postPreview-tag">
         {%- for tag in post.tags -%}
           <span class="tag tag--{{ tag }}">{{ tag }}</span>
         {%- endfor -%}
       </div>
       <h1 class="postPreview-title" itemprop="headline">{{ post.title }}</h1>
 
-      <div class="postPreview-meta"><time class="postPreview-date" datetime="{{ post.published_date }}" itemprop="datePublished">{{ post.published_date | date: "%e %b %Y" }}</time></div>
+      <time class="postPreview-date" datetime="{{ post.published_date }}" itemprop="datePublished">{{ post.published_date | date: "%e %b %Y" }}</time>
       <div class="postPreview-summary" itemprop="description">{{ post.description }}</div>
       <div class="postPreview-simlink">
         read

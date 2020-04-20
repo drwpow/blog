@@ -16,6 +16,22 @@
     @media (min-width: 600px) {
       font-size: var(--u1);
     }
+
+    ul li {
+      position: relative;
+      list-style: none;
+
+      &::before {
+        position: absolute;
+        top: 0.25em;
+        right: 100%;
+        margin-right: 0.75em;
+        font-size: var(--d2);
+        line-height: inherit;
+        content: '▶︎';
+        pointer-events: none;
+      }
+    }
   }
 
   &-description {
@@ -44,6 +60,21 @@
 
   &-title {
     margin-top: 0;
+  }
+
+  &-yt {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 

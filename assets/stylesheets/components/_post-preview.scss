@@ -16,11 +16,9 @@
     margin-top: 0;
   }
 
-  &-meta {
-    font-size: var(--d1);
-    font-family: var(--heading);
-
+  &-date {
     @media (min-width: 600px) {
+      margin-top: 0.25em;
       text-align: right;
     }
   }
@@ -30,6 +28,7 @@
 
     @media (min-width: 600px) {
       grid-column: span 4;
+      margin-top: -0.25rem;
     }
   }
 
@@ -39,6 +38,14 @@
     justify-content: flex-end;
     font-weight: 600;
     font-family: var(--heading);
+  }
+
+  &-tag {
+    align-self: center;
+
+    @media (min-width: 600px) {
+      text-align: right;
+    }
   }
 
   &-title {

@@ -1,12 +1,12 @@
 ---
-title: media queries are (still) a hack
 slug: media-queries-are-still-a-hack
+title: media queries are (still) a hack
+published_date: 2020-01-18 12:00:00 +0000
 description:
   After 15 years of working with CSS, media queries still don’t do enough for me to create
   responsive designs. To express my frustrations, I had written about half of a blog post under the
   title <em>Media Queries are a Hack</em> before I discovered that title had been taken. In
   <strong>2013</strong>. Clearly I’m not as original as I think I am.
-published_date: 2020-01-18 12:00:00 +0000
 tags:
   - dev
 ---
@@ -15,8 +15,6 @@ After 15 years of working with CSS, media queries still don’t do enough for me
 designs. To express my frustrations, I had written about half of a blog post under the title _Media
 Queries are a Hack_ before I discovered [that title had been taken][ist]. In **2013**. Clearly I’m
 not as original as I think I am.
-
-## media queries are (still) a hack
 
 Ian Storm Taylor, the author of that post, summarizes the major failing of media queries:
 
@@ -80,7 +78,7 @@ But despite being incredibly-useful, CSS Grid’s `repeat(auto-fit, minmax())` h
 - 🚫 It can’t be used on the component level like a Container Query could, so components can’t
   declare their own widths and breakpoints; their parents must.
 - 🚫 It doesn’t allow for columns of different widths. Neither can you tell items to responsively
-  span multiple columns without media queries (and if we’re using media queries we‘re all the way
+  span multiple columns without media queries (and if we’re using media queries we’re all the way
   back to where we started).
 
 ## container queries.
@@ -101,12 +99,12 @@ Components: A Solution to the Container Queries Problem_][pw]:
 > principles][w3c]: “In case of conflict, consider users over authors over implementors over
 > specifiers over theoretical purity.”
 
-In other words, in 2020, the best solution we have to media queries’ failings is, somewhat
-disappointingly, JavaScript. But not JavaScript for the sake of JavaScript; JavaScript for the sake
-of users.
+In other words, in 2020, **the best solution we have to media queries’ failings is JavaScript.**
 
-It’s been 7 years since Ian Storm Taylor published _Media Queries are a Hack_. To no one’s surprise,
-in 2020 they’re still a hack. And we’re still waiting on Container Queries.
+But not JavaScript for the sake of JavaScript; JavaScript for the sake of users.
+
+It’s been 7 years since Ian Storm Taylor published _Media Queries are a Hack_. And unfortunately, in
+2020, they’re _still_ a hack. And we’re still waiting on Container Queries.
 
 I may not have any original ideas on this subject, but at least we’re all on the same page.
 

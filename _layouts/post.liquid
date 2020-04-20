@@ -12,6 +12,7 @@
     <div class="wrapper">
       <header class="post-header">
         <div class="post-animation">
+          {%- if page.slug == 'was-html-a-mistake' -%}{%- include 'animations/cursor.liquid' -%}{%- endif -%}
           {%- if page.slug == 'the-state-of-es-modules-in-2020' -%}{%- include 'animations/waves.liquid' -%}{%- endif -%}
           {%- if page.slug == '3-pillars-of-front-end-knowledge' -%}{%- include 'animations/3-rings.liquid' -%}{%- endif -%}
           {%- if page.slug == 'media-queries-are-still-a-hack' -%}{%- include 'animations/windows.liquid' -%}{%- endif -%}
