@@ -9,7 +9,7 @@ description:
 tags:
   - dev
 data:
-  updated_date: 2020-04-19 12:00:00 +0000
+  updated_date: 2020-04-21 12:00:00 +0000
 ---
 
 **In 2019, a revolution happened in JS.** You may have missed it. All [major browsers][esm-browser]
@@ -54,7 +54,7 @@ we must move forward.
 
 So, why switch to ESM? What do we stand to gain by changing everything?
 
-### universal
+### universal JS
 
 The same JavaScript you write for the browser, works in the server. While that was the _promise_ of
 Node.js, over time it’s shifted away from ECMAScript to become its own language. ESM would bring
@@ -69,7 +69,9 @@ from the [docs][deno-docs]:
 > **Comparison to Node.js**<br/> Deno does not use `npm`
 
 This single, understated line is a huge shift. How can you just… _move away_ from the most popular
-package repository in history? With ESM, it’s possible 🎉
+package repository in history? Well thanks to ESM, you can load modules from any URL, whether that
+be locally, or a CDN. `npm install` is now no longer needed; the language itself supports
+cross-domain modules!
 
 ### no bundling or transpilation needed
 

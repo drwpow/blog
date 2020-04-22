@@ -106,7 +106,7 @@
         <h1 class="post-title mb1r">JavaScript's greatest revolution was too quiet</h1>
         <dl class="post-meta">
           <dt class="post-meta-key">published</dt>
-          <dd class="post-meta-value"><time datetime="2020-03-08 12:00:00 +0000"> 8 Mar 2020</time></dd><dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="2020-04-19 12:00:00 +0000">19 Apr 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/tag/dev">dev</a></dd>
+          <dd class="post-meta-value"><time datetime="2020-03-08 12:00:00 +0000"> 8 Mar 2020</time></dd><dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="2020-04-21 12:00:00 +0000">21 Apr 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/tag/dev">dev</a></dd>
         </dl>
       </header>
 
@@ -142,7 +142,7 @@ perhaps that fear of starting over—again—has kept us from recognizing the ex
 we must move forward.</p>
 <h2>why switch to ESM</h2>
 <p>So, why switch to ESM? What do we stand to gain by changing everything?</p>
-<h3>universal</h3>
+<h3>universal JS</h3>
 <p>The same JavaScript you write for the browser, works in the server. While that was the <em>promise</em> of
 Node.js, over time it’s shifted away from ECMAScript to become its own language. ESM would bring
 everything back under one roof again.</p>
@@ -154,7 +154,9 @@ from the <a href="https://deno.land/std/manual.md#introduction">docs</a>:</p>
 <p><strong>Comparison to Node.js</strong><br/> Deno does not use <code>npm</code></p>
 </blockquote>
 <p>This single, understated line is a huge shift. How can you just… <em>move away</em> from the most popular
-package repository in history? With ESM, it’s possible 🎉</p>
+package repository in history? Well thanks to ESM, you can load modules from any URL, whether that
+be locally, or a CDN. <code>npm install</code> is now no longer needed; the language itself supports
+cross-domain modules!</p>
 <h3>no bundling or transpilation needed</h3>
 <p>Imagine a world where you don’t need to run any CLI command whatsoever to start a front-end
 application. No runtime, webpack, build times… <em>nothing</em>.</p>
