@@ -19,7 +19,7 @@
     "stylelint-config-rational-order": "^0.1.2"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
+    "concurrently": "^5.2.0",
     "prettier": "^2.0.4",
     "stylelint": "^13.3.2",
     "stylelint-config-prettier": "^8.0.1",
