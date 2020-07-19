@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "cssnano": "^4.1.10",
-    "postcss-cli": "^7.1.0",
+    "postcss-cli": "^7.1.1",
     "postcss-preset-env": "^6.7.0",
-    "sass": "^1.26.3",
+    "sass": "^1.26.10",
     "stylelint-config-rational-order": "^0.1.2"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "prettier": "^2.0.4",
-    "stylelint": "^13.3.2",
-    "stylelint-config-prettier": "^8.0.1",
+    "concurrently": "^5.2.0",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0"
   }
 }

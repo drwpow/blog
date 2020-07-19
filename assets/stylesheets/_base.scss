@@ -107,6 +107,10 @@ svg {
   fill: currentColor;
 }
 
+strong {
+  font-weight: 600;
+}
+
 blockquote {
   margin: 0 -1.5rem;
   padding: 1.5rem 3rem;
@@ -191,4 +195,8 @@ figcaption {
   font-size: var(--d1);
   font-style: italic;
   line-height: 1.75;
+
+  em {
+    font-style: normal;
+  }
 }

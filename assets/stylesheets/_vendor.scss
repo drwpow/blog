@@ -31,3 +31,24 @@
     color: #088;
   }
 }
+
+.language-html,
+.language-jsx,
+.language-xml {
+  .attr-value {
+    color: #00f;
+  }
+
+  .comment {
+    opacity: 0.5;
+  }
+
+  .tag {
+    color: #f0f;
+    font: inherit;
+
+    &::before {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>responsive type scales: the correct way to handle font sizes in css</title>
+    <link rel="stylesheet" href="/assets/app.min.css" />
+
+    
+    <meta charset="utf-8">
+<meta name="description" content="There actually is an easy, quick way to configure font sizes, it works universally in both CSS and CSS-in-JS, and it’s even responsive. You’re just not using it." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
+<link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@_drewpowers" />
+<meta name="twitter:creator" content="@_drewpowers" />
+<meta property="og:url" content="posts/responsive-type-scales-in-css.html" />
+<meta property="og:title" content="responsive type scales: the correct way to handle font sizes in css" />
+<meta property="og:description" content="There actually is an easy, quick way to configure font sizes, it works universally in both CSS and CSS-in-JS, and it’s even responsive. You’re just not using it." />
+<meta property="og:image" content="https://blog.pow.rs/assets/images/drew-monogram-black.png" />
+
+  </head>
+  <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
+
+<header class="header">
+  <a class="header-logo" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.3 226.8"><path d="M0 181.1h60.6v45.7H0zM66.2 159.1h21.6c27 0 48.3-7.1 64-21.2s23.5-33.7 23.5-58.8c0-24.8-7.8-44.2-23.5-58.2C136.1 7 114.8 0 87.8 0H0v159.1h66.2zm39.7-59.3c-5.4 4.8-12.4 7.1-21.1 7.1H60.3V52.2h24.6c8.6 0 15.7 2.4 21.1 7.1s8.1 11.4 8.1 20.1c-.1 8.8-2.8 15.6-8.2 20.4z"/></svg>
+  </a>
+  <p class="header-desc">the personal blog of Drew Powers</p>
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-item"><a class="header-link" href="/">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--design" href="/tag/design/">design</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/tag/dev/">dev</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="wrapper">
+      <header class="post-header">
+        <div class="post-animation"></div>
+        <h1 class="post-title mb1r">responsive type scales: the correct way to handle font sizes in css</h1>
+        <dl class="post-meta">
+          <dt class="post-meta-key">published</dt>
+          <dd class="post-meta-value"><time datetime="2020-08-02 12:00:00 +0000"> 2 Aug 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/tag/dev">dev</a></dd>
+        </dl>
+      </header>
+
+      <main role="main" class="post-body mt4 post-body__responsive-type-scales-in-css">
+        <p>Are you making typography on the web harder on yourself than it needs to be? Probably. What if I
+told you I could give you a typographic scale that is:</p>
+<ul>
+<li><strong>Universal:</strong> works in CSS, Sass, and CSS-in-JS</li>
+<li><strong>Simple:</strong> easy to set up, quick to learn</li>
+<li><strong>Stylish:</strong> actually looks good (it follows typographic principles)</li>
+<li><strong>Automatically-responsive:</strong> makes responsive text sizes easier than you‘re used to</li>
+<li><strong>Adjustable</strong> you can actually tweak it to taste</li>
+</ul>
+<p>Would you not use it? Well good news, friends, it does exist! And it’s called <strong>Responsive Type
+Scales.</strong> And I don’t know for the life of me why it’s not the norm. Maybe it needs a more
+buzzworthy name. Maybe it needs a landing page (🤔 actually it probably does).</p>
+<p>This blog post will cover:</p>
+<ol>
+<li>Responsive Type Scales: the basics</li>
+<li>Responsive Type Scale: the theory</li>
+<li>tips / faqs</li>
+</ol>
+<p>“But is this for me?” You’ll ask. <strong>Yes. Yes, this is for you.</strong> If you type words and put them on
+the internet, you should use this. You can check the “FAQ” section at the end to learn how it works
+with special edge cases and such.</p>
+<h2>part 1: responsive type scales</h2>
+<h3>getting started</h3>
+<p>Typographic scales are a <a href="https://en.wikipedia.org/wiki/Goldilocks_principle">Goldilocks solution</a>
+to font sizes. We don’t want too many font sizes in our site, but we need just enough to have the
+design look good and have structural hierarchy. We need just the right amount.</p>
+<p>If you’ve ever used “shirt size” names like <code>font-s</code>, <code>font-m</code>, and <code>font-l</code> (small, medium, and
+large, respectively), you’ve likely run into the “too few” end of the spectrum (unless you resort to
+dumb names like <code>font-xxxxl</code>). But the real problem with this approach is this isn’t responsive
+(unless you resort to even dumber names like <code>class=&quot;font-xxxl font-lg-xxxxl&quot;</code>).</p>
+<p>A responsive type scale solves all of the above: <strong>gives you just the right amount</strong> (it’s
+configurable, so you can set the right number you need), and <strong>handles responsive font sizes
+elegantly</strong>.</p>
+<p>But before we get ahead of ourselves, you’re probably wondering “how does it look in action?” (or
+you just want to copy + paste something and then leave). Let’s dive into an example first to show it
+in practice, then we’ll step back to explain the principles and reasoning. To get started, copy some
+CSS classes into your styles (don’t worry; we’ll explain how we generated these numbers later):</p>
+<!-- prettier-ignore -->
+<pre><code class="language-css">/* fonts.css */
+/* (note: ignore the em values for now and only focus on the class names) */
+
+.font-u18 { font-size: 11.390625em }
+.font-u17 { font-size: 9.950627481136905em }
+.font-u16 { font-size: 8.692673779389363em }
+.font-u15 { font-size: 7.59375em }
+.font-u14 { font-size: 6.63375165409127em }
+.font-u13 { font-size: 5.795115852926242em }
+.font-u12 { font-size: 5.0625em }
+.font-u11 { font-size: 4.422501102727513em;}
+.font-u10 { font-size: 3.8634105686174953em }
+.font-u9  { font-size: 3.375em }
+.font-u8  { font-size: 2.9483340684850083em }
+.font-u7  { font-size: 2.575607045744997em }
+.font-u6  { font-size: 2.25em }
+.font-u5  { font-size: 1.9655560456566725em }
+.font-u4  { font-size: 1.7170713638299977em }
+.font-u3  { font-size: 1.5em }
+.font-u2  { font-size: 1.3103706971044482em }
+.font-u1  { font-size: 1.1447142425533319em }
+.font-d1  { font-size: 0.8735804647362989em }
+.font-d2  { font-size: 0.7631428283688879em }
+.font-d3  { font-size: 0.6666666666666666em }
+.font-d4  { font-size: 0.5823869764908659em }
+.font-d5  { font-size: 0.5087618855792586em }
+.font-d6  { font-size: 0.4444444444444444em }
+.font-d7  { font-size: 0.3882579843272439em }
+.font-d8  { font-size: 0.3391745903861724em }
+.font-d9  { font-size: 0.2962962962962963em }
+.font-d10 { font-size: 0.2588386562181626em }
+.font-d11 { font-size: 0.22611639359078162em }
+.font-d12 { font-size: 0.19753086419753085em }
+.font-d13 { font-size: 0.17255910414544176em }
+.font-d14 { font-size: 0.15074426239385438em }
+.font-d15 { font-size: 0.13168724279835392em }
+.font-d16 { font-size: 0.11503940276362785em }
+.font-d17 { font-size: 0.10049617492923625em }
+.font-d18 { font-size: 0.0877914951989026em }
+</code></pre>
+<p><em>Don’t want to use CSS classes? You could use
+<a href="https://github.com/drwpow/responsive-type-scale/blob/master/variables.css">CSS variables</a> or
+<a href="https://github.com/drwpow/responsive-type-scale/blob/master/index.js">JS values</a> or even Sass
+variables—it is universal after all and you can translate this into whatever works best</em></p>
+<p>Then just sprinkle the utilities in whenever you need it:</p>
+<pre><code class="language-html">&lt;h1 class=&quot;font-u6&quot;&gt;I’m an h1 so I’m 6 steps up from the base size&lt;/h1&gt;
+&lt;h2 class=&quot;font-u5&quot;&gt;
+  I’m an h2 so I’m slightly smaller than h1, but still 5 steps up from the base size
+&lt;/h2&gt;
+
+&lt;small class=&quot;font-d1&quot;&gt;I’m 1 step down from the base size&lt;/small&gt;
+</code></pre>
+<p>What if that <code>h1</code> tag needs to be a little bigger? No problem; bump it up one to <code>font-u7</code>. Or
+smaller: <code>font-u5</code>. They’re just numbers; you go up (<code>font-u*</code>) or down (<code>font-d*</code>) as you need to.</p>
+<h3>nesting</h3>
+<p>Since we’re dealing with <code>em</code>s, we can nest sizes. Say we had an <code>&lt;h1&gt;</code> tag we wanted to be big, but
+inside that we have a subheading we want to be the same size as the base font. How would we
+accomplish that? Easy:</p>
+<pre><code class="language-html">&lt;h1 class=&quot;font-u3&quot;&gt;
+  I’m 3 steps up from the base size
+  &lt;small class=&quot;font-d3&quot;&gt;I’m the same size as the base (3 - 3)&lt;/small&gt;
+&lt;/h1&gt;
+</code></pre>
+<p>By thinking in terms of moving “up” or “down” a scale, you’re starting to think in relationships,
+which is how type works. Typography is less about absolute sizes, and is more about how much bigger
+or smaller one size is to another (how one “relates” to another).</p>
+<p><em>But if this nests, won’t this be a pain to keep track of?</em> If you’re working in components, it’s
+probably smart to reset the font size back to <code>1rem</code> (root font size) so you don’t have to worry
+about it:</p>
+<pre><code class="language-css">.MyComponent {
+  font-size: 1rem; /* reset font size back to base */
+}
+</code></pre>
+<p>This will actually be an important principle for responsive sizes.</p>
+<h3>responsive sizes</h3>
+<p>Responsive font sizes can be a nightmare at scale. Fortunately, using this system, <strong>you only have
+to set a component’s base sizes for each breakpoint.</strong> But to add this, let’s copy the the same CSS
+values from above, but this time we’ll use CSS variables and swap out the <code>em</code>s for <code>rem</code>s:</p>
+<pre><code class="language-css">/* fonts.css (expanded from above) */
+
+:root {
+  --font-u18r: 11.390625rem; /* the “r” in “u18r” stands for “root” */
+  --font-u17r: 9.950627481136905rem;
+  --font-u16r: 8.692673779389363rem;
+  --font-u15r: 7.59375rem;
+  /* … (add the rest from above) */
+}
+</code></pre>
+<p>Then in your component styles, you only need to change the base size for its breakpoints:</p>
+<pre><code class="language-css">.MyComponent {
+  font-size: var(--font-d1r); /* small screens: 1 step down */
+}
+
+@media (min-width: 600px) {
+  .MyComponent {
+    font-size: 1rem; /* medium screens: base size */
+  }
+}
+
+@media (min-width: 1200px) {
+  .MyComponent {
+    font-size: var(--font-u1r); /* large screens: 1 step up */
+  }
+}
+
+@media (min-width: 1800px) {
+  .MyComponent {
+    font-size: var(--font-u2r); /* extra large screens: 2 steps up */
+  }
+}
+</code></pre>
+<p>You don’t have to do anything else! Because we’re using <code>em</code>s, our components all scaled while
+preserving their typographic relationships. However, for the base component size, we did use <code>rem</code>s
+instead of <code>em</code>s to blow away any nested styles we may have had to deal with otherwise
+(<a href="https://visly.app/blog/layout-isolated-components">following good principles of layout isolation</a>).</p>
+<h3>wrapping up</h3>
+<p>Congratulations! You’ve just learned the whole system. 🎉 You can either copy + paste the above code
+into your own codebase if you’d like to manage it yourself. Or you can use the
+<code>responsive-typography</code> npm package (<a href="https://www.npmjs.com/package/responsive-typography">npm</a> /
+<a href="https://github.com/drwpow/responsive-typography">GitHub</a>) for an even easier time:</p>
+<pre><code>npm install responsive-typography
+</code></pre>
+<p>But perhaps even after seeing how it works, you have some lingering “why” questions. Such as: <em>how
+big is a “step” in pixels?</em> or <em>what if I don’t like the scale above?</em> or <em>is this really simpler
+than other typographic libraries?</em> Read on to get a little more into why this approach can work for
+everyone.</p>
+<h2>part 2: why responsive type scales work</h2>
+<p><em>Note: this section is completely <strong>optional</strong> to read—you have everything you need to start using a
+responsive type scale already. Everything that follows is theory and extra information if you’d like
+to understand the concepts a bit deeper.</em></p>
+<h3>3 principles of a type scale</h3>
+<figure>
+  <img src="/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
+  <figcaption>The <em>Hypnerotomachia Poliphili</em> (try saying that 5 times fast) is a stunning Renaissance-era example of flawless typography. And like all printed material, it uses a typographic scale to achieve its beauty.</figcaption>
+</figure>
+<p>As we mentioned above, typographic scales solve the Goldilocks problem of font sizes: you need just
+enough to make the design feel complete, but not too many.</p>
+<p>Typographic scales are so effective because they’ve had time to mature. At over 600 years old,
+they’re as ancient as the printing press itself (they don’t look a day over 500 though). You’ve
+encountered typographic scales every time you’ve used a word processor like Google Docs. While
+you’ll find some slight variation from program to program, most typographic scales are identical
+save for a few numbers. And they have three guiding principles that are important to keep in mind:
+<strong>they scale exponentially</strong>, have <strong>numbered steps</strong>, and <strong>prioritize relative sizing over
+absolute</strong>.</p>
+<h4>principle 1: exponential scaling</h4>
+<p>The classic type scale you know from almost every word processor is:</p>
+<pre><code>6   7   8   9   10   11   12   14   16   18   21   24   30   36   48   60   72
+</code></pre>
+<p>Let’s look at the scale increase between the numbers:</p>
+<pre><code>6   7   8   9   10   11   12   14   16   18   21   24   30   36   48   60   72
+------------------------------------------------------------------------------
+  1   1   1   1    1    1    2    2    2    3    3    6    6    12   12   12
+</code></pre>
+<p>Notice how the numbers <strong>increase exponentially</strong> moving up the scale (it’s not a
+mathematically-perfect exponential equation, but it still exponentially increases at regular
+intervals):</p>
+<pre><code>                   |
+                +--+
+                |
+                |
+                |
+                |
+                |
+             +--+
+             |
+             |
+          +--+
+      +---+
+------+
+</code></pre>
+<p>The reason for this is that bigger font sizes require bigger increases for contrast. You can
+probably recognize the difference between <code>6px</code> and <code>7px</code> type because that’s a 16.6% increase in
+size. But you can’t tell the difference between <code>71px</code> and <code>72px</code> (1%). So <code>6 -&gt; 7</code> make sense as a
+typographic relationship, but not <code>71 -&gt; 72</code>.</p>
+<p>Any type scale we make has to scale exponentially as well.</p>
+<h4>principle 2: numbered steps</h4>
+<p>Given type scales’ exponential nature, it would follow that we treat them like exponents. For
+example, when we’re dealing with powers of 2, how do we express it? Not as <code>2, 4, 8, 16…</code> but as
+<code>2² 2³ 2⁴ …</code>. Let’s apply that thinking to the type scale: we’ll take the same scale, but number the
+steps themselves. And we’ll give the step itself a number (<code>step² step³ step⁴ …</code>):</p>
+<pre><code>6   7   8   9   10   11   12   14   16   18   21   24   30   36   48   60   72
+------------------------------------------------------------------------------
+1   2   3   4    5    6    7    8    9   10   11   12   13   14   15   16   17
+</code></pre>
+<p>Thinking in <strong>numbered steps</strong> lets you remove all the complexity of conditional logic. You don’t
+have to go “OK so I’m at <code>24px</code>, which means the next step up is <code>+6</code> but the next step down is
+<code>-3</code>.” You simply think in terms of being at a certain step and going up or down.</p>
+<p>In the end, your new scale is just a list of integers, which is much simpler to reason about (this
+is only the bottom row from above):</p>
+<pre><code>1   2   3   4    5    6    7    8    9   10   11   12   13   14   15   16   17
+</code></pre>
+<p>Another way to think about this idea is to treat it the same way you would a music scale. You don’t
+say “first I’ll play a <code>440 Hz</code> note followed by <code>493.8833 Hz</code>.” You simply say “I’ll play an A
+note, followed by B.” “A” and “B” are just shorthand names for the tones produced that are easier to
+reason about. In the same way, you don’t have to remember that <code>9</code> was <code>16px</code>; you just know that
+your font size is a <code>9</code> on the scale.</p>
+<h4>principle 3: relationships matter</h4>
+<p>Take a look at the following type samples:</p>
+<div style="display:grid;grid-gap:1.5rem;grid-template-columns:1fr 1fr">
+  <div>
+    <div><strong>A</strong></div>
+    <div class="fs-u2 mb1 mt2"><strong>Heading</strong></div>
+    <div>Paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph</div>
+    <div class="fs-d2 mt2">Footnote</div>
+  </div>
+  <div>
+    <div><strong>B</strong></div>
+    <div class="fs-u5 mb2 mt2"><strong>Heading</strong></div>
+    <div class="fs-u2 mb2">Paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph paragraph</div>
+    <div>Footnote</div>
+  </div>
+</div>
+<p>What if I told you that the “paragraph” size from Column B was the same value as the “heading” in
+Column A? Inspect it if you don’t believe me! Our brains don’t perceive absolute value as much as we
+think we do. Take this famous optical illusion from Edward H. Adelson:</p>
+<figure>
+  <img src="/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
+  <figcaption>Are “A” and “B” really the same color? (Yes)</figcaption>
+</figure>
+<p>The tiles marked “A” and “B” are the exact same RGB value. Our brains perceive one as lighter than
+the other because of their relationships— “B” is surrounded by darker colors, and “A” by lighter
+colors. The illusion works because our brains are hardwired to perceive relative differences (if
+you’re interested in this general subject, see <em>Interaction of Color</em> by Josef Albers).</p>
+<p>Managing a typographic system is the same in that <strong>the relative sizes are more important than
+absolute sizes.</strong> Something isn’t a heading because “headings are <code>32px</code> and that’s the law.”
+Because as soon as your base size increases to <code>32px</code>, headings have to be proportionately bigger to
+match! No, headings are only headings <em>if</em> they’re noticably larger than normal text.</p>
+<p>So how do we deal with relationships? We do so by counting in steps. Taking the scale we had before,
+let’s slide the bottom numbers to center around our base font size—<code>16px</code>—to measure how far away
+other numbers are, relatively:</p>
+<pre><code>6   7   8   9   10   11   12   14   16   18   21   24   30   36   48   60   72
+------------------------------------------------------------------------------
+-8 -7  -6  -5   -4   -3   -2   -1    0   +1   +2   +3   +4   +5   +6   +7   +8
+</code></pre>
+<p>We can easily see that <code>16 -&gt; 18</code> is <code>+1 step</code>; <code>16 -&gt; 30</code> is <code>+4 steps</code>; <code>16 -&gt; 9</code> is <code>-4 steps</code>,
+etc. If we move around the scale even more, we notice more interesting relationships. <code>16 -&gt; 30</code> is
+the same “ratio” as <code>30 -&gt; 72</code>. In both cases, there are <code>4 steps</code> in between.</p>
+<p>So now we start to get back to those <code>font-u4</code> CSS classes introduced earlier. See how no matter
+what our base size started with, all that matters is applying the correct number of steps up or
+down? If we just know that we want a heading to be 4 steps above our base size, it gets a
+<code>&lt;h1 class=&quot;font-u4&quot;&gt;</code> class. And if we resize everything else on the page, that typographic
+relationship is preserved. That means <strong>less code to write, and less code to manage.</strong></p>
+<p>It takes some work, and relearning, to remap how you’ve thought about font sizes on the web. But
+you’ll be amazed at how much simpler things become when you do.</p>
+<h3>building your own scale</h3>
+<p>Say you are getting the basics of the system, but that exact scale ratio just isn’t working for your
+fonts. This is the basic mathematical formula used, of which full credit goes to
+<a href="https://spencermortensen.com/articles/typographic-scale/">Spencer Mortensen</a>:</p>
+<pre><code>𝐹 ^ (𝑛 / 𝛥)
+</code></pre>
+<p>You have 2 basic settings to configure: <code>𝐹</code>, the factor for multiplication, and <code>𝛥</code>, the delta
+(distance) between each step. Say you wanted to increase font size <code>2.25×</code> every <code>6</code> steps (my
+personal favorite scale). That would look like this:</p>
+<pre><code>2.25 ^ (𝑛 / 6)
+</code></pre>
+<p>The last variable, <code>𝑛</code>, receives the step number you’re calculating. This is how the example back at
+the beginning of the blog post was generated—by counting up (<code>1</code>, <code>2</code>, <code>3</code>, …):</p>
+<pre><code>2.25 ^ (1/6)      -&gt;    1.1447142426
+2.25 ^ (2/6)      -&gt;    1.3103706971
+2.25 ^ (3/6)      -&gt;    1.5
+2.25 ^ (4/6)      -&gt;    1.7170713638
+2.25 ^ (5/6)      -&gt;    1.9655560457
+2.25 ^ (6/6)      -&gt;    2.25
+…
+</code></pre>
+<p>To go down the scale, use negative numbers (<code>-1</code>, <code>-2</code>, <code>-3</code>, …):</p>
+<pre><code>2.25 ^ (-1/6)     -&gt;    0.8735804647
+2.25 ^ (-2/6)     -&gt;    0.7631428284
+2.25 ^ (-3/6)     -&gt;    0.6666666667
+2.25 ^ (-4/6)     -&gt;    0.5823869765
+2.25 ^ (-5/6)     -&gt;    0.5087618856
+2.25 ^ (-6/6)     -&gt;    0.4444444444
+…
+</code></pre>
+<p><em>Tip: want to calculate these a bit more automatically? Try
+<a href="https://codepen.io/dangodev/full/ZEzmJaB">this visual calculator</a> or see the <code>scale()</code> method in JS
+in
+<a href="https://github.com/drwpow/responsive-typography/blob/master/index.ts#L97">responsive-typography</a></em></p>
+<p>Take the above values and plug them into CSS class names, CSS variables, Sass variables, JS
+variables… whatever your system uses. It’s universal because at the end of the day it’s just <code>em</code>s.</p>
+<p>Now that you know how these numbers are made, you may find that the <code>2.25 ^ (𝑛 / 6)</code> scale doesn’t
+work too well for your fonts!</p>
+<h2>appendix 1: faq</h2>
+<h4>how does this compare to x, y, or z?</h4>
+<p>Ever since the idea of responsive design came about, we’ve been inventing complex systems to manage
+typography (or we’ve been ignoring it and hoping the problem goes away 🙈). There are too many to
+list out here, but prominent ones I’ve come across:</p>
+<ul>
+<li><a href="https://blog.typekit.com/2016/08/17/flexible-typography-with-css-locks/">Flexible Typography with CSS Locks</a>:
+this is probably the closest to a technically-accurate system, but just look at this
+“human-generated” CSS for <strong>a single font size</strong>:
+<code>line-height: calc(1.3em + (1.5 - 1.3) * ((100vw - 21em)/(35 - 21)))</code>. Does your brain work like
+this? Mine doesn’t.</li>
+<li><a href="https://tailwindcss.com/docs/font-size/#app">Tailwind CSS</a>: here’s their <strong>simple example</strong>:
+<code>&lt;p class=&quot;text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl ...&quot;&gt;</code>. Imagine managing all
+that manually across all your markup? No thank you.</li>
+<li><a href="http://kyleamathews.github.io/typography.js/">Typography.js</a>: This requires a runtime? I’d rather
+not have flickering font sizes as my pages load, thank you.</li>
+<li><a href="https://www.npmjs.com/package/@material/typography">Material UI</a>: Decent type scale, but not
+responsive.</li>
+</ul>
+<p>In short, other proposals have come about, but they’re either too complicated for human-written CSS.
+Or they require a JS runtime for styling, which by default won’t work in a large number of setups.
+I’d argue that responsive type scales strikes the best balance of simplicity and efficiency, and it
+works in every setup.</p>
+<h4>how can I use this with multiple fonts?</h4>
+<p>When working with multiple fonts, sometimes one scale to “rule them all” will work just fine. But a
+common problem is having different fonts <em>appear</em> bigger or smaller than another at the same pixel
+size. In that case, you’ll need an adjustment number. Say your site has 2 fonts: one for body, and
+another for headings. Say your heading font is feeling a little small when you try and use the same
+scale for everything:</p>
+<!-- prettier-ignore -->
+<pre><code class="language-css">/* fonts.css */
+
+:root {
+  /* your base scale */
+  --font-u6: 2.25em;
+  --font-u5: 1.9655560456566725em;
+  --font-u4: 1.7170713638299977em;
+  --font-u3: 1.5em;
+  --font-u2: 1.3103706971044482em;
+  --font-u1: 1.1447142425533319em;
+
+  /* heading scale */
+  --heading-adjustment: 1.5px; /* Increase the final size of the heading font */
+}
+
+.font-heading-u6 { font-size: calc(var(--font-u6) + var(--heading-adjustment)) }
+.font-heading-u5 { font-size: calc(var(--font-u5) + var(--heading-adjustment)) }
+.font-heading-u4 { font-size: calc(var(--font-u4) + var(--heading-adjustment)) }
+.font-heading-u3 { font-size: calc(var(--font-u3) + var(--heading-adjustment)) }
+.font-heading-u2 { font-size: calc(var(--font-u2) + var(--heading-adjustment)) }
+.font-heading-u1 { font-size: calc(var(--font-u1) + var(--heading-adjustment)) }
+</code></pre>
+<p>We have a <code>--heading-adjustment</code> CSS variable that we’re using to modify the final output value.
+It’s being calculated at the end, so we are still using the same scale, but we can make a minor
+visual tweak to make the typefaces work together better. Simply adjust <code>--heading-adjustment</code> to
+taste. Rinse and repeat for any other typefaces you add to your project.</p>
+<h4>can i use this in CSS-in-JS?</h4>
+<p>Yes (try the
+<a href="https://github.com/drwpow/responsive-typography#option-3-js">JS import from responsive-typography</a>).</p>
+<h2>appendix 2: tips</h2>
+<p>Some various tips you may find helpful both in adopting responsive type scales, and thinking about
+it in the context of your larger styling system.</p>
+<ul>
+<li><strong>Hardcode the scale if you can help it.</strong> It might be tempting to write a Sass or JS function to
+generate the scale values. While there’s nothing wrong with that, know that <strong>if you change your
+scale, you change your design.</strong> All the hard work and perfectly-tuned styles have now just gone
+out the window. I like to not have this “typographic restart button” so easily-accessible on a
+team that may not understand the implications.</li>
+<li><strong>Rename the CSS classes to whatever you like.</strong> You may not like <code>font-u1</code> or <code>font-d1</code>. Generate
+your <a href="https://codepen.io/dangodev/full/ZEzmJaB">own scale</a> and come up with your own names! Keep
+it short and sweet, but do what’s obvious to you.</li>
+<li><strong>Why not both—use CSS AND CSS-in-JS!</strong> It doesn’t hurt to use CSS utility classes AND CSS
+variables AND JS values in your CSS-in-JS. Sometimes you just want a global CSS class; other times
+you need a value in your scoped CSS Modules. There’s no right or wrong here; simply do what saves
+you and your team the most time, both in writing new code and managing existing code.</li>
+<li><strong>Reset component styles at the base level.</strong> This is a good practice beyond this blog post! You
+always want your component’s styles to be
+<a href="https://visly.app/blog/layout-isolated-components">isolated from one another</a>, which means
+throwing some resets at the top level. When your components only look good in certain contexts but
+not others, you’re fighting a losing battle.</li>
+<li><strong>Avoid global breakpoints if you can help it.</strong> Often people try and have a
+<a href="https://medium.com/free-code-camp/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862">perfect breakpoint system</a>
+in their app. It makes sense—it’s simple, and it’s encouraged in frameworks. But it’s bad because
+global breakpoints don’t care about your actual content. They don’t care that half of your
+components look weird as the page responds. Conversely, component-level media queries are <strong>always
+perfect for every component.</strong> It’s a little extra code, sure, but it’s 100% scalable, and unlike
+global breakpoints, adjusting one component’s breakpoint will never disrupt another. A little
+redundancy can save a lot of headache down the line. Give it a try and prove me wrong!</li>
+</ul>
+<p>If this post was helpful, please
+<a href="https://github.com/drwpow/responsive-typography">give responsive-typography a star on GitHub</a> (or
+give me feedback in the issues!)</p>
+
+      </main>
+    </div>
+
+    <div class="wrapper">
+  <footer class="footer">
+    <a class="footer-link" href="/rss.xml">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      RSS
+    </a>
+    /
+    <a class="footer-link" href="/feed.json">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      JSON
+    </a>
+    /
+    <a class="footer-link" href="https://github.com/drwpow/blog">
+      <svg class="icon mr1r" aria-label="github" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M16 23c-.6 0-1-.4-1-1v-3.9c0-.4 0-.7-.1-1.1-.1-.3-.3-.6-.5-.8-.3-.3-.4-.7-.2-1 .2-.3.5-.6.8-.7 2.9-.3 5.6-1.3 5.6-6 0-1.1-.4-2.2-1.2-3.1-.3-.3-.3-.7-.2-1 .3-.8.3-1.6.1-2.4-.5.1-1.3.4-2.6 1.3-.2.2-.5.2-.8.1-2.1-.6-4.4-.6-6.5 0-.4.1-.7.1-1-.1-1.2-.8-2.1-1.1-2.6-1.2-.2.7-.2 1.6.1 2.3.1.4.1.8-.2 1-.8.9-1.2 2-1.2 3.2 0 4.7 2.7 5.7 5.6 6 .4 0 .7.3.8.7.1.4 0 .8-.2 1-.2.2-.4.5-.5.8-.2.3-.2.7-.2 1V22c0 .6-.4 1-1 1s-1-.4-1-1v-1.7c-3 .5-4.3-1.2-5.2-2.3-.4-.5-.7-.9-1.1-1-.5-.1-.9-.7-.7-1.2.1-.5.7-.9 1.2-.7 1 .3 1.6 1 2.2 1.7.8 1.1 1.5 1.9 3.6 1.5v-.1c0-.5 0-1.2.3-1.7v-.1c-2.8-.6-5.8-2.4-5.8-7.7 0-1.5.5-2.9 1.4-4-.4-1.4-.3-2.8.3-4.1.1-.3.3-.5.6-.6.4 0 1.7-.2 4.4 1.4 2.2-.5 4.5-.5 6.6 0 2.6-1.7 4-1.5 4.4-1.4.3.1.5.3.6.6.5 1.3.6 2.6.3 3.9.9 1.1 1.4 2.5 1.4 4 0 5.7-3.4 7.2-5.8 7.8v.1c.3.6.3 1.2.3 1.8V22c0 .6-.4 1-1 1z"/></g><defs><clipPath id="clip0"><path d="M0 0h24v24H0V0z"/></clipPath></defs></svg>
+      GitHub
+    </a>
+    <br />
+    this website is encrypted and 100% analytics-free.<br />
+    if you’d like to support this blog, tweet or share&nbsp;a&nbsp;link!
+
+    <div class="footer-theme">
+      <div class="toggle">
+        <input class="toggle-input" id="theme-switcher" type="checkbox" value="dark-mode" />
+        <label class="toggle-label" for="theme-switcher">dark theme</label>
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById('theme-switcher');
+      if (localStorage.getItem('theme') === 'dark') toggle.checked = true;
+      function darkTheme(dark) {
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        document.body.classList.add('theme--' + (dark ? 'dark' : 'light'));
+        document.body.classList.add('theme-transition');
+        setTimeout(function() { document.body.classList.remove('theme-transition') }, 500);
+      }
+      toggle.addEventListener('change', function(evt) {
+        document.body.classList.remove('theme--dark');
+        document.body.classList.remove('theme--light');
+        darkTheme(evt.target.checked === true);
+      });
+    </script>
+  </footer>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>

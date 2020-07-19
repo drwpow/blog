@@ -12,6 +12,8 @@
 //  Components
 // -----------
 
+@use "components/art";
+@use "components/blog-tag";
 @use "components/footer";
 @use "components/header";
 @use "components/icon";
@@ -19,7 +21,6 @@
 @use "components/photo";
 @use "components/post-preview";
 @use "components/post";
-@use "components/tag";
 @use "components/toggle";
 @use "components/wrapper";
 

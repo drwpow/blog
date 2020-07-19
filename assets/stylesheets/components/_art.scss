@@ -1,0 +1,26 @@
+.art {
+  &-description {
+    font-size: var(--d2);
+  }
+
+  &-title {
+    margin-left: -0.25em;
+
+    &::before {
+      content: '“';
+    }
+
+    &::after {
+      content: '”';
+    }
+  }
+
+  &-meta {
+    padding-left: 2rem;
+  }
+
+  &-year {
+    font-size: var(--d2);
+    font-style: italic;
+  }
+}

@@ -240,6 +240,10 @@ svg {
   fill: currentColor;
 }
 
+strong {
+  font-weight: 600;
+}
+
 blockquote {
   margin: 0 -1.5rem;
   padding: 1.5rem 3rem;
@@ -325,6 +329,9 @@ figcaption {
   font-style: italic;
   line-height: 1.75;
 }
+figcaption em {
+  font-style: normal;
+}
 
 .language-css .comment {
   opacity: 0.5;
@@ -352,6 +359,28 @@ figcaption {
   color: #088;
 }
 
+.language-html .attr-value,
+.language-jsx .attr-value,
+.language-xml .attr-value {
+  color: #00f;
+}
+.language-html .comment,
+.language-jsx .comment,
+.language-xml .comment {
+  opacity: 0.5;
+}
+.language-html .tag,
+.language-jsx .tag,
+.language-xml .tag {
+  color: #f0f;
+  font: inherit;
+}
+.language-html .tag::before,
+.language-jsx .tag::before,
+.language-xml .tag::before {
+  display: none;
+}
+
 :root {
   --bg: #fcfcfc;
   --bg-accent: #f0f0f0;
@@ -373,6 +402,49 @@ figcaption {
 .theme-transition,
 .theme-transition * {
   transition: background-color 500ms linear, color 500ms linear;
+}
+
+.art-description {
+  font-size: var(--d2);
+}
+.art-title {
+  margin-left: -0.25em;
+}
+.art-title::before {
+  content: "“";
+}
+.art-title::after {
+  content: "”";
+}
+.art-meta {
+  padding-left: 2rem;
+}
+.art-year {
+  font-size: var(--d2);
+  font-style: italic;
+}
+
+.blog-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--d1);
+  font-family: var(--heading);
+  text-decoration: none;
+}
+.blog-tag::before {
+  display: inline-block;
+  width: 0.375em;
+  height: 0.375em;
+  margin-right: 0.5em;
+  background: currentColor;
+  border-radius: 50%;
+  content: "";
+}
+.blog-tag--dev {
+  color: var(--green);
+}
+.blog-tag--design {
+  color: var(--fuschia);
 }
 
 .footer {
@@ -538,7 +610,8 @@ figcaption {
 
 .post-animation {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   pointer-events: none;
 }
 @media (min-width: 1200px) {
@@ -610,29 +683,6 @@ figcaption {
   opacity: 0.625;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--d1);
-  font-family: var(--heading);
-  text-decoration: none;
-}
-.tag::before {
-  display: inline-block;
-  width: 0.375em;
-  height: 0.375em;
-  margin-right: 0.5em;
-  background: currentColor;
-  border-radius: 50%;
-  content: "";
-}
-.tag--dev {
-  color: var(--green);
-}
-.tag--design {
-  color: var(--fuschia);
-}
-
 .toggle {
   position: relative;
   display: flex;
@@ -696,6 +746,150 @@ figcaption {
 }
 .wrapper--s {
   max-width: 40rem;
+}
+
+.fs-u18 {
+  font-size: 11.390625em;
+}
+
+.fs-u17 {
+  font-size: 9.9506274811em;
+}
+
+.fs-u16 {
+  font-size: 8.6926737794em;
+}
+
+.fs-u15 {
+  font-size: 7.59375em;
+}
+
+.fs-u14 {
+  font-size: 6.6337516541em;
+}
+
+.fs-u13 {
+  font-size: 5.7951158529em;
+}
+
+.fs-u12 {
+  font-size: 5.0625em;
+}
+
+.fs-u11 {
+  font-size: 4.4225011027em;
+}
+
+.fs-u10 {
+  font-size: 3.8634105686em;
+}
+
+.fs-u9 {
+  font-size: 3.375em;
+}
+
+.fs-u8 {
+  font-size: 2.9483340685em;
+}
+
+.fs-u7 {
+  font-size: 2.5756070457em;
+}
+
+.fs-u6 {
+  font-size: 2.25em;
+}
+
+.fs-u5 {
+  font-size: 1.9655560457em;
+}
+
+.fs-u4 {
+  font-size: 1.7170713638em;
+}
+
+.fs-u3 {
+  font-size: 1.5em;
+}
+
+.fs-u2 {
+  font-size: 1.3103706971em;
+}
+
+.fs-u1 {
+  font-size: 1.1447142426em;
+}
+
+.fs-d1 {
+  font-size: 0.8735804647em;
+}
+
+.fs-d2 {
+  font-size: 0.7631428284em;
+}
+
+.fs-d3 {
+  font-size: 0.6666666667em;
+}
+
+.fs-d4 {
+  font-size: 0.5823869765em;
+}
+
+.fs-d5 {
+  font-size: 0.5087618856em;
+}
+
+.fs-d6 {
+  font-size: 0.4444444444em;
+}
+
+.fs-d7 {
+  font-size: 0.3882579843em;
+}
+
+.fs-d8 {
+  font-size: 0.3391745904em;
+}
+
+.fs-d9 {
+  font-size: 0.2962962963em;
+}
+
+.fs-d10 {
+  font-size: 0.2588386562em;
+}
+
+.fs-d11 {
+  font-size: 0.2261163936em;
+}
+
+.fs-d12 {
+  font-size: 0.1975308642em;
+}
+
+.fs-d13 {
+  font-size: 0.1725591041em;
+}
+
+.fs-d14 {
+  font-size: 0.1507442624em;
+}
+
+.fs-d15 {
+  font-size: 0.1316872428em;
+}
+
+.fs-d16 {
+  font-size: 0.1150394028em;
+}
+
+.fs-d17 {
+  font-size: 0.1004961749em;
+}
+
+.fs-d18 {
+  font-size: 0.0877914952em;
 }
 
 .tal {
