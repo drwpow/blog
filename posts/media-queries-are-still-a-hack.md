@@ -34,7 +34,7 @@ If, for example, I have a user card component that I want to rearrange when ther
 I can only do that based on the browser width, **not the component width itself.**
 
 <figure>
-  <img src="/blog/assets/images/media-queries-are-still-a-hack/user-cards.svg" alt="A horizontally-laid out user card next to a vertical one" />
+  <img src="../assets/images/media-queries-are-still-a-hack/user-cards.svg" alt="A horizontally-laid out user card next to a vertical one" />
   <figcaption>What if I wanted to stack a card vertically not based on screen width, but based on whether or not the text and image will fit side-by-side? In 2020, I still can’t.</figcaption>
 </figure>
 

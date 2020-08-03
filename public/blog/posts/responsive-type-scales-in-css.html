@@ -11,8 +11,8 @@
 <meta name="theme-color" content="#000" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/rss.xml">
-<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/blog/feed.json">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="blog/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="blog/feed.json">
 <link rel="apple-touch-icon" href="/blog/assets/images/drew-monogram-black.png" />
 <link rel="icon" type="image/png" href="/blog/assets/images/drew-monogram-black.png" />
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="posts/responsive-type-scales-in-css.html" />
 <meta property="og:title" content="responsive type scales: the correct way to handle font sizes in css" />
 <meta property="og:description" content="There actually is an easy, quick way to configure font sizes, it works universally in both CSS and CSS-in-JS, and it’s even responsive. You’re just not using it." />
-<meta property="og:image" content="https://pow.rs/blog/assets/images/drew-monogram-black.png" />
+<meta property="og:image" content="/blog/assets/images/drew-monogram-black.png" />
 
   </head>
   <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
@@ -34,7 +34,7 @@
   <p class="header-desc">the personal blog of Drew Powers</p>
   <nav class="header-nav">
     <ul class="header-nav-list">
-      <li class="header-nav-item"><a class="header-link" href="/blog/">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/blog">all posts</a></li>
       <li class="header-nav-item"><a class="header-link header-link--design" href="/blog/tag/design/">design</a></li>
       <li class="header-nav-item"><a class="header-link" href="/blog/tag/dev/">dev</a></li>
       <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
@@ -96,6 +96,8 @@ these numbers later):</p>
 <pre><code class="language-css">/* fonts.css */
 /* (note: ignore the em values for now and only focus on the class names) */
 
+
+
 .font-u18 { font-size: 11.390625em }
 .font-u17 { font-size: 9.950627481136905em }
 .font-u16 { font-size: 8.692673779389363em }
@@ -134,8 +136,8 @@ these numbers later):</p>
 .font-d18 { font-size: 0.0877914951989026em }
 </code></pre>
 <p><em>Don’t want to use CSS classes? You could use
-<a href="https://github.com/drwpow/responsive-type-scale/blob/master/variables.css">CSS variables</a> or
-<a href="https://github.com/drwpow/responsive-type-scale/blob/master/index.js">JS values</a> or even Sass
+<a href="https://github.com/drwpow/responsive-typography/blob/master/variables.css">CSS variables</a> or
+<a href="https://github.com/drwpow/responsive-typography/blob/master/index.js">JS values</a> or even Sass
 variables—it is universal after all and you can translate this into whatever works best</em></p>
 <p>Then just sprinkle the utilities in whenever you need it:</p>
 <pre><code class="language-html">&lt;h1 class=&quot;font-u6&quot;&gt;I’m an h1 so I’m 6 steps up from the base size&lt;/h1&gt;
@@ -209,13 +211,15 @@ values from above, but this time we’ll use CSS variables and swap out the <cod
 preserving their typographic relationships. However, for the base component size, we did use <code>rem</code>s
 instead of <code>em</code>s to blow away any nested styles we may have had to deal with otherwise
 (<a href="https://visly.app/blog/layout-isolated-components">following good principles of layout isolation</a>).</p>
-<h3>wrapping up</h3>
-<p>Congratulations! You’ve just learned the whole system. 🎉 You can either copy + paste the above code
-into your own codebase if you’d like to manage it yourself. Or you can use the
-<code>responsive-typography</code> npm package (<a href="https://www.npmjs.com/package/responsive-typography">npm</a> /
-<a href="https://github.com/drwpow/responsive-typography">GitHub</a>) for an even easier time:</p>
-<pre><code>npm install responsive-typography
-</code></pre>
+<h3>further reading</h3>
+<p>Congratulations! You’ve just learned the whole system. 🎉 From here you may want to explore the
+following:</p>
+<ul>
+<li><a href="https://github.com/drwpow/responsive-typography">responsive-typography</a> contains all the code
+above but packaged in a convenient npm wrapper</li>
+<li><a href="https://codesandbox.io/s/responsive-typography-app-mc613?file=/src/styles.css">CodeSandbox example</a>
+showing how responsive type scales can work in an app</li>
+</ul>
 <p>But perhaps even after seeing how it works, you have some lingering “why” questions. Such as: <em>how
 big is a “step” in pixels?</em> or <em>what if I don’t like the scale above?</em> or <em>is this really simpler
 than other typographic libraries?</em> Read on to get a little more into why this approach can work for
@@ -226,7 +230,7 @@ responsive type scale already. Everything that follows is theory and extra infor
 to understand the concepts a bit deeper.</em></p>
 <h3>3 principles of a type scale</h3>
 <figure>
-  <img src="/blog/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
+  <img src="../assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
   <figcaption>The <em>Hypnerotomachia Poliphili</em> (try saying that 5 times fast) is a stunning Renaissance-era example of flawless typography. And like all printed material, it uses a typographic scale to achieve its beauty.</figcaption>
 </figure>
 <p>As we mentioned above, typographic scales solve the Goldilocks problem of font sizes: you need just
@@ -236,7 +240,7 @@ they’re as ancient as the printing press itself (they don’t look a day over 
 encountered typographic scales every time you’ve used a word processor like Google Docs. While
 you’ll find some slight variation from program to program, most typographic scales are identical
 save for a few numbers. And they have three guiding principles that are important to keep in mind:
-<strong>they scale exponentially</strong>, have <strong>numbered steps</strong>, and <strong>prioritize relative sizing over
+<strong>they scale exponentially</strong>, are <strong>expressed in steps</strong>, and <strong>prioritize relative sizing over
 absolute</strong>.</p>
 <h4>principle 1: exponential scaling</h4>
 <p>The classic type scale you know from almost every word processor is:</p>
@@ -268,8 +272,9 @@ intervals):</p>
 probably recognize the difference between <code>6px</code> and <code>7px</code> type because that’s a 16.6% increase in
 size. But you can’t tell the difference between <code>71px</code> and <code>72px</code> (1%). So <code>6 -&gt; 7</code> make sense as a
 typographic relationship, but not <code>71 -&gt; 72</code>.</p>
-<p>Any type scale we make has to scale exponentially as well.</p>
-<h4>principle 2: numbered steps</h4>
+<p>Any type scale we make has to scale exponentially, which means we can mathematically automate it!
+Yay!</p>
+<h4>principle 2: type scales are expressed in steps</h4>
 <p>Given type scales’ exponential nature, it would follow that we treat them like exponents. For
 example, when we’re dealing with powers of 2, how do we express it? Not as <code>2, 4, 8, 16…</code> but as
 <code>2² 2³ 2⁴ …</code>. Let’s apply that thinking to the type scale: we’ll take the same scale, but number the
@@ -278,9 +283,9 @@ steps themselves. And we’ll give the step itself a number (<code>step² step³
 ------------------------------------------------------------------------------
 1   2   3   4    5    6    7    8    9   10   11   12   13   14   15   16   17
 </code></pre>
-<p>Thinking in <strong>numbered steps</strong> lets you remove all the complexity of conditional logic. You don’t
-have to go “OK so I’m at <code>24px</code>, which means the next step up is <code>+6</code> but the next step down is
-<code>-3</code>.” You simply think in terms of being at a certain step and going up or down.</p>
+<p>Thinking in numbered steps lets you remove all the complexity of conditional logic. You don’t have
+to go “OK so I’m at <code>24px</code>, which means the next step up is <code>+6</code> but the next step down is <code>-3</code>.”
+You simply think in terms of being at a certain step and going up or down.</p>
 <p>In the end, your new scale is just a list of integers, which is much simpler to reason about (this
 is only the bottom row from above):</p>
 <pre><code>1   2   3   4    5    6    7    8    9   10   11   12   13   14   15   16   17
@@ -310,7 +315,7 @@ your font size is a <code>9</code> on the scale.</p>
 Column A? Inspect it if you don’t believe me! Our brains don’t perceive absolute value as much as we
 think we do. Take this famous optical illusion from Edward H. Adelson:</p>
 <figure>
-  <img src="/blog/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
+  <img src="../assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
   <figcaption>Are “A” and “B” really the same color? (Yes)</figcaption>
 </figure>
 <p>The tiles marked “A” and “B” are the exact same RGB value. Our brains perceive one as lighter than
@@ -321,7 +326,8 @@ you’re interested in this general subject, see <em>Interaction of Color</em> b
 absolute sizes.</strong> Something isn’t a heading because “headings are <code>32px</code> and that’s the law.”
 Because as soon as your base size increases to <code>32px</code>, headings have to be proportionately bigger to
 match! No, headings are only headings <em>if</em> they’re noticably larger than normal text.</p>
-<p>So how do we deal with relationships? We do so by counting in steps. Taking the scale we had before,
+<p>So how do we deal with relationships? We know that a type scale is expressed in steps already, but
+now we have to think in <strong>relative steps</strong> from one size to another. Taking the scale we had before,
 let’s slide the bottom numbers to center around our base font size—<code>16px</code>—to measure how far away
 other numbers are, relatively:</p>
 <pre><code>6   7   8   9   10   11   12   14   16   18   21   24   30   36   48   60   72
@@ -374,8 +380,11 @@ in
 <a href="https://github.com/drwpow/responsive-typography/blob/master/index.ts#L97">responsive-typography</a></em></p>
 <p>Take the above values and plug them into CSS class names, CSS variables, Sass variables, JS
 variables… whatever your system uses. It’s universal because at the end of the day it’s just <code>em</code>s.</p>
-<p>Now that you know how these numbers are made, you may find that the <code>2.25 ^ (𝑛 / 6)</code> scale doesn’t
-work too well for your fonts!</p>
+<p>Now that you know how these numbers are made, you may find that the <code>2.25:6</code> scale isn’t producing
+the results you expected. Try <a href="https://codepen.io/dangodev/full/ZEzmJaB">playing with both numbers</a>
+and seeing what you get. Try it in an existing app! The key is experimentation.</p>
+<p>That wraps up the main meat of the blog posts. What follows from here are tips and FAQs to try and
+take care of remaining questions.</p>
 <h2>appendix 1: faq</h2>
 <h4>how does this compare to x, y, or z?</h4>
 <p>Ever since the idea of responsive design came about, we’ve been inventing complex systems to manage
@@ -434,11 +443,17 @@ visual tweak to make the typefaces work together better. Simply adjust <code>--h
 taste. Rinse and repeat for any other typefaces you add to your project.</p>
 <h4>can i use this in CSS-in-JS?</h4>
 <p>Yes (try the
-<a href="https://github.com/drwpow/responsive-typography#option-3-js">JS import from responsive-typography</a>).</p>
+<a href="https://github.com/drwpow/responsive-typography#js">JS import from responsive-typography</a>).</p>
 <h2>appendix 2: tips</h2>
 <p>Some various tips you may find helpful both in adopting responsive type scales, and thinking about
 it in the context of your larger styling system.</p>
 <ul>
+<li><strong>If you’re struggling, try working backwards from pixels.</strong> Say you’re trying to generate your
+own type scale, but you just can’t find the right <code>factor</code> and <code>delta</code> that feels right. Try
+starting with an absolute type scale like <code>12px 14px 16px 18px 21px …</code>, and work backwards into
+the relative type scale. Use <a href="https://codepen.io/dangodev/full/ZEzmJaB">the visual calculator</a> and
+look on the right hand side. How close can you get to recreating your absolute scale? Now you have
+more of a concrete goal to hit than simply turning dials until something “feels right.”</li>
 <li><strong>Hardcode the scale if you can help it.</strong> It might be tempting to write a Sass or JS function to
 generate the scale values. While there’s nothing wrong with that, know that <strong>if you change your
 scale, you change your design.</strong> All the hard work and perfectly-tuned styles have now just gone
@@ -474,12 +489,12 @@ give me feedback in the issues!)</p>
 
     <div class="wrapper">
   <footer class="footer">
-    <a class="footer-link" href="/blog/rss.xml">
+    <a class="footer-link" href="blog/rss.xml">
       <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
       RSS
     </a>
     /
-    <a class="footer-link" href="/blog/feed.json">
+    <a class="footer-link" href="blog/feed.json">
       <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
       JSON
     </a>
@@ -490,7 +505,7 @@ give me feedback in the issues!)</p>
     </a>
     <br />
     this website is encrypted and 100% analytics-free.<br />
-    built by <a href="https://cobalt-org.github.io/" target="_blank" rel="noopener noreferrer">Cobalt</a>, a Rust-powered static site generator
+    built with <a href="https://cobalt-org.github.io/" target="_blank" rel="noopener noreferrer">Cobalt</a>, a Rust-powered static site generator.<br />
     if you’d like to support this blog, tweet or share&nbsp;a&nbsp;link!
 
     <div class="footer-theme">

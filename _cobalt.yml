@@ -6,19 +6,20 @@ ignore:
   - 'scripts'
   - 'package*.json'
   - 'README.md'
+  - 'vercel.json'
 destination: public/blog
 syntax_highlight:
   enabled: false
 site:
   title: blog // Drew Powers
   description: The personal blog of Drew Powers
-  base_url: http://pow.rs/blog
+  base_url: /blog/
 pages:
   default:
     layout: default.liquid
 posts:
   publish_date_in_filename: false
-  rss: rss.xml
-  jsonfeed: feed.json
+  rss: blog/rss.xml
+  jsonfeed: blog/feed.json
   default:
     layout: post.liquid

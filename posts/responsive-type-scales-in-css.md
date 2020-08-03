@@ -63,6 +63,8 @@ these numbers later):
 /* fonts.css */
 /* (note: ignore the em values for now and only focus on the class names) */
 
+
+
 .font-u18 { font-size: 11.390625em }
 .font-u17 { font-size: 9.950627481136905em }
 .font-u16 { font-size: 8.692673779389363em }
@@ -102,8 +104,8 @@ these numbers later):
 ```
 
 _Don’t want to use CSS classes? You could use
-[CSS variables](https://github.com/drwpow/responsive-type-scale/blob/master/variables.css) or
-[JS values](https://github.com/drwpow/responsive-type-scale/blob/master/index.js) or even Sass
+[CSS variables](https://github.com/drwpow/responsive-typography/blob/master/variables.css) or
+[JS values](https://github.com/drwpow/responsive-typography/blob/master/index.js) or even Sass
 variables—it is universal after all and you can translate this into whatever works best_
 
 Then just sprinkle the utilities in whenever you need it:
@@ -199,16 +201,15 @@ preserving their typographic relationships. However, for the base component size
 instead of `em`s to blow away any nested styles we may have had to deal with otherwise
 ([following good principles of layout isolation](https://visly.app/blog/layout-isolated-components)).
 
-### wrapping up
+### further reading
 
-Congratulations! You’ve just learned the whole system. 🎉 You can either copy + paste the above code
-into your own codebase if you’d like to manage it yourself. Or you can use the
-`responsive-typography` npm package ([npm](https://www.npmjs.com/package/responsive-typography) /
-[GitHub](https://github.com/drwpow/responsive-typography)) for an even easier time:
+Congratulations! You’ve just learned the whole system. 🎉 From here you may want to explore the
+following:
 
-```
-npm install responsive-typography
-```
+- [responsive-typography](https://github.com/drwpow/responsive-typography) contains all the code
+  above but packaged in a convenient npm wrapper
+- [CodeSandbox example](https://codesandbox.io/s/responsive-typography-app-mc613?file=/src/styles.css)
+  showing how responsive type scales can work in an app
 
 But perhaps even after seeing how it works, you have some lingering “why” questions. Such as: _how
 big is a “step” in pixels?_ or _what if I don’t like the scale above?_ or _is this really simpler
@@ -224,7 +225,7 @@ to understand the concepts a bit deeper._
 ### 3 principles of a type scale
 
 <figure>
-  <img src="/blog/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
+  <img src="../assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
   <figcaption>The <em>Hypnerotomachia Poliphili</em> (try saying that 5 times fast) is a stunning Renaissance-era example of flawless typography. And like all printed material, it uses a typographic scale to achieve its beauty.</figcaption>
 </figure>
 
@@ -236,7 +237,7 @@ they’re as ancient as the printing press itself (they don’t look a day over 
 encountered typographic scales every time you’ve used a word processor like Google Docs. While
 you’ll find some slight variation from program to program, most typographic scales are identical
 save for a few numbers. And they have three guiding principles that are important to keep in mind:
-**they scale exponentially**, have **numbered steps**, and **prioritize relative sizing over
+**they scale exponentially**, are **expressed in steps**, and **prioritize relative sizing over
 absolute**.
 
 #### principle 1: exponential scaling
@@ -280,9 +281,10 @@ probably recognize the difference between `6px` and `7px` type because that’s 
 size. But you can’t tell the difference between `71px` and `72px` (1%). So `6 -> 7` make sense as a
 typographic relationship, but not `71 -> 72`.
 
-Any type scale we make has to scale exponentially as well.
+Any type scale we make has to scale exponentially, which means we can mathematically automate it!
+Yay!
 
-#### principle 2: numbered steps
+#### principle 2: type scales are expressed in steps
 
 Given type scales’ exponential nature, it would follow that we treat them like exponents. For
 example, when we’re dealing with powers of 2, how do we express it? Not as `2, 4, 8, 16…` but as
@@ -295,9 +297,9 @@ steps themselves. And we’ll give the step itself a number (`step² step³ step
 1   2   3   4    5    6    7    8    9   10   11   12   13   14   15   16   17
 ```
 
-Thinking in **numbered steps** lets you remove all the complexity of conditional logic. You don’t
-have to go “OK so I’m at `24px`, which means the next step up is `+6` but the next step down is
-`-3`.” You simply think in terms of being at a certain step and going up or down.
+Thinking in numbered steps lets you remove all the complexity of conditional logic. You don’t have
+to go “OK so I’m at `24px`, which means the next step up is `+6` but the next step down is `-3`.”
+You simply think in terms of being at a certain step and going up or down.
 
 In the end, your new scale is just a list of integers, which is much simpler to reason about (this
 is only the bottom row from above):
@@ -336,7 +338,7 @@ Column A? Inspect it if you don’t believe me! Our brains don’t perceive abso
 think we do. Take this famous optical illusion from Edward H. Adelson:
 
 <figure>
-  <img src="/blog/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
+  <img src="../assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
   <figcaption>Are “A” and “B” really the same color? (Yes)</figcaption>
 </figure>
 
@@ -350,7 +352,8 @@ absolute sizes.** Something isn’t a heading because “headings are `32px` and
 Because as soon as your base size increases to `32px`, headings have to be proportionately bigger to
 match! No, headings are only headings _if_ they’re noticably larger than normal text.
 
-So how do we deal with relationships? We do so by counting in steps. Taking the scale we had before,
+So how do we deal with relationships? We know that a type scale is expressed in steps already, but
+now we have to think in **relative steps** from one size to another. Taking the scale we had before,
 let’s slide the bottom numbers to center around our base font size—`16px`—to measure how far away
 other numbers are, relatively:
 
@@ -424,8 +427,12 @@ in
 Take the above values and plug them into CSS class names, CSS variables, Sass variables, JS
 variables… whatever your system uses. It’s universal because at the end of the day it’s just `em`s.
 
-Now that you know how these numbers are made, you may find that the `2.25 ^ (𝑛 / 6)` scale doesn’t
-work too well for your fonts!
+Now that you know how these numbers are made, you may find that the `2.25:6` scale isn’t producing
+the results you expected. Try [playing with both numbers](https://codepen.io/dangodev/full/ZEzmJaB)
+and seeing what you get. Try it in an existing app! The key is experimentation.
+
+That wraps up the main meat of the blog posts. What follows from here are tips and FAQs to try and
+take care of remaining questions.
 
 ## appendix 1: faq
 
@@ -494,13 +501,19 @@ taste. Rinse and repeat for any other typefaces you add to your project.
 #### can i use this in CSS-in-JS?
 
 Yes (try the
-[JS import from responsive-typography](https://github.com/drwpow/responsive-typography#option-3-js)).
+[JS import from responsive-typography](https://github.com/drwpow/responsive-typography#js)).
 
 ## appendix 2: tips
 
 Some various tips you may find helpful both in adopting responsive type scales, and thinking about
 it in the context of your larger styling system.
 
+- **If you’re struggling, try working backwards from pixels.** Say you’re trying to generate your
+  own type scale, but you just can’t find the right `factor` and `delta` that feels right. Try
+  starting with an absolute type scale like `12px 14px 16px 18px 21px …`, and work backwards into
+  the relative type scale. Use [the visual calculator](https://codepen.io/dangodev/full/ZEzmJaB) and
+  look on the right hand side. How close can you get to recreating your absolute scale? Now you have
+  more of a concrete goal to hit than simply turning dials until something “feels right.”
 - **Hardcode the scale if you can help it.** It might be tempting to write a Sass or JS function to
   generate the scale values. While there’s nothing wrong with that, know that **if you change your
   scale, you change your design.** All the hard work and perfectly-tuned styles have now just gone
