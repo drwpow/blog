@@ -18,7 +18,7 @@ experiment. And it may shed light on some of the more frustrating parts of makin
 
 ## why was HTML created?
 
-<figure><img src="/assets/images/was-html-a-mistake/tims_editor.gif" alt="Tim Berners Lee’s WorldWideWeb (Nexus) browser editor" /><figcaption>Tim Berners Lee’s “WorldWideWeb” browser editor (1993) <a href="https://www.w3.org/People/Berners-Lee/WorldWideWeb.html" target="_blank" rel="noopener noreferrer">source</a></figcaption></figure>
+<figure><img src="/blog/assets/images/was-html-a-mistake/tims_editor.gif" alt="Tim Berners Lee’s WorldWideWeb (Nexus) browser editor" /><figcaption>Tim Berners Lee’s “WorldWideWeb” browser editor (1993) <a href="https://www.w3.org/People/Berners-Lee/WorldWideWeb.html" target="_blank" rel="noopener noreferrer">source</a></figcaption></figure>
 
 Tim Berners Lee open-sourced the first browser in 1993 as a [WYSIWYG][wysiwyg] editor. So basically
 an internet-connected Microsoft Word.
@@ -31,7 +31,7 @@ something like this in a WYSIWYG editor:
 
 <figure>
   <video autoplay="true" controls muted loop playsinline width="800" height="500">
-    <source src="/assets/images/was-html-a-mistake/rino-pelle.mp4" type="video/mp4" />
+    <source src="/blog/assets/images/was-html-a-mistake/rino-pelle.mp4" type="video/mp4" />
   </video>
   <figcaption>The actual homepage of <a href="https://rino-pelle.com" target="_blank" rel="noopener noreferrer">rino-pelle.com</a>. An actual work of animation art that people actually made, somehow.</figcaption>
 </figure>
@@ -91,7 +91,7 @@ you have to build your rendering tools from scratch compared to HTML + CSS.
 
 <figure>
   <video autoplay="true" controls muted loop playsinline width="800" height="500">
-    <source src="/assets/images/was-html-a-mistake/zoomquilt.mp4" type="video/mp4" />
+    <source src="/blog/assets/images/was-html-a-mistake/zoomquilt.mp4" type="video/mp4" />
   </video>
   <figcaption>Zoomquilt, the greatest Flash experiment ever made, was <a href="https://zoomquilt.org" target="_blank" rel="noopener noreferrer">revived in HTML5 canvas form!</a><br />Full disclosure: I know this isn’t 100% relevant to this post, but when am I going to get another opportunity to reminisce about Zoomquilt?</figcaption>
 </figure>
@@ -166,6 +166,6 @@ reader support I’m going to be doing some [fun stuff in canvas][js1k].
 [http-archive]: https://httparchive.org/reports/page-weight
 [ils]: https://www.internetlivestats.com/
 [js1k]: https://js1k.com/2019-x/demo/4130
-[patience]: https://blog.pow.rs/posts/playfulness-budget.html
+[patience]: https://pow.rs/blog/posts/playfulness-budget.html
 [wp]: https://w3techs.com/
 [wysiwyg]: https://en.wikipedia.org/wiki/WYSIWYG

@@ -6,13 +6,13 @@ ignore:
   - 'scripts'
   - 'package*.json'
   - 'README.md'
-destination: public
+destination: public/blog
 syntax_highlight:
   enabled: false
 site:
   title: blog // Drew Powers
   description: The personal blog of Drew Powers
-  base_url: http://blog.pow.rs
+  base_url: http://pow.rs/blog
 pages:
   default:
     layout: default.liquid

@@ -26,7 +26,7 @@
             <dt class="post-meta-key">updated</dt><dd class="post-meta-value"><time datetime="{{ page.data.updated_date }}">{{ page.data.updated_date | date: "%e %b %Y" }}</time></dd>
           {%- endif -%}
           <dt class="post-meta-key">tagged</dt><dd class="post-meta-value">
-            {%- for tag in page.tags -%}<a class="tag tag--{{ tag }}" href="/tag/{{ tag }}">{{ tag }}</a>{%- endfor -%}
+            {%- for tag in page.tags -%}<a class="tag tag--{{ tag }}" href="/blog/tag/{{ tag }}">{{ tag }}</a>{%- endfor -%}
           </dd>
         </dl>
       </header>

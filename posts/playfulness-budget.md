@@ -44,7 +44,7 @@ However, based on the task, state of mind, and precise point in the process a us
 there can be opportunities to slow down and deliver something unexpected.
 
 <figure>
-  <img src="/assets/images/playfulness-budget/pizza-tracker.jpg" alt="Domino’s Pizza Tracker" />
+  <img src="/blog/assets/images/playfulness-budget/pizza-tracker.jpg" alt="Domino’s Pizza Tracker" />
   <figcaption>The Domino’s Pizza Tracker: probably my favorite example of a playful time-passer</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ is the only difference.
 
 <figure>
   <video autoplay="true" controls muted loop playsinline width="1376" height="600">
-    <source src="/assets/images/playfulness-budget/little-known-goods-carousel.mp4" type="video/mp4" />
+    <source src="/blog/assets/images/playfulness-budget/little-known-goods-carousel.mp4" type="video/mp4" />
   </video>
   <figcaption>Little Known Goods Carousel animation</figcaption>
 </figure>
@@ -89,7 +89,7 @@ turning it on its head and making it playful.
 
 <figure>
   <video autoplay="true" controls muted loop playsinline width="1375" height="600">
-    <source src="/assets/images/playfulness-budget/playdate.mp4" type="video/mp4" />
+    <source src="/blog/assets/images/playfulness-budget/playdate.mp4" type="video/mp4" />
   </video>
   <figcaption>A 3D, rotatable portable game console right at the top of the page? Yes, please.</figcaption>
 </figure>

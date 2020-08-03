@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>responsive type scales: the correct way to handle font sizes in css</title>
-    <link rel="stylesheet" href="/assets/app.min.css" />
+    <link rel="stylesheet" href="/blog/assets/app.min.css" />
 
     
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
 <meta name="theme-color" content="#000" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta http-equiv="x-ua-compatible" content="IE=Edge" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/rss.xml">
-<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/feed.json">
-<link rel="apple-touch-icon" href="/assets/images/drew-monogram-black.png" />
-<link rel="icon" type="image/png" href="/assets/images/drew-monogram-black.png" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="/blog/feed.json">
+<link rel="apple-touch-icon" href="/blog/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/blog/assets/images/drew-monogram-black.png" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@_drewpowers" />
@@ -22,7 +22,7 @@
 <meta property="og:url" content="posts/responsive-type-scales-in-css.html" />
 <meta property="og:title" content="responsive type scales: the correct way to handle font sizes in css" />
 <meta property="og:description" content="There actually is an easy, quick way to configure font sizes, it works universally in both CSS and CSS-in-JS, and it’s even responsive. You’re just not using it." />
-<meta property="og:image" content="https://blog.pow.rs/assets/images/drew-monogram-black.png" />
+<meta property="og:image" content="https://pow.rs/blog/assets/images/drew-monogram-black.png" />
 
   </head>
   <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
@@ -34,9 +34,9 @@
   <p class="header-desc">the personal blog of Drew Powers</p>
   <nav class="header-nav">
     <ul class="header-nav-list">
-      <li class="header-nav-item"><a class="header-link" href="/">all posts</a></li>
-      <li class="header-nav-item"><a class="header-link header-link--design" href="/tag/design/">design</a></li>
-      <li class="header-nav-item"><a class="header-link" href="/tag/dev/">dev</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/blog/">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--design" href="/blog/tag/design/">design</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/blog/tag/dev/">dev</a></li>
       <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
     </ul>
   </nav>
@@ -47,7 +47,7 @@
         <h1 class="post-title mb1r">responsive type scales: the correct way to handle font sizes in css</h1>
         <dl class="post-meta">
           <dt class="post-meta-key">published</dt>
-          <dd class="post-meta-value"><time datetime="2020-08-02 12:00:00 +0000"> 2 Aug 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/tag/dev">dev</a></dd>
+          <dd class="post-meta-value"><time datetime="2020-08-02 12:00:00 +0000"> 2 Aug 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/blog/tag/dev">dev</a></dd>
         </dl>
       </header>
 
@@ -67,7 +67,7 @@ buzzworthy name. Maybe it needs a landing page (🤔 actually it probably does).
 <p>This blog post will cover:</p>
 <ol>
 <li>Responsive Type Scales: the basics</li>
-<li>Responsive Type Scale: the theory</li>
+<li>Responsive Type Scales: the theory</li>
 <li>tips / faqs</li>
 </ol>
 <p>“But is this for me?” You’ll ask. <strong>Yes. Yes, this is for you.</strong> If you type words and put them on
@@ -87,8 +87,11 @@ configurable, so you can set the right number you need), and <strong>handles res
 elegantly</strong>.</p>
 <p>But before we get ahead of ourselves, you’re probably wondering “how does it look in action?” (or
 you just want to copy + paste something and then leave). Let’s dive into an example first to show it
-in practice, then we’ll step back to explain the principles and reasoning. To get started, copy some
-CSS classes into your styles (don’t worry; we’ll explain how we generated these numbers later):</p>
+in practice, then we’ll step back to explain the principles and reasoning. After all, no matter how
+solid a concept is theoretically, will you use it if it has bad DX? Rest assured this is quick to
+learn, easy to use, and solves your font problems.</p>
+<p>To get started, copy some CSS classes into your styles (don’t worry; we’ll explain how we generated
+these numbers later):</p>
 <!-- prettier-ignore -->
 <pre><code class="language-css">/* fonts.css */
 /* (note: ignore the em values for now and only focus on the class names) */
@@ -156,14 +159,15 @@ accomplish that? Easy:</p>
 <p>By thinking in terms of moving “up” or “down” a scale, you’re starting to think in relationships,
 which is how type works. Typography is less about absolute sizes, and is more about how much bigger
 or smaller one size is to another (how one “relates” to another).</p>
-<p><em>But if this nests, won’t this be a pain to keep track of?</em> If you’re working in components, it’s
-probably smart to reset the font size back to <code>1rem</code> (root font size) so you don’t have to worry
-about it:</p>
+<p><em>But if this nests, won’t this be a pain to keep track of when you’re several components deep?</em> If
+you’re working in components, it’s probably smart to reset the font size back to <code>1rem</code> (root font
+size) so sizes within a component are predictable:</p>
 <pre><code class="language-css">.MyComponent {
   font-size: 1rem; /* reset font size back to base */
 }
 </code></pre>
-<p>This will actually be an important principle for responsive sizes.</p>
+<p>This may seem like an annoyance at first if you haven’t done this before, but this is actually great
+practice. This will be an important principle for responsive sizes going forward.</p>
 <h3>responsive sizes</h3>
 <p>Responsive font sizes can be a nightmare at scale. Fortunately, using this system, <strong>you only have
 to set a component’s base sizes for each breakpoint.</strong> But to add this, let’s copy the the same CSS
@@ -222,7 +226,7 @@ responsive type scale already. Everything that follows is theory and extra infor
 to understand the concepts a bit deeper.</em></p>
 <h3>3 principles of a type scale</h3>
 <figure>
-  <img src="/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
+  <img src="/blog/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
   <figcaption>The <em>Hypnerotomachia Poliphili</em> (try saying that 5 times fast) is a stunning Renaissance-era example of flawless typography. And like all printed material, it uses a typographic scale to achieve its beauty.</figcaption>
 </figure>
 <p>As we mentioned above, typographic scales solve the Goldilocks problem of font sizes: you need just
@@ -306,7 +310,7 @@ your font size is a <code>9</code> on the scale.</p>
 Column A? Inspect it if you don’t believe me! Our brains don’t perceive absolute value as much as we
 think we do. Take this famous optical illusion from Edward H. Adelson:</p>
 <figure>
-  <img src="/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
+  <img src="/blog/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
   <figcaption>Are “A” and “B” really the same color? (Yes)</figcaption>
 </figure>
 <p>The tiles marked “A” and “B” are the exact same RGB value. Our brains perceive one as lighter than
@@ -470,12 +474,12 @@ give me feedback in the issues!)</p>
 
     <div class="wrapper">
   <footer class="footer">
-    <a class="footer-link" href="/rss.xml">
+    <a class="footer-link" href="/blog/rss.xml">
       <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
       RSS
     </a>
     /
-    <a class="footer-link" href="/feed.json">
+    <a class="footer-link" href="/blog/feed.json">
       <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
       JSON
     </a>
@@ -486,6 +490,7 @@ give me feedback in the issues!)</p>
     </a>
     <br />
     this website is encrypted and 100% analytics-free.<br />
+    built by <a href="https://cobalt-org.github.io/" target="_blank" rel="noopener noreferrer">Cobalt</a>, a Rust-powered static site generator
     if you’d like to support this blog, tweet or share&nbsp;a&nbsp;link!
 
     <div class="footer-theme">

@@ -25,7 +25,7 @@ buzzworthy name. Maybe it needs a landing page (🤔 actually it probably does).
 This blog post will cover:
 
 1. Responsive Type Scales: the basics
-1. Responsive Type Scale: the theory
+1. Responsive Type Scales: the theory
 1. tips / faqs
 
 “But is this for me?” You’ll ask. **Yes. Yes, this is for you.** If you type words and put them on
@@ -51,8 +51,12 @@ elegantly**.
 
 But before we get ahead of ourselves, you’re probably wondering “how does it look in action?” (or
 you just want to copy + paste something and then leave). Let’s dive into an example first to show it
-in practice, then we’ll step back to explain the principles and reasoning. To get started, copy some
-CSS classes into your styles (don’t worry; we’ll explain how we generated these numbers later):
+in practice, then we’ll step back to explain the principles and reasoning. After all, no matter how
+solid a concept is theoretically, will you use it if it has bad DX? Rest assured this is quick to
+learn, easy to use, and solves your font problems.
+
+To get started, copy some CSS classes into your styles (don’t worry; we’ll explain how we generated
+these numbers later):
 
 <!-- prettier-ignore -->
 ```css
@@ -133,9 +137,9 @@ By thinking in terms of moving “up” or “down” a scale, you’re starting
 which is how type works. Typography is less about absolute sizes, and is more about how much bigger
 or smaller one size is to another (how one “relates” to another).
 
-_But if this nests, won’t this be a pain to keep track of?_ If you’re working in components, it’s
-probably smart to reset the font size back to `1rem` (root font size) so you don’t have to worry
-about it:
+_But if this nests, won’t this be a pain to keep track of when you’re several components deep?_ If
+you’re working in components, it’s probably smart to reset the font size back to `1rem` (root font
+size) so sizes within a component are predictable:
 
 ```css
 .MyComponent {
@@ -143,7 +147,8 @@ about it:
 }
 ```
 
-This will actually be an important principle for responsive sizes.
+This may seem like an annoyance at first if you haven’t done this before, but this is actually great
+practice. This will be an important principle for responsive sizes going forward.
 
 ### responsive sizes
 
@@ -219,7 +224,7 @@ to understand the concepts a bit deeper._
 ### 3 principles of a type scale
 
 <figure>
-  <img src="/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
+  <img src="/blog/assets/images/responsive-type-scales-in-css/hypnerotomachia-poliphili.jpg" alt="Hypnerotomachia Poliphili" />
   <figcaption>The <em>Hypnerotomachia Poliphili</em> (try saying that 5 times fast) is a stunning Renaissance-era example of flawless typography. And like all printed material, it uses a typographic scale to achieve its beauty.</figcaption>
 </figure>
 
@@ -331,7 +336,7 @@ Column A? Inspect it if you don’t believe me! Our brains don’t perceive abso
 think we do. Take this famous optical illusion from Edward H. Adelson:
 
 <figure>
-  <img src="/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
+  <img src="/blog/assets/images/responsive-type-scales-in-css/checkerboard-illusion.jpg" alt="Checkerboard illusion by Edward H. Adelson" />
   <figcaption>Are “A” and “B” really the same color? (Yes)</figcaption>
 </figure>
 
