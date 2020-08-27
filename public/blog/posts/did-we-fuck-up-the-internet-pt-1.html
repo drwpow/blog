@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>did we fuck up the internet? part 1</title>
+    <link rel="stylesheet" href="/blog/assets/app.min.css" />
+
+    
+    <meta charset="utf-8">
+<meta name="description" content="2020 has been… a year. Amdist a global pandemic, collapse of the United States, and other acts of God, several events transpired this year that has made us question the internet’s trajectory. Are we boned?" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#000" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="blog/rss.xml">
+<link rel="alternate" type="application/json" title="JSON Feed 1.0" href="blog/feed.json">
+<link rel="apple-touch-icon" href="/blog/assets/images/drew-monogram-black.png" />
+<link rel="icon" type="image/png" href="/blog/assets/images/drew-monogram-black.png" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@_drewpowers" />
+<meta name="twitter:creator" content="@_drewpowers" />
+<meta property="og:url" content="posts/did-we-fuck-up-the-internet-pt-1.html" />
+<meta property="og:title" content="did we fuck up the internet? part 1" />
+<meta property="og:description" content="2020 has been… a year. Amdist a global pandemic, collapse of the United States, and other acts of God, several events transpired this year that has made us question the internet’s trajectory. Are we boned?" />
+<meta property="og:image" content="/blog/assets/images/drew-monogram-black.png" />
+
+  </head>
+  <body><script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('theme--dark')</script>
+
+<header class="header">
+  <a class="header-logo" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.3 226.8"><path d="M0 181.1h60.6v45.7H0zM66.2 159.1h21.6c27 0 48.3-7.1 64-21.2s23.5-33.7 23.5-58.8c0-24.8-7.8-44.2-23.5-58.2C136.1 7 114.8 0 87.8 0H0v159.1h66.2zm39.7-59.3c-5.4 4.8-12.4 7.1-21.1 7.1H60.3V52.2h24.6c8.6 0 15.7 2.4 21.1 7.1s8.1 11.4 8.1 20.1c-.1 8.8-2.8 15.6-8.2 20.4z"/></svg>
+  </a>
+  <p class="header-desc">the personal blog of Drew Powers</p>
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-item"><a class="header-link" href="/blog">all posts</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--design" href="/blog/tag/design/">design</a></li>
+      <li class="header-nav-item"><a class="header-link" href="/blog/tag/dev/">dev</a></li>
+      <li class="header-nav-item"><a class="header-link header-link--about" href="/about">about</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="wrapper">
+      <header class="post-header">
+        <div class="post-animation"></div>
+        <h1 class="post-title mb1r">did we fuck up the internet? part 1</h1>
+        <dl class="post-meta">
+          <dt class="post-meta-key">published</dt>
+          <dd class="post-meta-value"><time datetime="2020-08-26 12:00:00 +0000">26 Aug 2020</time></dd><dt class="post-meta-key">tagged</dt><dd class="post-meta-value"><a class="tag tag--dev" href="/blog/tag/dev">dev</a></dd>
+        </dl>
+      </header>
+
+      <main role="main" class="post-body mt4 post-body__did-we-fuck-up-the-internet-pt-1">
+        <p>2020 has been… a year. I have neither the time nor energy to really describe all the extreme,
+heartbreaking, life-shattering events in 2020. So I won’t.</p>
+<p>There are lots of “was the internet a mistake?” blog posts (“we’re monkeys that tricked rocks to
+think; we deserve what we get! ha ha”), but they’re a bit melodramatic. I’ve never written one
+(besides a mild <a href="./was-html-a-mistake.html">questioning of HTML</a>). I’m pretty bad in general at
+feeding off sensationalism. I think I might even irrationally avoid it.</p>
+<p>However, recent events have led me to question if our current trajectory of building the web is the
+right one, for the the first time in my 11+ year professional career of web development (though take
+that with a grain of salt—2020 has me questioning everything my life has led to so far). But by
+“direction” I don’t mean it shouldn’t exist. Yes, I believe in radical democratization of knowledge.
+Yes, I believe the internet has the capability to be a great social equalizer. Yes, I believe open
+access to knowledge is the most ethical thing I can probably do with my life. Yes, yes, yes.</p>
+<p>But, rather, I’m questioning our execution of it thusfar. Our understanding and <a href="https://www.apa.org/members/content/social-media-research">relationship with
+the internet has evolved</a> since its inception. And perhaps—just perhaps—our collective
+first stab at one of the most important transformations in human history wasn’t completely perfect
+only 20-something years in.</p>
+<p>What follows are my thoughts leading up to this questioning. Part 1 (this post) will outline what
+led up to now by highlighting some notable discussions happening in the community. The following
+parts will outline whatever harebrained solutions I think may get us out of this giant-ass digital
+pickle.</p>
+<h3>the Mozilla layoffs</h3>
+<p>Our journey begins with <a href="https://www.theverge.com/2020/8/11/21363424/mozilla-layoffs-quarter-staff-250-people-new-revenue-focus">Mozilla laying off 25% of its staff in August 2020</a>.
+Software layoffs suck in general, but they <em>really</em> suck when they carry global impact. An extreme
+(but possible) take on the outcome is: this is the <a href="https://twitter.com/chriscoyier/status/1296573362223759361?s=20">death of Firefox</a> and MDN as we know it
+(<a href="https://blog.rust-lang.org/2020/08/18/laying-the-foundation-for-rusts-future.html?ref=hvper.com">Rust may be OK</a>).</p>
+<p>If Firefox goes, then the burden of the internet rests practically on the shoulders of Chromium (if
+you’re reading this in the far future, remember that <a href="https://www.theverge.com/2019/5/6/18527550/microsoft-chromium-edge-google-history-collaboration">Microsoft recently abandoned their historic
+browser project in favor of Chromium</a>).</p>
+<p>At worst, such monopolistic control over the internet is so dangerous it had to be held in check by
+a <a href="https://en.wikipedia.org/wiki/United_States_v._Microsoft_Corp.">2001 Supreme Court ruling</a>. At best, the responsibility of stewarding the
+development of <em>the entire internet</em> is so monumental, it crushes any mere team of mortals tasked
+with it. Either way, if Chromium is the last browser standing, it’s bad news for all.</p>
+<blockquote>
+<p>Do you think the web has almost 'priced itself out of the market' in terms of complexity if only
+1-2 organisations are capable of building rendering engines for it?</p>
+<p>Microsoft gave up, Mozilla will struggle as you say.</p>
+<p>— <a href="https://twitter.com/i/status/1296573362223759361">Mike Healey on Aug 20</a></p>
+</blockquote>
+<p>I guess there’s WebKit still 🤷‍♂️. Until Apple remembers they’re supposed to maintain it.</p>
+<h3>an ecosystem fracturing (further)</h3>
+<p>We pause there, and join the developer discussion in another part of the dev sphere, where people
+(like myself) are having existential meltdowns over what they’ve been doing their entire career.
+<em><a href="https://macwright.com/2020/05/10/spa-fatigue.html">Second-guessing the modern web</a></em> by Tom MacWright in May 2020 comes to
+mind as a post at the center of the discussion questioning whether or not our current JS-heavy
+trajectory is <em>evolution</em> or <em>de-evolution</em>.</p>
+<p>Sure, JS has always had nay-sayers. <a href="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4">JavaScript fatigue</a> had been questioning this
+direction since 2015. And there have been no shortage of the “get off my lawn“ old guard complaining
+about any attempt at replacing jQuery (<a href="https://twitter.com/search?q=%40thomasfuchs%20react&amp;src=typed_query">link</a>). However, MacWright’s post was a more
+considered viewpoint that hit just at the right time, finding agreement among the old guard <a href="https://twitter.com/dan_abramov/status/1259614150386425858?s=20">as well
+as the new React folk</a>.</p>
+<p>So after years in the spotlight, JS is under question again. In rough chronological order, here are
+a few notable discussions/milestones that amount to some key players in tech all rethinking their
+choices:</p>
+<ul>
+<li>2019: Web Components gain widespread browser support, but <a href="https://twitter.com/Rich_Harris/status/1198332398561353728?s=20">devs don’t like them</a></li>
+<li>2019–2020: websites are over 2MB and <a href="https://twitter.com/scottjehl/status/1263492890979979264?s=20">getting bigger</a> thanks to more JS</li>
+<li>Apr 2020: a <a href="https://twitter.com/tkadlec/status/1252613423361376256?s=20">pretty damning study of JS frameworks</a> comes out</li>
+<li>May 2020: Tom Wright’s <a href="https://macwright.com/2020/05/10/spa-fatigue.html">Second-guessing the modern web</a> post</li>
+<li>2020: A new (JS-free) static site generator, <a href="https://twitter.com/zachleat/status/1296817280098205699?s=20">Eleventy, grows in popularity</a></li>
+</ul>
+<p>Back in 2015, React + webpack were our saviors, solving all our problems and paving the way to a
+bright future of the web. Sure, there were questions, but we all figured the kinks would be hammered
+out in due time.</p>
+<p>Now, at almost 6 years in, the luster has faded. We know that many of our questions (<em>how can I view
+this page if there’s a single JS error?</em>) will never be answered. It’s not that React let us down;
+on the contrary, React was a prolific achievement. But the internet, <a href="https://macwright.com/2020/08/22/clean-starts-for-the-web.html">vast and complex as it
+is</a>, demands more of its tools, and React has proven to be an imperfect solution. That
+leaves us back at no consensus what the future of building the web looks like for all cases, for all
+people.</p>
+<p>Sure, there are, and will continue to be, new experiments that pose new ideas (like recently
+<a href="https://github.com/sveltejs/svelte">Svelte</a>). But as of the time of this post, React has been the closest thing to a unifier
+since jQuery, and signs point to it being on the decline, with no clear replacement.</p>
+<h3>no true path forward</h3>
+<p>So we’re at a bit of a jam: both <a href="https://macwright.com/2020/08/22/clean-starts-for-the-web.html">questioning our browser-centric standards process</a>,
+and <a href="https://macwright.com/2020/05/10/spa-fatigue.html">questioning our tools</a>, what <em>are</em> we to do? (…No, seriously, what
+are we to do? That was a real question. Help me out a little.)</p>
+<p>In planning out this post, I was going to highlight an even more fractured ecosystem with the above
+by reminding you, the reader, that the Java/Springboot, Laravel/PHP, Ruby/Rails, Django, and
+Elixir/Phoenix communities exist. And have been largely ignoring the Node community. I was going to
+drive that point home, but instead, I’m going to tangent into this <a href="https://vprise.wordpress.com/2005/12/14/ruby-on-rails-demo-video-why-do-people-buy-into-this-shit/">really interesting post from
+2005 ragging on Rails</a>:</p>
+<blockquote>
+<p><strong>Ruby on rails demo video (why do people buy into this shit?)</strong></p>
+<p>In these respects Rails is a step in the wrong direction that will complicate our lives further, …
+In Java I myself can produce the same sort of results in the same amount of time using J2EE even
+without hibernate but with a decent IDE.</p>
+<p>The syntax seemed like a simpler version of JSP with extensive use of scriptlets and no custom
+tags, the IDE doesn’t seem to have even basic features like completion and the documentation seems
+monolithic and dissorganized although when delving into a particular feature it seems quite
+detailed.</p>
+</blockquote>
+<p>I don’t know why, but I found some comfort in the reminder that Rails, a mostly unifying force, was
+met with criticism when it came out (though I don’t know why I would expect any change to be
+received with open, loving arms by this community). That back in 2005, we were decrying the death of
+the internet, or our tooling, or whatever.</p>
+<p>I still see the situation now as far worse as it was back then, but at least I’m reminded that we’ve
+gotten by so far on complete uncertainty and done all right.</p>
+<p>If it’s not clear by now, I’m writing this to bemoan the fact that builders of the web currently are
+fractured with each community solving the same problems other communities have already solved,
+throwing work away, losing ideas and people left-and-right, and generally stressed af. And now
+there’s no end goal in sight. The “did we fuck-up” here is we’ve architected a web that’s never been
+harder to build for, and it’s only getting worse.</p>
+<p>But rather than end on a “doom and gloom” note, we’re going to spin this uncertainty around into a
+creative exercise and use an unclear future as a blank canvas. In part 2, I’d like to shift into
+something a little more fun by outlining some possible futures. We’ll brainstorm a few backup
+plans—Plan A, Plan B, … <a href="https://www.youtube.com/embed/PPEbmbWuBx4?start=8&amp;end=25&amp;rel=0">Plan E</a>, etc, A Marvelesque <em>multiverse</em> of possibilities, if you
+will.</p>
+<p><em>Part 2 coming soon!</em></p>
+
+      </main>
+    </div>
+
+    <div class="wrapper">
+  <footer class="footer">
+    <a class="footer-link" href="blog/rss.xml">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      RSS
+    </a>
+    /
+    <a class="footer-link" href="blog/feed.json">
+      <svg class="icon mr1r" aria-label="rss" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" clip-rule="evenodd"><path d="M3 11a1 1 0 011-1 10 10 0 0110 10 1 1 0 11-2 0 8 8 0 00-8-8 1 1 0 01-1-1z"/><path d="M3 4a1 1 0 011-1 17 17 0 0117 17 1 1 0 11-2 0A15 15 0 004 5a1 1 0 01-1-1zM3 19a2 2 0 114 0 2 2 0 01-4 0z"/></g></svg>
+      JSON
+    </a>
+    /
+    <a class="footer-link" href="https://github.com/drwpow/blog">
+      <svg class="icon mr1r" aria-label="github" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)"><path d="M16 23c-.6 0-1-.4-1-1v-3.9c0-.4 0-.7-.1-1.1-.1-.3-.3-.6-.5-.8-.3-.3-.4-.7-.2-1 .2-.3.5-.6.8-.7 2.9-.3 5.6-1.3 5.6-6 0-1.1-.4-2.2-1.2-3.1-.3-.3-.3-.7-.2-1 .3-.8.3-1.6.1-2.4-.5.1-1.3.4-2.6 1.3-.2.2-.5.2-.8.1-2.1-.6-4.4-.6-6.5 0-.4.1-.7.1-1-.1-1.2-.8-2.1-1.1-2.6-1.2-.2.7-.2 1.6.1 2.3.1.4.1.8-.2 1-.8.9-1.2 2-1.2 3.2 0 4.7 2.7 5.7 5.6 6 .4 0 .7.3.8.7.1.4 0 .8-.2 1-.2.2-.4.5-.5.8-.2.3-.2.7-.2 1V22c0 .6-.4 1-1 1s-1-.4-1-1v-1.7c-3 .5-4.3-1.2-5.2-2.3-.4-.5-.7-.9-1.1-1-.5-.1-.9-.7-.7-1.2.1-.5.7-.9 1.2-.7 1 .3 1.6 1 2.2 1.7.8 1.1 1.5 1.9 3.6 1.5v-.1c0-.5 0-1.2.3-1.7v-.1c-2.8-.6-5.8-2.4-5.8-7.7 0-1.5.5-2.9 1.4-4-.4-1.4-.3-2.8.3-4.1.1-.3.3-.5.6-.6.4 0 1.7-.2 4.4 1.4 2.2-.5 4.5-.5 6.6 0 2.6-1.7 4-1.5 4.4-1.4.3.1.5.3.6.6.5 1.3.6 2.6.3 3.9.9 1.1 1.4 2.5 1.4 4 0 5.7-3.4 7.2-5.8 7.8v.1c.3.6.3 1.2.3 1.8V22c0 .6-.4 1-1 1z"/></g><defs><clipPath id="clip0"><path d="M0 0h24v24H0V0z"/></clipPath></defs></svg>
+      GitHub
+    </a>
+    <br />
+    this website is encrypted and 100% analytics-free.<br />
+    built with <a href="https://cobalt-org.github.io/" target="_blank" rel="noopener noreferrer">Cobalt</a>, a Rust-powered static site generator.<br />
+    if you’d like to support this blog, tweet or share&nbsp;a&nbsp;link!
+
+    <div class="footer-theme">
+      <div class="toggle">
+        <input class="toggle-input" id="theme-switcher" type="checkbox" value="dark-mode" />
+        <label class="toggle-label" for="theme-switcher">dark theme</label>
+      </div>
+    </div>
+
+    <script>
+      const toggle = document.getElementById('theme-switcher');
+      if (localStorage.getItem('theme') === 'dark') toggle.checked = true;
+      function darkTheme(dark) {
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        document.body.classList.add('theme--' + (dark ? 'dark' : 'light'));
+        document.body.classList.add('theme-transition');
+        setTimeout(function() { document.body.classList.remove('theme-transition') }, 500);
+      }
+      toggle.addEventListener('change', function(evt) {
+        document.body.classList.remove('theme--dark');
+        document.body.classList.remove('theme--light');
+        darkTheme(evt.target.checked === true);
+      });
+    </script>
+  </footer>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
