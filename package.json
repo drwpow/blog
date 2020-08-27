@@ -9,7 +9,7 @@
     "build:css:watch": "sass --watch --no-source-map assets/stylesheets/app.scss:assets/app.css",
     "minify:css": "postcss assets/app.css -o assets/app.min.css",
     "minify:css:watch": "postcss -w assets/app.css -o assets/app.min.css",
-    "start": "concurrently 'cobalt serve' 'npm run build:css:watch' 'npm run minify:css:watch'"
+    "start": "concurrently 'cobalt serve --drafts' 'npm run build:css:watch' 'npm run minify:css:watch'"
   },
   "dependencies": {
     "cssnano": "^4.1.10",

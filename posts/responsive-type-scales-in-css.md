@@ -6,7 +6,7 @@ description:
   There actually is an easy, quick way to configure font sizes, it works universally in both CSS and
   CSS-in-JS, and it’s even responsive. You’re just not using it.
 tags:
-  - dev
+  - design
 ---
 
 Are you making typography on the web harder on yourself than it needs to be? Probably. What if I
